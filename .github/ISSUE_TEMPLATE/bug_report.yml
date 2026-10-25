@@ -1,0 +1,41 @@
+name: Bug report
+description: Report a MavericksResurrection issue on MacBookPro11,4 or MacBookPro11,5.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Support is limited to MacBookPro11,4 and MacBookPro11,5. If you used another host macOS version, try Monterey where possible and include logs from both attempts.
+  - type: input
+    id: model
+    attributes:
+      label: Mac model identifier
+      placeholder: MacBookPro11,4 or MacBookPro11,5
+    validations:
+      required: true
+  - type: input
+    id: host
+    attributes:
+      label: macOS version running the app, and app version
+      placeholder: Monterey 12.7.6; MavericksResurrection 1.0 Beta 1
+    validations:
+      required: true
+  - type: input
+    id: storage
+    attributes:
+      label: SSD model and installation destination
+      description: Include whether the installation is on the internal drive or USB, and whether experimental NVMe support is installed.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the operation, exact error if any, and steps to reproduce it. For boot issues, mention whether HDMI or a dock was connected.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Diagnostic logs
+      description: Attach logs saved using Diagnostic logs… and, if available, Collect installation diagnostics…. Review attachments for personal information before posting.
