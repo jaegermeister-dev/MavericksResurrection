@@ -8,7 +8,7 @@ Install OS X Mavericks 10.9.5 directly onto an existing internal or USB partitio
 
 MavericksResurrection downloads and prepares Mavericks using MavericksForever, installs it, and applies the patches needed for the MacBookPro11,4 or MacBookPro11,5. It also includes optional NVMe support and a fix for audio breaking after software updates.
 
-**[Download 1.0 Beta 2](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.2)**
+**[Download 1.0 Beta 3](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.3)**
 
 ## Before you start
 
@@ -23,7 +23,7 @@ Keep a working newer macOS installation available. You'll use it to run the app,
 - **Macs that officially support Mavericks:** the app can install Mavericks without the extra model patches. A normal Apple installer is recommended for these Macs. If this app doesn't work, use the normal installation method; support is limited to the 11,4 and 11,5.
 - Other unsupported Mac models are not supported.
 
-The app targets **OS X Yosemite 10.10 through macOS Tahoe**, but Monterey is the tested host. If something goes wrong on another version, try Monterey and include logs from both attempts in your report.
+The app targets **OS X Yosemite 10.10 through macOS Tahoe**. It has been tested on Monterey and Tahoe. If something goes wrong on another version, try Monterey and include logs from both attempts in your report.
 
 **Creating a Mavericks installation on a USB drive from an Apple silicon Mac has not been tested.** Any resulting installation would be for a compatible Intel Mac.
 
