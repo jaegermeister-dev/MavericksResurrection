@@ -8,7 +8,7 @@ Install OS X Mavericks 10.9.5 directly onto an existing internal or USB partitio
 
 MavericksResurrection downloads and prepares Mavericks using MavericksForever, installs it, and applies the patches needed for the MacBookPro11,4 or MacBookPro11,5. It also includes optional NVMe support and a fix for audio breaking after software updates.
 
-**[Download 1.0 Beta 4](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.4)**
+**[Download 1.0 Beta 5](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.5)**
 
 ## Before you start
 
@@ -69,6 +69,21 @@ The repair has been tested on both internal and USB installations with NVMe supp
 **If you see a window appear that you already progressed past, just ignore it.** Don't interact with it or close it, as that may interfere with the process. Installation and repairs continued successfully despite these windows during testing, and they should disappear on their own. Follow progress in the main window.
 
 This means leftover confirmation or selection dialogs, sometimes with an empty list. It does **not** mean you should ignore actual error messages.
+
+## Debug tools (advanced users)
+
+Beta 5 adds a **Debug — Advanced users only…** button:
+
+- **Read-only filesystem and installation diagnostics:** select the affected Mavericks partition. The app unmounts it normally, reads it without applying patches or repairs, checks the filesystem with repairs disabled, and leaves it unmounted. The report ZIP goes on your Desktop. Normal unmounting can flush writes macOS already has pending.
+- **EFI diagnostics:** select the Mavericks partition and the EFI partition where you want the tool and logs saved. One EFI offers either diagnostics only, or diagnostics followed by a separately confirmed boot attempt. Existing OpenCore and boot files are preserved. Logs always stay on the EFI partition the tool runs from.
+- **Collect EFI reports:** after the test, return to your working macOS and use this option to save a Desktop ZIP to share with your observations.
+- **11,4 graphics experiment:** an optional setting for an existing MacBookPro11,4 installation. It copies Mavericks' existing MacBookPro11,2 Intel graphics power-management profile to the 11,4 board entry and rebuilds caches. It does not change the Mac model, Intel driver binaries or framebuffer selection. It is off by default and has **not been confirmed to fix an 11,4 boot failure**. Untick it and apply to restore the previous profile. Recovery copies are kept if a change is interrupted.
+
+For the EFI test, use your existing **OpenCore EFI with OpenShell**, or install OpenCore EFI separately using [OCLP](https://dortania.github.io/OpenCore-Legacy-Patcher/BUILD.html). You can install it for testing even if your current macOS does not need it. This app does not install or configure OpenCore or OpenShell. The generated instructions identify your selected partitions and the correct tool path; follow those instead of assuming a particular `fs0:` mapping.
+
+The EFI reports cover firmware information and boot-loader checkpoints. They cannot save the entire Mavericks kernel console after handoff, so photograph or record the last screen if booting fails. A boot attempt can write to disks; preserve a damaged installation before trying it. OpenCore can also affect the boot environment, so use the same route when comparing results.
+
+These are experimental troubleshooting tools. Reports can contain hardware identifiers, usernames and file paths. Review them before sharing; nothing is uploaded automatically.
 
 ## Reporting a problem
 
