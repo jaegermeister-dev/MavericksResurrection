@@ -8,7 +8,7 @@ Install OS X Mavericks 10.9.5 directly onto an existing internal or USB partitio
 
 MavericksResurrection downloads and prepares Mavericks using MavericksForever, installs it, and applies the patches needed for the MacBookPro11,4 or MacBookPro11,5. It also includes optional NVMe support and a fix for audio breaking after software updates.
 
-**[Download 1.0 Beta 5](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.5)**
+**[Download 1.0 Beta 6](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.6)**
 
 ## Before you start
 
@@ -72,12 +72,12 @@ This means leftover confirmation or selection dialogs, sometimes with an empty l
 
 ## Debug tools (advanced users)
 
-Beta 5 adds a **Debug — Advanced users only…** button:
+Use the **Debug — Advanced users only…** button:
 
 - **Read-only filesystem and installation diagnostics:** select the affected Mavericks partition. The app unmounts it normally, reads it without applying patches or repairs, checks the filesystem with repairs disabled, and leaves it unmounted. The report ZIP goes on your Desktop. Normal unmounting can flush writes macOS already has pending.
 - **EFI diagnostics:** select the Mavericks partition and the EFI partition where you want the tool and logs saved. One EFI offers either diagnostics only, or diagnostics followed by a separately confirmed boot attempt. Existing OpenCore and boot files are preserved. Logs always stay on the EFI partition the tool runs from.
 - **Collect EFI reports:** after the test, return to your working macOS and use this option to save a Desktop ZIP to share with your observations.
-- **11,4 graphics experiment:** an optional setting for an existing MacBookPro11,4 installation. It copies Mavericks' existing MacBookPro11,2 Intel graphics power-management profile to the 11,4 board entry and rebuilds caches. It does not change the Mac model, Intel driver binaries or framebuffer selection. It is off by default and has **not been confirmed to fix an 11,4 boot failure**. Untick it and apply to restore the previous profile. Recovery copies are kept if a change is interrupted.
+- **11,4 experimental settings:** select an existing Mavericks installation to change its graphics power profile, Intel framebuffer compatibility or CPU power profile. You can enable or remove these options **without reinstalling Mavericks**. Each installation saves its own settings, which are checked against its files when reopened. The three current options can be combined. Unticking an option restores its saved original files; recovery copies are kept if a change is interrupted. All options are off by default and **untested on 11,4 hardware**. They are not confirmed boot fixes. Try one change at a time so you can tell what affected the result.
 
 For the EFI test, use your existing **OpenCore EFI with OpenShell**, or install OpenCore EFI separately using [OCLP](https://dortania.github.io/OpenCore-Legacy-Patcher/BUILD.html). You can install it for testing even if your current macOS does not need it. This app does not install or configure OpenCore or OpenShell. The generated instructions identify your selected partitions and the correct tool path; follow those instead of assuming a particular `fs0:` mapping.
 
