@@ -1,0 +1,15 @@
+--- Beta-6/MacProgressView.js
++++ Beta-6.1/MacProgressView.js
+@@ -18,6 +18,12 @@
+         var scroll=$.NSScrollView.alloc.mrInitWithXYWidthHeight(0,0,width,height-111);
+         scroll.hasVerticalScroller=true;scroll.hasHorizontalScroller=false;scroll.borderType=$.NSBezelBorder;
+         var text=$.NSTextView.alloc.mrInitWithXYWidthHeight(0,0,width-20,height-111);
++        // Use the classic text layout engine before attaching the log to a
++        // scroll view. Tahoe TextKit 2 was observed looping in viewport
++        // estimation and allocating tens of GB while this log updated.
++        // Accessing layoutManager explicitly selects TextKit 1 on newer
++        // macOS and uses the existing engine on older supported hosts.
++        text.layoutManager;
+         text.editable=false;text.selectable=true;text.richText=false;text.font=$.NSFont.userFixedPitchFontOfSize(11);
+         text.textColor=$.NSColor.textColor;text.backgroundColor=$.NSColor.textBackgroundColor;
+         text.verticallyResizable=true;text.horizontallyResizable=false;

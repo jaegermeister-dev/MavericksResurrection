@@ -1,0 +1,49 @@
+{
+  "beforeSHA256": "8f94d4e1446cf6ba05a0dab4d5f0dad5753091aad39b9629e16bc75905acd9c1",
+  "afterSHA256": "368dabc204f7c9038909cc11c014b901dc44d277d7bb84a008e58fa13073bfde",
+  "donorInstructionAndDataRangeUnchanged": [
+    "0xeb4",
+    "0x31000"
+  ],
+  "bridgeStart": "0x600",
+  "bridges": [
+    {
+      "symbol": "_GMNVMeBridge0",
+      "address": "0x600"
+    },
+    {
+      "symbol": "_GMNVMeBridge1",
+      "address": "0x610"
+    },
+    {
+      "symbol": "_GMNVMeBridge2",
+      "address": "0x620"
+    },
+    {
+      "symbol": "_GMNVMeBridge3",
+      "address": "0x630"
+    },
+    {
+      "symbol": "_GMNVMeBridge4",
+      "address": "0x640"
+    },
+    {
+      "symbol": "_GMNVMeBridge5",
+      "address": "0x650"
+    },
+    {
+      "symbol": "_GMNVMeBridge6",
+      "address": "0x660"
+    },
+    {
+      "symbol": "_GMNVMeBridge7",
+      "address": "0x670"
+    },
+    {
+      "symbol": "_GMNVMeBridge8",
+      "address": "0x680"
+    }
+  ],
+  "reason": "Mavericks KXLD emits RX for __TEXT, RW for unknown segments. Thunks now occupy unused __TEXT header padding.",
+  "hardwareValidated": false
+}

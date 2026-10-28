@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pkg-info format-version="2" relocatable="false" deleteObsoleteLanguages="true" overwrite-permissions="true" identifier="com.apple.pkg.AdditionalEssentials" useHFSPlusCompression="true" auth="root" version="10.9.0.1.1.1306847324">
+  <payload installKBytes="246346" numberOfFiles="16366"/>
+  <groups>
+    <group>com.apple.snowleopard-repair-permissions.pkg-group</group>
+    <group>com.apple.FindSystemFiles.pkg-group</group>
+  </groups>
+  <bundle-version>
+    <bundle CFBundleVersion="950.1" CFBundleShortVersionString="10.9.0" SourceVersion="950001000000000" id="com.apple.ActivityMonitor" path="./Applications/Utilities/Activity Monitor.app"/>
+    <bundle CFBundleVersion="16.7" CFBundleShortVersionString="5.0" SourceVersion="16007000000000" id="com.apple.ActivityMonitor.help" path="./Applications/Utilities/Activity Monitor.app/Contents/Resources/ActivityMonitor.help"/>
+    <bundle CFBundleVersion="16.8" CFBundleShortVersionString="5.0" SourceVersion="16008000000000" id="com.apple.AudioMIDISetup.help" path="./Applications/Utilities/Audio MIDI Setup.app/Contents/Resources/AudioMIDISetup.help"/>
+    <bundle CFBundleVersion="4.2.7f3" CFBundleShortVersionString="4.2.7" SourceVersion="4270004003000000" id="com.apple.BluetoothFileExchange" path="./Applications/Utilities/Bluetooth File Exchange.app"/>
+    <bundle CFBundleVersion="4.9.0" CFBundleShortVersionString="4.9.0" SourceVersion="266000000000000" id="com.apple.ColorSyncUtility" path="./Applications/Utilities/ColorSync Utility.app"/>
+    <bundle CFBundleVersion="4.9.0" CFBundleShortVersionString="4.9.0" SourceVersion="266000000000000" id="com.apple.ColorSyncUtility.Calculator" path="./Applications/Utilities/ColorSync Utility.app/Contents/Resources/Calculator.csutil"/>
+    <bundle CFBundleVersion="4.9.0" CFBundleShortVersionString="4.9.0" SourceVersion="266000000000000" id="com.apple.ColorSyncUtility.Devices" path="./Applications/Utilities/ColorSync Utility.app/Contents/Resources/Devices.csutil"/>
+    <bundle CFBundleVersion="4.9.0" CFBundleShortVersionString="4.9.0" SourceVersion="266000000000000" id="com.apple.ColorSyncUtility.Filters" path="./Applications/Utilities/ColorSync Utility.app/Contents/Resources/Filters.csutil"/>
+    <bundle CFBundleVersion="4.9.0" CFBundleShortVersionString="4.9.0" SourceVersion="266000000000000" id="com.apple.ColorSyncUtility.FirstAid" path="./Applications/Utilities/ColorSync Utility.app/Contents/Resources/FirstAid.csutil"/>
+    <bundle CFBundleVersion="4.9.0" CFBundleShortVersionString="4.9.0" SourceVersion="266000000000000" id="com.apple.ColorSyncUtility.Profiles" path="./Applications/Utilities/ColorSync Utility.app/Contents/Resources/Profiles.csutil"/>
+    <bundle CFBundleVersion="536.100.1" CFBundleShortVersionString="10.9" SourceVersion="536100001000000" id="com.apple.Console" path="./Applications/Utilities/Console.app"/>
+    <bundle CFBundleVersion="15.4" CFBundleShortVersionString="5.0" SourceVersion="15004000000000" id="com.apple.Console.help" path="./Applications/Utilities/Console.app/Contents/Resources/Console.help"/>
+    <bundle CFBundleVersion="5.9" CFBundleShortVersionString="5.9" SourceVersion="510000000000000" id="com.apple.DigitalColorMeter" path="./Applications/Utilities/DigitalColor Meter.app"/>
+    <bundle CFBundleVersion="19.8" CFBundleShortVersionString="6.0" SourceVersion="19008000000000" id="com.apple.DiskUtility.help" path="./Applications/Utilities/Disk Utility.app/Contents/Resources/DiskUtility.help"/>
+    <bundle CFBundleVersion="117" CFBundleShortVersionString="1.8" SourceVersion="117000000000000" id="com.apple.Grab" path="./Applications/Utilities/Grab.app"/>
+    <bundle CFBundleVersion="8.8" CFBundleShortVersionString="5.0" SourceVersion="8008000000000" id="com.apple.Grapher.help" path="./Applications/Utilities/Grapher.app/Contents/Resources/Grapher.help"/>
+    <bundle CFBundleVersion="9.9" CFBundleShortVersionString="8.0" SourceVersion="9009000000000" id="com.apple.HelpCenter.help" path="./Library/Documentation/Help/HelpCenter.help"/>
+    <bundle CFBundleVersion="1.0" CFBundleShortVersionString="1.0" SourceVersion="27000000000000" id="com.apple.OSLicenseAgreement" path="./Library/Documentation/License.lpdf"/>
+    <bundle CFBundleVersion="17.6" CFBundleShortVersionString="5.0" SourceVersion="17006000000000" id="com.apple.Terminal.help" path="./Applications/Utilities/Terminal.app/Contents/Resources/Terminal.help"/>
+    <bundle CFBundleVersion="18.6" CFBundleShortVersionString="10.0" SourceVersion="18006000000000" id="com.apple.VoiceOver.help" path="./Library/Documentation/Help/VoiceOver.help"/>
+    <bundle CFBundleVersion="333.11" CFBundleShortVersionString="6.0" SourceVersion="333011000000000" id="com.apple.VoiceOverUtility" path="./Applications/Utilities/VoiceOver Utility.app"/>
+    <bundle CFBundleVersion="333.11" CFBundleShortVersionString="6.0" SourceVersion="333011000000000" id="com.apple.VoiceOverUtilityCacheBuilder" path="./Applications/Utilities/VoiceOver Utility.app/Contents/OtherBinaries/VoiceOverUtilityCacheBuilder.app"/>
+    <bundle CFBundleVersion="1" CFBundleShortVersionString="1.0" SourceVersion="950001000000000" id="com.apple.activititymonitor.helper" path="./Applications/Utilities/Activity Monitor.app/Contents/XPCServices/com.apple.activititymonitor.helper.xpc"/>
+    <bundle CFBundleVersion="3.0.6" CFBundleShortVersionString="3.0.6" SourceVersion="119006000000000" id="com.apple.audio.AudioMIDISetup" path="./Applications/Utilities/Audio MIDI Setup.app"/>
+    <bundle CFBundleVersion="6.7" CFBundleShortVersionString="3.0" SourceVersion="6007000000000" id="com.apple.colorsyncutility.help" path="./Applications/Utilities/ColorSync Utility.app/Contents/Resources/ColorSyncUtility.help"/>
+    <bundle CFBundleVersion="1.8" CFBundleShortVersionString="1.8" SourceVersion="16000000000000" id="com.apple.dashboardlauncher" path="./Applications/Dashboard.app"/>
+    <bundle CFBundleVersion="6.4" CFBundleShortVersionString="3.0" SourceVersion="6004000000000" id="com.apple.digitalcolormeter.help" path="./Applications/Utilities/DigitalColor Meter.app/Contents/Resources/DigitalColorMeter.help"/>
+    <bundle CFBundleVersion="6.4" CFBundleShortVersionString="3.0" SourceVersion="6004000000000" id="com.apple.grab.help" path="./Applications/Utilities/Grab.app/Contents/Resources/Grab.help"/>
+    <bundle CFBundleVersion="46" CFBundleShortVersionString="2.5" SourceVersion="68000000000000" id="com.apple.grapher" path="./Applications/Utilities/Grapher.app"/>
+    <bundle CFBundleVersion="55153" CFBundleShortVersionString="9.0" SourceVersion="55153000000000000" id="com.apple.keychainaccess" path="./Applications/Utilities/Keychain Access.app"/>
+    <bundle CFBundleVersion="6.7" CFBundleShortVersionString="3.1" SourceVersion="6007000000000" id="com.apple.keychainaccess.help" path="./Applications/Utilities/Keychain Access.app/Contents/Resources/KeychainAccess.help"/>
+    <bundle CFBundleVersion="414.26" CFBundleShortVersionString="3108.0" SourceVersion="414026000000000" id="com.apple.machelp" path="./Library/Documentation/Help/MacHelp.help"/>
+    <bundle CFBundleVersion="55153" CFBundleShortVersionString="9.0" SourceVersion="55153000000000000" id="com.apple.menuextra.keychain" path="./Applications/Utilities/Keychain Access.app/Contents/Resources/Keychain.menu"/>
+    <bundle CFBundleVersion="33" CFBundleShortVersionString="1.2.2" SourceVersion="33000000000000" id="com.apple.widget.SkiReport" path="./Library/Widgets/Ski Report.wdgt"/>
+    <bundle CFBundleVersion="1.2.3" CFBundleShortVersionString="1.2.3" SourceVersion="45000000000000" id="com.apple.widget.addressbook" path="./Library/Widgets/Contacts.wdgt"/>
+    <bundle CFBundleVersion="1.3.3" CFBundleShortVersionString="1.3.3" SourceVersion="45000000000000" id="com.apple.widget.addressbook.plugin" path="./Library/Widgets/Contacts.wdgt/Contacts.widgetplugin"/>
+    <bundle CFBundleVersion="1.3.1" CFBundleShortVersionString="1.3.1" SourceVersion="15000000000000" id="com.apple.widget.calculator" path="./Library/Widgets/Calculator.wdgt"/>
+    <bundle CFBundleVersion="18" CFBundleShortVersionString="4.0.3" SourceVersion="49000000000000" id="com.apple.widget.calendar" path="./Library/Widgets/Calendar.wdgt"/>
+    <bundle CFBundleVersion="15" CFBundleShortVersionString="3.0.3" SourceVersion="49000000000000" id="com.apple.widget.calendar.plugin" path="./Library/Widgets/Calendar.wdgt/Calendar.widgetplugin"/>
+    <bundle CFBundleVersion="26" CFBundleShortVersionString="1.1.2" SourceVersion="28000000000000" id="com.apple.widget.cinema" path="./Library/Widgets/Movies.wdgt"/>
+    <bundle CFBundleVersion="33" CFBundleShortVersionString="1.4.3" SourceVersion="35000000000000" id="com.apple.widget.currencyconverter.plugin" path="./Library/Widgets/Unit Converter.wdgt/ConverterPlugin.widgetplugin"/>
+    <bundle CFBundleVersion="39" CFBundleShortVersionString="2.1.2" SourceVersion="39000000000000" id="com.apple.widget.dictionary" path="./Library/Widgets/Dictionary.wdgt"/>
+    <bundle CFBundleVersion="37" CFBundleShortVersionString="1.2.1" SourceVersion="39000000000000" id="com.apple.widget.dictionary.plugin" path="./Library/Widgets/Dictionary.wdgt/Dictionary.widgetplugin"/>
+    <bundle CFBundleVersion="30" CFBundleShortVersionString="1.1.6" SourceVersion="30000000000000" id="com.apple.widget.espn" path="./Library/Widgets/ESPN.wdgt"/>
+    <bundle CFBundleVersion="33" CFBundleShortVersionString="1.5.4" SourceVersion="33000000000000" id="com.apple.widget.flighttracker" path="./Library/Widgets/Flight Tracker.wdgt"/>
+    <bundle CFBundleVersion="28" CFBundleShortVersionString="2.0.2" SourceVersion="28000000000000" id="com.apple.widget.stickies" path="./Library/Widgets/Stickies.wdgt"/>
+    <bundle CFBundleVersion="48" CFBundleShortVersionString="1.7.3" SourceVersion="49000000000000" id="com.apple.widget.stocks" path="./Library/Widgets/Stocks.wdgt"/>
+    <bundle CFBundleVersion="1.2.1" CFBundleShortVersionString="1.2.1" SourceVersion="20000000000000" id="com.apple.widget.tilegame" path="./Library/Widgets/Tile Game.wdgt"/>
+    <bundle CFBundleVersion="33" CFBundleShortVersionString="1.3.2" SourceVersion="33000000000000" id="com.apple.widget.translation" path="./Library/Widgets/Translation.wdgt"/>
+    <bundle CFBundleVersion="31" CFBundleShortVersionString="1.3.1" SourceVersion="33000000000000" id="com.apple.widget.translation.plugin" path="./Library/Widgets/Translation.wdgt/Translation.widgetplugin"/>
+    <bundle CFBundleVersion="35" CFBundleShortVersionString="2.2.5" SourceVersion="35000000000000" id="com.apple.widget.unitconverter" path="./Library/Widgets/Unit Converter.wdgt"/>
+    <bundle CFBundleVersion="46" CFBundleShortVersionString="2.0.8" SourceVersion="47000000000000" id="com.apple.widget.weather" path="./Library/Widgets/Weather.wdgt"/>
+    <bundle CFBundleVersion="9537.78.1" CFBundleShortVersionString="9537" SourceVersion="7537078001000000" id="com.apple.widget.web-clip" path="./Library/Widgets/Web Clip.wdgt"/>
+    <bundle CFBundleVersion="9537.78.1" CFBundleShortVersionString="9537" SourceVersion="7537078001000000" id="com.apple.widget.webclip.plugin" path="./Library/Widgets/Web Clip.wdgt/WebClip.plugin"/>
+    <bundle CFBundleVersion="33" CFBundleShortVersionString="3.0.2" SourceVersion="33000000000000" id="com.apple.widget.worldclock" path="./Library/Widgets/World Clock.wdgt"/>
+    <bundle CFBundleVersion="27" CFBundleShortVersionString="3.0.1" SourceVersion="33000000000000" id="com.apple.widget.worldclock.plugin" path="./Library/Widgets/World Clock.wdgt/WorldClock.widgetplugin"/>
+  </bundle-version>
+</pkg-info>

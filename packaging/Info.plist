@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDisplayName</key>
+	<string>MavericksResurrection</string>
+	<key>CFBundleExecutable</key>
+	<string>MavericksResurrection</string>
+	<key>CFBundleIconFile</key>
+	<string>MavericksResurrection</string>
+	<key>CFBundleIdentifier</key>
+	<string>dev.Jaegermeister.MavericksResurrection</string>
+	<key>CFBundleName</key>
+	<string>MavericksResurrection</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0 Beta 6</string>
+	<key>CFBundleVersion</key>
+	<string>105</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>12.0</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSHumanReadableCopyright</key>
+	<string>MavericksResurrection — maintained by Jaegermeister-dev. MavericksForever by Wowfunhappy.</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pkg-info format-version="2" relocatable="false" deleteObsoleteLanguages="true" overwrite-permissions="true" identifier="com.apple.pkg.JavaEssentials" useHFSPlusCompression="true" auth="root" version="10.9.0.1.1.1306847324">
+  <payload installKBytes="10014" numberOfFiles="691"/>
+  <groups>
+    <group>com.apple.snowleopard-repair-permissions.pkg-group</group>
+    <group>com.apple.FindSystemFiles.pkg-group</group>
+  </groups>
+  <bundle-version>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="267000000000000" id="com.apple.JarLauncher" path="./System/Library/CoreServices/Jar Launcher.app"/>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="267000000000000" id="com.apple.JavaApplicationLauncher" path="./System/Library/PrivateFrameworks/JavaApplicationLauncher.framework"/>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="267000000000000" id="com.apple.JavaFrameEmbedding" path="./System/Library/Frameworks/JavaFrameEmbedding.framework"/>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="37000000000000" id="com.apple.JavaLaunching" path="./System/Library/PrivateFrameworks/JavaLaunching.framework"/>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="71000000000000" id="com.apple.JavaNativeFoundation" path="./System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaNativeFoundation.framework"/>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="267000000000000" id="com.apple.JavaPluginCocoa" path="./System/Library/Frameworks/JavaVM.framework/Versions/A/JavaPluginCocoa.bundle"/>
+    <bundle CFBundleVersion="14.6.9" CFBundleShortVersionString="14.6.9" SourceVersion="220000000000000" id="com.apple.JavaVM" path="./System/Library/Frameworks/JavaVM.framework"/>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="267000000000000" id="com.apple.JavaWebStart" path="./System/Library/CoreServices/Java Web Start.app"/>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="56000000000000" id="com.apple.java.DownloadComponents" path="./System/Library/Java/Support/CoreDeploy.bundle/Contents/Download Java Components.app"/>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="56000000000000" id="com.apple.java.JavaAppletPlugin" path="./System/Library/Java/Support/CoreDeploy.bundle/Contents/JavaAppletPlugin.plugin"/>
+    <bundle CFBundleVersion="14.8.0" CFBundleShortVersionString="14.8.0" SourceVersion="54000000000000" id="com.apple.java.JavaRuntimeSupport" path="./System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaRuntimeSupport.framework"/>
+  </bundle-version>
+</pkg-info>

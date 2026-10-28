@@ -8,7 +8,14 @@ Install OS X Mavericks 10.9.5 directly onto an existing internal or USB partitio
 
 MavericksResurrection downloads and prepares Mavericks using MavericksForever, installs it, and applies the patches needed for the MacBookPro11,4 or MacBookPro11,5. It also includes optional NVMe support and a fix for audio breaking after software updates.
 
-**[Download 1.0 Beta 6](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.6)**
+**[Download 1.0 Beta 6.1](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.6.1)**
+
+## Source code
+
+The source for Beta 6.1 is now available after a user pointed out that it had not been published. See [SOURCE.md](SOURCE.md) for the code layout and build instructions.
+
+Previous release downloads were removed following reports of a memory leak, and for transparency because their source code had not been published. Beta 6.1 contains only the memory leak fix on top of Beta 6. The tested app still displays Beta 6 (build 105) internally.
+
 
 ## Before you start
 

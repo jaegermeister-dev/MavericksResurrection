@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pkg-info format-version="2" relocatable="false" deleteObsoleteLanguages="true" overwrite-permissions="true" identifier="com.apple.pkg.AsianLanguagesSupport" useHFSPlusCompression="true" auth="root" version="10.9.0.1.1.1306847324">
+  <payload installKBytes="6038" numberOfFiles="508"/>
+  <groups>
+    <group>com.apple.snowleopard-repair-permissions.pkg-group</group>
+    <group>com.apple.FindSystemFiles.pkg-group</group>
+  </groups>
+  <bundle-version>
+    <bundle CFBundleVersion="1.1.0" CFBundleShortVersionString="1.1.0" SourceVersion="31000000000000" id="com.apple.50onPaletteIM" path="./System/Library/Input Methods/50onPaletteServer.app"/>
+    <bundle CFBundleVersion="11.15" CFBundleShortVersionString="11.4" SourceVersion="11015000000000" id="com.apple.KotoeriIM.help" path="./System/Library/Input Methods/Kotoeri.app/Contents/Resources/KotoeriIM.help"/>
+    <bundle CFBundleVersion="12.14" CFBundleShortVersionString="12.3" SourceVersion="12014000000000" id="com.apple.SCIM.help" path="./System/Library/Input Methods/SCIM.app/Contents/Resources/SCIM.help"/>
+    <bundle CFBundleVersion="13.7" CFBundleShortVersionString="12.3" SourceVersion="13007000000000" id="com.apple.TCIM.help" path="./System/Library/Input Methods/TCIM.app/Contents/Resources/TCIM.help"/>
+    <bundle CFBundleVersion="205.6" CFBundleShortVersionString="102" SourceVersion="205006000000000" id="com.apple.inputmethod.SCIM" path="./System/Library/Input Methods/SCIM.app"/>
+    <bundle CFBundleVersion="205.6" CFBundleShortVersionString="1.0" SourceVersion="205006000000000" id="com.apple.inputmethod.SCIM.Preferences" path="./System/Library/Input Methods/SCIM.app/Contents/Resources/Preferences.prefPane"/>
+    <bundle CFBundleVersion="205.6" CFBundleShortVersionString="102" SourceVersion="205006000000000" id="com.apple.inputmethod.TCIM" path="./System/Library/Input Methods/TCIM.app"/>
+    <bundle CFBundleVersion="205.6" CFBundleShortVersionString="1.0" SourceVersion="205006000000000" id="com.apple.inputmethod.TCIM.Preferences" path="./System/Library/Input Methods/TCIM.app/Contents/Resources/Preferences.prefPane"/>
+  </bundle-version>
+</pkg-info>

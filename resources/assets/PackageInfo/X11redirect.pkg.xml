@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pkg-info format-version="2" relocatable="false" deleteObsoleteLanguages="true" overwrite-permissions="true" identifier="com.apple.pkg.X11redirect" useHFSPlusCompression="true" auth="root" version="10.9.0.1.1.1306847324">
+  <payload installKBytes="5218" numberOfFiles="316"/>
+  <groups>
+    <group>com.apple.snowleopard-repair-permissions.pkg-group</group>
+    <group>com.apple.FindSystemFiles.pkg-group</group>
+  </groups>
+  <bundle-version>
+    <bundle CFBundleVersion="1" CFBundleShortVersionString="1.0" SourceVersion="14000000000000" id="com.apple.X11redirect" path="./Applications/Utilities/X11.app"/>
+  </bundle-version>
+</pkg-info>

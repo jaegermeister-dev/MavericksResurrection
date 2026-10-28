@@ -1,0 +1,6 @@
+{
+  "reason": "Mavericks KXLD expects link-edit data after executable segments.",
+  "bridgeVirtualAddress": "0x31000",
+  "originalInstructionsUnchanged": true,
+  "sha256": "8f94d4e1446cf6ba05a0dab4d5f0dad5753091aad39b9629e16bc75905acd9c1"
+}

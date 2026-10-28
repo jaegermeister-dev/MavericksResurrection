@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "version": "10.9.5",
+  "build": "13F34",
+  "nativeBootValidated": false,
+  "files": [
+    {
+      "path": "usr/bin/security",
+      "sha256": "da9704d070102415e06de8b48bd984ebe7ff6bb2dd34e06a1ab7239264ec215e",
+      "bytes": 220240,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "usr/sbin/postfix",
+      "sha256": "8c7a1f4483199528417e7539fc84749ce18fa7c0fac6ed1efa11f9c06d9b0abd",
+      "bytes": 111840,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "usr/libexec/dumpemacs",
+      "sha256": "807ec1f5107ebf50a0bc03cbe9fa52b4bfe653ed591edf5c32800ce9c4927a03",
+      "bytes": 24384,
+      "mode": 365,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "System/Library/Frameworks/Automator.framework/Versions/A/Support/update_automator_cache",
+      "sha256": "53c629c44d8cba920bba2ee01ae203459703c6a0bf37385af6dac41d86a05d5b",
+      "bytes": 26320,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "usr/libexec/ifcstart",
+      "sha256": "eaed4d35cd37a960c52f111746ac4acc5b6a32b5fd42927f1a84d783af0fda8a",
+      "bytes": 14304,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "usr/libexec/xpchelper",
+      "sha256": "17695782b70b4f39f25db877d2af280979f3e58d734be1dfb84d9da8cac63b53",
+      "bytes": 67392,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    }
+  ]
+}

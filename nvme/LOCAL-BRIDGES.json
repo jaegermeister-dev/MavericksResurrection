@@ -1,0 +1,62 @@
+{
+  "status": "PRIVATE_OFFLINE_LINK_TEST_ONLY",
+  "originalInstructionsUnchanged": true,
+  "beforeSha256": "368acbe3c5a4ec9365de913cb1ee994a6e9144a9f06ad919cacddd83981101c0",
+  "afterSha256": "315902dcfc25870553539169e268c801773f3a0061fbdf619818e83fee4ad68f",
+  "bridges": [
+    {
+      "local": "_GMNVMeBridge0",
+      "helper": "_gm_nvme_dma_init_refcon",
+      "vtableAddress": "0x2cb00",
+      "thunkAddress": "0x6c000"
+    },
+    {
+      "local": "_GMNVMeBridge1",
+      "helper": "_gm_nvme_dma_copy_buffer",
+      "vtableAddress": "0x2cb18",
+      "thunkAddress": "0x6c010"
+    },
+    {
+      "local": "_GMNVMeBridge2",
+      "helper": "_gm_nvme_dma_init_segments",
+      "vtableAddress": "0x2cb08",
+      "thunkAddress": "0x6c020"
+    },
+    {
+      "local": "_GMNVMeBridge3",
+      "helper": "_gm_nvme_dma_prepare_segments",
+      "vtableAddress": "0x2cb10",
+      "thunkAddress": "0x6c030"
+    },
+    {
+      "local": "_GMNVMeBridge4",
+      "helper": "_gm_nvme_timer_timeout",
+      "vtableAddress": "0x2db00",
+      "thunkAddress": "0x6c040"
+    },
+    {
+      "local": "_GMNVMeBridge5",
+      "helper": "_gm_nvme_timer_wake",
+      "vtableAddress": "0x2db08",
+      "thunkAddress": "0x6c050"
+    },
+    {
+      "local": "_GMNVMeBridge6",
+      "helper": "_gm_nvme_timer_init",
+      "vtableAddress": "0x2daf8",
+      "thunkAddress": "0x6c060"
+    },
+    {
+      "local": "_GMNVMeBridge7",
+      "helper": "_gm_nvme_flush",
+      "vtableAddress": "0x2a6f0",
+      "thunkAddress": "0x6c070"
+    },
+    {
+      "local": "_GMNVMeBridge8",
+      "helper": "_gm_nvme_provision_status",
+      "vtableAddress": "0x2a798",
+      "thunkAddress": "0x6c080"
+    }
+  ]
+}

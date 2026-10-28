@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "version": "10.9.5",
+  "build": "13F34",
+  "tools": {
+    "kextcache": {
+      "path": "usr/sbin/kextcache",
+      "sha256": "c12ccf4b72766263a77fd162c0e7ac631bffbc3eb22905da70a1a3b881ae479c",
+      "bytes": 409296
+    },
+    "makewhatis": {
+      "path": "usr/libexec/makewhatis",
+      "sha256": "da50ccbeb4533b5e4777e627fe9c1463e00722233db2234c2a83363e3fdcf9e8",
+      "bytes": 24592
+    },
+    "update_dyld_shared_cache": {
+      "path": "usr/bin/update_dyld_shared_cache",
+      "bytes": 509856,
+      "sha256": "efb3b7c52bf8cd172622786a7736a5083af0309469e7aee0d8f8de13e4e5fe16"
+    }
+  }
+}

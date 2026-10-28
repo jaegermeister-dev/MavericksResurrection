@@ -1,0 +1,42 @@
+{
+  "path": "D:\\Mavericks-NVMe-Development-20261024\\High-Sierra-Compatibility-Prototype-r3\\IONVMeFamily.kext\\Contents\\MacOS\\IONVMeFamily",
+  "applied": true,
+  "file_size": 446464,
+  "sha256_before": "315902dcfc25870553539169e268c801773f3a0061fbdf619818e83fee4ad68f",
+  "sha256_after": "d078093cb912d1c5088eae0efce8b7e3ff2efdb3781debe9fa0982d4d94bc082",
+  "changed_byte_count": 84,
+  "changed_first_offset": 207616,
+  "changed_last_offset": 408038,
+  "operations": [
+    {
+      "mode": "retarget-to-reclaimed-local-string-slot",
+      "source_symbol": "_bufattr_cpoff",
+      "target_symbol": "_gm_nvme_bufattr_cpoff",
+      "source_symbol_index": 1493,
+      "source_nlist_offset": 231152,
+      "old_source_n_strx": 64904,
+      "new_source_n_strx": 66574,
+      "donor_symbol_index": 22,
+      "donor_nlist_offset": 207616,
+      "donor_original_name": "__ZN18AppleS1XController9MetaClassD0Ev",
+      "donor_original_length": 38,
+      "reclaimed_string_file_offset": 407918,
+      "reclaimed_string_slot_size": 39
+    },
+    {
+      "mode": "retarget-to-reclaimed-local-string-slot",
+      "source_symbol": "_bufattr_quickcomplete",
+      "target_symbol": "_gm_nvme_bufattr_quickcomplete",
+      "source_symbol_index": 1497,
+      "source_nlist_offset": 231216,
+      "old_source_n_strx": 64963,
+      "new_source_n_strx": 66657,
+      "donor_symbol_index": 24,
+      "donor_nlist_offset": 207648,
+      "donor_original_name": "__GLOBAL__sub_I_AppleS1XController.cpp",
+      "donor_original_length": 38,
+      "reclaimed_string_file_offset": 408001,
+      "reclaimed_string_slot_size": 39
+    }
+  ]
+}

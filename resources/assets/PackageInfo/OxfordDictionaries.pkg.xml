@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pkg-info format-version="2" relocatable="false" deleteObsoleteLanguages="true" overwrite-permissions="true" identifier="com.apple.pkg.OxfordDictionaries" useHFSPlusCompression="true" auth="root" version="10.9.0.1.1.1306847324">
+  <payload installKBytes="153686" numberOfFiles="2466"/>
+  <groups>
+    <group>com.apple.snowleopard-repair-permissions.pkg-group</group>
+    <group>com.apple.FindSystemFiles.pkg-group</group>
+  </groups>
+  <bundle-version>
+    <bundle SourceVersion="75000000000000" id="com.apple.dictionary.NOAD" path="./Library/Dictionaries/New Oxford American Dictionary.dictionary"/>
+    <bundle SourceVersion="75000000000000" id="com.apple.dictionary.OAWT" path="./Library/Dictionaries/Oxford American Writer's Thesaurus.dictionary"/>
+    <bundle SourceVersion="75000000000000" id="com.apple.dictionary.ODE" path="./Library/Dictionaries/Oxford Dictionary of English.dictionary"/>
+    <bundle SourceVersion="75000000000000" id="com.apple.dictionary.OTE" path="./Library/Dictionaries/Oxford Thesaurus of English.dictionary"/>
+  </bundle-version>
+</pkg-info>

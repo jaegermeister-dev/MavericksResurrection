@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "version": "10.9.5",
+  "build": "13F34",
+  "strategy": "stock-on-demand",
+  "nativeFirstBootValidated": false,
+  "files": [
+    {
+      "path": "usr/sbin/systemkeychain",
+      "sha256": "b5ecdc583ee34ddfe6ea71093de73939df499f547786b5d3fff93778d7744992",
+      "bytes": 127808,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "usr/bin/security",
+      "sha256": "da9704d070102415e06de8b48bd984ebe7ff6bb2dd34e06a1ab7239264ec215e",
+      "bytes": 220240,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "usr/libexec/security-checksystem",
+      "sha256": "e765630d088e3007bd5713f44406df741f34ed58a0381d1e2b8fbc940c9acdd4",
+      "bytes": 1635,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "System/Library/LaunchDaemons/com.apple.systemkeychain.plist",
+      "sha256": "e1815a59872d4986190a1e9d3b062fa91740f13f4e62dbbab8875e0f391170e0",
+      "bytes": 677,
+      "mode": 420,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "System/Library/Frameworks/Security.framework/Versions/A/Security",
+      "sha256": "e7bae341d55a3df6fb9736b2ed5e7dfb8c1832b5e36d935789c5ae9e0f44d037",
+      "bytes": 7668896,
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    }
+  ]
+}

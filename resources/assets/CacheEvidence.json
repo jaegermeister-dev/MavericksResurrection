@@ -1,0 +1,16 @@
+{
+  "verified": true,
+  "source": "D:\\MavericksWork\\Mavericks-Next-Update-20261002\\High-Sierra-Generic-NVMe-Study-20261004\\private-local-build\\installed-system-study-evidence-20261004\\nonroot-244-dual-cache-20261004\\installed-dual-uncompressed.kernelcache",
+  "sourceSHA256": "935e762bbd6a3a60e2774f266f9ed2c8e32a0a155b8d939fc8334ce46d6ed1e9",
+  "scope": "Read-only validation against an existing Monterey-generated cache. No new native cache execution or boot test.",
+  "independentPythonAndJavaScriptSectionMatch": {
+    "offset": 50974748,
+    "length": 1495651
+  },
+  "matchingReleasedAndExperimentalBundles": 246,
+  "xmlIDDefinitions": 438,
+  "xmlIDReferences": 5762,
+  "emptyIntegerElements": 4841,
+  "nativeJXAParserValidated": false,
+  "nativeChrootCacheBuilderValidated": false
+}

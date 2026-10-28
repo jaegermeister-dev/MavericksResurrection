@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pkg-info format-version="2" relocatable="false" deleteObsoleteLanguages="true" overwrite-permissions="true" identifier="com.apple.pkg.AdditionalSpeechVoices" useHFSPlusCompression="true" auth="root" version="10.9.0.1.1.1306847324">
+  <payload installKBytes="441022" numberOfFiles="16"/>
+  <groups>
+    <group>com.apple.snowleopard-repair-permissions.pkg-group</group>
+    <group>com.apple.FindSystemFiles.pkg-group</group>
+  </groups>
+  <bundle-version>
+    <bundle CFBundleVersion="1.60.26" CFBundleShortVersionString="1.60.26" SourceVersion="3007001000000" id="com.apple.speech.synthesis.voice.Alex" path="./System/Library/Speech/Voices/Alex.SpeechVoice"/>
+    <bundle CFBundleVersion="3.6" CFBundleShortVersionString="3.6" SourceVersion="3007001000000" id="com.apple.speech.synthesis.voice.Vicki" path="./System/Library/Speech/Voices/Vicki.SpeechVoice"/>
+  </bundle-version>
+</pkg-info>

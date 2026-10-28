@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "version": "10.9.5",
+  "build": "13F34",
+  "nativeValidated": false,
+  "note": "Implemented means source exists, not that cross-version execution has passed.",
+  "actions": [
+    {
+      "source": "BSD.pkg/postinstall_actions/dumpemacs.sh",
+      "sha256": "5440748e5645191fde326a6d21b8352dcb1fde9525e34852449f9a1519f24c10",
+      "status": "first-boot-configured",
+      "handling": "FirstBootSetup schedules original dumpemacs -v on native Mavericks; verbose mode permits opt-in output capture. Staging and engine tested; native Mavericks execution remains unverified"
+    },
+    {
+      "source": "BSD.pkg/postinstall_actions/fixnortinst.sh",
+      "sha256": "12fccc6e899ba5bfe927be5924e1378e983e8e959fd62db813980211ba41e6b6",
+      "status": "implemented",
+      "handling": "OfflineSetup: Library/Receipts/BSD.pkg marker"
+    },
+    {
+      "source": "BSD.pkg/postinstall_actions/postfixChrooted",
+      "sha256": "0cd54d963ad728655b868dcbb0e664e8d3dd89144b9e2669584d9e778832d14b",
+      "status": "first-boot-configured",
+      "handling": "FirstBootSetup schedules original postfix set-permissions on native Mavericks. No mail listener start/stop. Actual queue/permission result still requires first-boot validation"
+    },
+    {
+      "source": "BaseSystemResources.pkg/postinstall_actions/permissions",
+      "sha256": "31dc7785deae8ebd3e2e74e76c46ce0f414b5aa1a5f58d0c4c1c3b8073f19fd3",
+      "status": "implemented",
+      "handling": "OfflineSetup: Volumes ACL"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/aclmodify.pl",
+      "sha256": "eaf1f05fa0dcbe4c37e53e0e9698e663ff44384d1cd0f85810a1f7f683e62cb7",
+      "status": "implemented",
+      "handling": "OfflineSetup: template directory ACLs; Foundation hidden-extension property replaces the original mismatched tool filename"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/addLoginItem.pl",
+      "sha256": "285e7c89a8f208252e3ec4c8fe5881c0c9086c71b19d0d9fdfefe38b9180eb73",
+      "status": "implemented",
+      "handling": "OfflineSetup: copy AirPort launch-agent plist"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/checkIfPhysicalMedia",
+      "sha256": "749d859ff761a790236f42aab798e7fd04d0ce3f7b5226b54a65f65945ad9bdc",
+      "status": "implemented",
+      "handling": "OfflineSetup: move physical-media marker if present"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/createDSStore",
+      "sha256": "bf8d7ba0fadead170a895e6343fca4cec332434a22c2997f28c896a22b29d825",
+      "status": "implemented",
+      "handling": "OfflineSetup: root .DS_Store"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/createJavaExtDir.sh",
+      "sha256": "e6f2c49e4cf2d2aa58e5afa190930444426238e000f0620e54f49d9bacb5eaf8",
+      "status": "implemented",
+      "handling": "OfflineSetup: Java directories and ownership"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/createPPDsDirectory",
+      "sha256": "fe940b63c68730000ca33ccfd87611c109c015c2c36839b21b9aeab6c0e5ba92",
+      "status": "implemented",
+      "handling": "OfflineSetup: PPD directory"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/createSynthesizersDir",
+      "sha256": "a3b70f31740cd0dac0af964f4c856bd13e928554b65edec8b5b0789eda962bcf",
+      "status": "implemented",
+      "handling": "OfflineSetup: speech directories"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/generateCache",
+      "sha256": "f1cd5576354c2f127b8373d33e028e165f139dd6dffbcab4d9aa5979eba1a5f2",
+      "status": "first-boot-configured",
+      "handling": "FirstBootSetup schedules the original update_automator_cache --system --force on native Mavericks. Staging and retry/timeout engine tested; actual Mavericks execution remains unverified"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/moveAsideHome",
+      "sha256": "7e7971f376c16a6ed82a844876ce33de0eeb6649c8f6681a3ddc8116ceb8b969",
+      "status": "implemented",
+      "handling": "OfflineSetup: remove empty fresh home or preserve contents"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/moveStoreManifest",
+      "sha256": "b5f8d0af717e635b483abc967eed4279b81fa8fbba9de7078d8851a65202c705",
+      "status": "implemented",
+      "handling": "OfflineSetup: move MAS manifest"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/rmQTPluginMIMEplist",
+      "sha256": "677168d1a2e8ef2b23751247d04299cbc529e35a4e35a4218108e2041d55619f",
+      "status": "not-applicable-to-fresh-image",
+      "handling": "No migrated users exist; never query the host directory service for target user paths"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/runChrooted.sh",
+      "sha256": "4ae19a038d0278bcb67819d3fa25ca474af27064798a0fe291049d2fd348f98f",
+      "status": "implemented-native-partial",
+      "handling": "OfflineSetup: verified stock on-demand keychain boot dependencies; FirstBootSetup checks the native system keychain on Mavericks (not yet boot-validated). Original makewhatis via confined host runtime passed with output readback. X509 move remains explicit. Fresh image has no stale live mds temporary files to delete"
+    },
+    {
+      "source": "Essentials.pkg/postinstall_actions/setACLs",
+      "sha256": "fffb8bb7911f4c3ec6d496c457806fef76f4da0a3dfc284a6f29572b5700ae22",
+      "status": "implemented",
+      "handling": "OfflineSetup: application ACLs and Applications mode"
+    },
+    {
+      "source": "OSInstall.pkg/postinstall_actions/postinstall",
+      "sha256": "40db2964d5eaeeccbaf34d83a3d9b1cc5371aea1fda99e1ec2264159fd0c6e37",
+      "status": "implemented-native-partial",
+      "handling": "FirstBootSetup schedules original ifcstart on native Mavericks; actual execution unverified. Stock and full 11,5 cache pipelines passed on Tahoe; NVMe combinations remain untested. StageCleanup preserves and verifies scratch data before removal and handles the exact legacy cache directory when present. Boot preparation and final read-only audit passed. No CF_USER_DATA_STRING is supplied; debug NVRAM helper is absent"
+    },
+    {
+      "source": "OSInstall.pkg/postinstall_actions/setHiddenFiles",
+      "sha256": "bd90da670cab8f7dce3c6ea141c2546b8eb49bb9559fa31f99a5e8980b480553",
+      "status": "implemented",
+      "handling": "OfflineSetup: set hidden flag on existing entries without following symlinks"
+    },
+    {
+      "source": "OSInstall.pkg/preinstall_actions/preinstall",
+      "sha256": "beda647ed3bcea1c5fed57214a9a965311d9cab1df85d69877af1c52e05710c6",
+      "status": "condition-false",
+      "handling": "CodeEquivalenceCandidates helper is absent from this verified scripts archive"
+    }
+  ]
+}

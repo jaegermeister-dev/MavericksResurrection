@@ -1,0 +1,5 @@
+MavericksForever get.sh by Wowfunhappy
+Source: https://mavericksforever.com/get.sh
+Upstream header revision: 2026-02-09
+SHA-256: 3856f41b521b8137a2ac07c18df4a6e0101ec8c4ad1a3934dd0ba1eceb75cdad
+Bundled adaptation maintained by Jaegermeister-dev.

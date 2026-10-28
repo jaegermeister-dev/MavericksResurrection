@@ -1,0 +1,1010 @@
+{
+  "schema": 1,
+  "version": "10.9.5",
+  "build": "13F34",
+  "architecture": "x86_64",
+  "kernelSHA256": "7910ba5869a70b245c6edb9990826bc64394ebe532050843138cf24b301c5fd0",
+  "tool": {
+    "path": "usr/sbin/kextcache",
+    "package": "BaseSystemBinaries.pkg",
+    "packageSHA256": "c62d8d444f8f205b652eeb172b553a7827dc79abfd8965a77885c4efbb6fd521",
+    "bytes": 409296,
+    "sha256": "c12ccf4b72766263a77fd162c0e7ac631bffbc3eb22905da70a1a3b881ae479c",
+    "kind": "Mach-O",
+    "cpuTypes": [
+      16777223,
+      7
+    ],
+    "skipLocksStringPresent": true,
+    "nativeChrootValidated": false
+  },
+  "releasedManifestSHA256": "af34ad07e83e0e4b6a403b07ca04b7e33f64f1071dc3de81239572bc66e66a01",
+  "releasedRecords": [
+    {
+      "id": "com.apple.kpi.mach",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/Mach.kext"
+    },
+    {
+      "id": "com.apple.kpi.iokit",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/IOKit.kext"
+    },
+    {
+      "id": "com.apple.kpi.libkern",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/Libkern.kext"
+    },
+    {
+      "id": "com.apple.kpi.private",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/Private.kext"
+    },
+    {
+      "id": "com.apple.kpi.unsupported",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/Unsupported.kext"
+    },
+    {
+      "id": "com.apple.kpi.bsd",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/BSDKernel.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOStorageFamily",
+      "path": "/System/Library/Extensions/IOStorageFamily.kext"
+    },
+    {
+      "id": "com.softraid.driver.SoftRAID",
+      "path": "/Library/Extensions/SoftRAID.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOSCSIArchitectureModelFamily",
+      "path": "/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOSCSIParallelFamily",
+      "path": "/System/Library/Extensions/IOSCSIParallelFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOPCIFamily",
+      "path": "/System/Library/Extensions/IOPCIFamily.kext"
+    },
+    {
+      "id": "com.promise.driver.stex",
+      "path": "/Library/Extensions/PromiseSTEX.kext"
+    },
+    {
+      "id": "com.highpoint-tech.kext.HighPointRR",
+      "path": "/Library/Extensions/HighPointRR.kext"
+    },
+    {
+      "id": "com.highpoint-tech.kext.HighPointIOP",
+      "path": "/Library/Extensions/HighPointIOP.kext"
+    },
+    {
+      "id": "com.CalDigit.driver.HDPro",
+      "path": "/Library/Extensions/CalDigitHDProDrv.kext"
+    },
+    {
+      "id": "com.ATTO.driver.ATTOExpressSASRAID2",
+      "path": "/Library/Extensions/ATTOExpressSASRAID2.kext"
+    },
+    {
+      "id": "com.ATTO.driver.ATTOExpressSASHBA2",
+      "path": "/Library/Extensions/ATTOExpressSASHBA2.kext"
+    },
+    {
+      "id": "com.ATTO.driver.ATTOCelerityFC8",
+      "path": "/Library/Extensions/ATTOCelerityFC8.kext"
+    },
+    {
+      "id": "com.Areca.ArcMSR",
+      "path": "/Library/Extensions/ArcMSR.kext"
+    },
+    {
+      "id": "com.apple.kpi.dsep",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/MACFramework.kext"
+    },
+    {
+      "id": "com.apple.security.TMSafetyNet",
+      "path": "/System/Library/Extensions/TMSafetyNet.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOSystemManagementFamily",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/IOSystemManagement.kext"
+    },
+    {
+      "id": "com.apple.iokit.IONVRAMFamily",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/IONVRAMFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.ApplePlatformFamily",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/ApplePlatformFamily.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleNMI",
+      "path": "/System/Library/Extensions/System.kext/PlugIns/AppleNMI.kext"
+    },
+    {
+      "id": "com.apple.kernel",
+      "path": "/System/Library/Extensions/System.kext"
+    },
+    {
+      "id": "com.apple.kext.AppleMatch",
+      "path": "/System/Library/Extensions/AppleMatch.kext"
+    },
+    {
+      "id": "com.apple.security.sandbox",
+      "path": "/System/Library/Extensions/Sandbox.kext"
+    },
+    {
+      "id": "com.apple.security.quarantine",
+      "path": "/System/Library/Extensions/Quarantine.kext"
+    },
+    {
+      "id": "com.apple.kec.pthread",
+      "path": "/System/Library/Extensions/pthread.kext"
+    },
+    {
+      "id": "com.apple.filesystems.msdosfs",
+      "path": "/System/Library/Extensions/msdosfs.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOATAFamily",
+      "path": "/System/Library/Extensions/IOATAFamily.kext"
+    },
+    {
+      "id": "com.jmicron.JMicronATA",
+      "path": "/System/Library/Extensions/JMicronATA.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOSCSIBlockCommandsDevice",
+      "path": "/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/IOSCSIBlockCommandsDevice.kext"
+    },
+    {
+      "id": "com.apple.driver.iPodSBCDriver",
+      "path": "/System/Library/Extensions/iPodDriver.kext/Contents/PlugIns/iPodSBCDriver.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOFireWireFamily",
+      "path": "/System/Library/Extensions/IOFireWireFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOSCSIReducedBlockCommandsDevice",
+      "path": "/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/IOSCSIReducedBlockCommandsDevice.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOFireWireSBP2",
+      "path": "/System/Library/Extensions/IOFireWireSBP2.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOFireWireSerialBusProtocolTransport",
+      "path": "/System/Library/Extensions/IOFireWireSerialBusProtocolTransport.kext"
+    },
+    {
+      "id": "com.apple.driver.iPodDriver",
+      "path": "/System/Library/Extensions/iPodDriver.kext"
+    },
+    {
+      "id": "com.apple.iokit.IONetworkingFamily",
+      "path": "/System/Library/Extensions/IONetworkingFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOUserEthernet",
+      "path": "/System/Library/Extensions/IOUserEthernet.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOUSBFamily",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOUSBMassStorageClass",
+      "path": "/System/Library/Extensions/IOUSBMassStorageClass.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOUSBUserClient",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBUserClient.kext"
+    },
+    {
+      "id": "com.apple.kec.corecrypto",
+      "path": "/System/Library/Extensions/corecrypto.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleFDEKeyStore",
+      "path": "/System/Library/Extensions/AppleFDEKeyStore.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOHIDFamily",
+      "path": "/System/Library/Extensions/IOHIDFamily.kext"
+    },
+    {
+      "id": "com.apple.driver.IOUSBHIDDriver",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriverSafeBoot.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOUSBHIDDriver",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBComposite",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBCompositeDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBXHCI",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBXHCI.kext"
+    },
+    {
+      "id": "com.apple.driver.USBCameraFirmwareLoader",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBVideoSupport.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBUHCI",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBUHCI.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBOHCI",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBOHCI.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBMergeNub",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBMergeNub.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBHub",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBHub.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBEHCI",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBEHCI.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBCDC",
+      "path": "/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDC.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOUSBAttachedSCSI",
+      "path": "/System/Library/Extensions/IOUSBAttachedSCSI.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOThunderboltFamily",
+      "path": "/System/Library/Extensions/IOThunderboltFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOSurface",
+      "path": "/System/Library/Extensions/IOSurface.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOSMBusFamily",
+      "path": "/System/Library/Extensions/IOSMBusFamily.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleWWANSupport",
+      "path": "/System/Library/Extensions/IOSerialFamily.kext/Contents/PlugIns/AppleWWANSupport.kext"
+    },
+    {
+      "id": "com.apple.iokit.SCSITaskUserClient",
+      "path": "/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/SCSITaskUserClient.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOCDStorageFamily",
+      "path": "/System/Library/Extensions/IOCDStorageFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IODVDStorageFamily",
+      "path": "/System/Library/Extensions/IODVDStorageFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOBDStorageFamily",
+      "path": "/System/Library/Extensions/IOBDStorageFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOSCSIMultimediaCommandsDevice",
+      "path": "/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/IOSCSIMultimediaCommandsDevice.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOReportFamily",
+      "path": "/System/Library/Extensions/IOReportFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOACPIFamily",
+      "path": "/System/Library/Extensions/IOACPIFamily.kext"
+    },
+    {
+      "id": "com.apple.driver.IOPlatformPluginFamily",
+      "path": "/System/Library/Extensions/IOPlatformPluginFamily.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleSMC",
+      "path": "/System/Library/Extensions/AppleSMC.kext"
+    },
+    {
+      "id": "com.apple.driver.X86PlatformPlugin",
+      "path": "/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext"
+    },
+    {
+      "id": "com.apple.driver.X86PlatformShim",
+      "path": "/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformShim.kext"
+    },
+    {
+      "id": "com.apple.driver.IOPlatformPluginLegacy",
+      "path": "/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/IOPlatformPluginLegacy.kext"
+    },
+    {
+      "id": "com.apple.driver.ACPI_SMC_PlatformPlugin",
+      "path": "/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext"
+    },
+    {
+      "id": "com.apple.driver.mDNSOffloadUserClient",
+      "path": "/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/mDNSOffloadUserClient.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOEthernetAVBController",
+      "path": "/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/IOEthernetAVBController.kext"
+    },
+    {
+      "id": "com.apple.iokit.AppleIntelI210Ethernet",
+      "path": "/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleIntelI210Ethernet.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOGraphicsFamily",
+      "path": "/System/Library/Extensions/IOGraphicsFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IONDRVSupport",
+      "path": "/System/Library/Extensions/IONDRVSupport.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOHIDUserClient",
+      "path": "/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDUserClient.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOHIDSystem",
+      "path": "/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDSystem.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOHIDEventDriverSafeBoot",
+      "path": "/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDEventDriverSafeBoot.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOHIDEventDriver",
+      "path": "/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDEventDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.DiskImages",
+      "path": "/System/Library/Extensions/IOHDIXController.kext"
+    },
+    {
+      "id": "com.apple.driver.DiskImages.KernelBacked",
+      "path": "/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesKernelBacked.kext"
+    },
+    {
+      "id": "com.apple.driver.DiskImages.UDIFDiskImage",
+      "path": "/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesUDIFDiskImage.kext"
+    },
+    {
+      "id": "com.apple.driver.DiskImages.ReadWriteDiskImage",
+      "path": "/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesReadWriteDiskImage.kext"
+    },
+    {
+      "id": "com.apple.driver.DiskImages.RAMBackingStore",
+      "path": "/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesRAMBackingStore.kext"
+    },
+    {
+      "id": "com.apple.driver.DiskImages.FileBackingStore",
+      "path": "/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesFileBackingStore.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleFWOHCI",
+      "path": "/System/Library/Extensions/IOFireWireFamily.kext/Contents/PlugIns/AppleFWOHCI.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOSerialFamily",
+      "path": "/System/Library/Extensions/IOSerialFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOBluetoothSerialManager",
+      "path": "/System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns/IOBluetoothSerialManager.kext"
+    },
+    {
+      "id": "com.apple.driver.CSRHIDTransitionDriver",
+      "path": "/System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns/CSRHIDTransitionDriver.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOBluetoothFamily",
+      "path": "/System/Library/Extensions/IOBluetoothFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOATAPIProtocolTransport",
+      "path": "/System/Library/Extensions/IOATAFamily.kext/Contents/PlugIns/IOATAPIProtocolTransport.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOATABlockStorage",
+      "path": "/System/Library/Extensions/IOATAFamily.kext/Contents/PlugIns/IOATABlockStorage.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleIntelPIIXATA",
+      "path": "/System/Library/Extensions/IOATAFamily.kext/Contents/PlugIns/AppleIntelPIIXATA.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOAHCIFamily",
+      "path": "/System/Library/Extensions/IOAHCIFamily.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOAHCISerialATAPI",
+      "path": "/System/Library/Extensions/IOAHCIFamily.kext/Contents/PlugIns/IOAHCISerialATAPI.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOAHCIBlockStorage",
+      "path": "/System/Library/Extensions/IOAHCIFamily.kext/Contents/PlugIns/IOAHCIBlockStorage.kext"
+    },
+    {
+      "id": "com.apple.Dont_Steal_Mac_OS_X",
+      "path": "/System/Library/Extensions/Dont Steal Mac OS X.kext"
+    },
+    {
+      "id": "com.apple.driver.CoreStorage",
+      "path": "/System/Library/Extensions/CoreStorage.kext"
+    },
+    {
+      "id": "com.apple.driver.CoreStorageFsck",
+      "path": "/System/Library/Extensions/CoreStorage.kext/Contents/PlugIns/CoreStorageFsck.kext"
+    },
+    {
+      "id": "com.apple.driver.CellPhoneHelper",
+      "path": "/System/Library/Extensions/CellPhoneHelper.kext"
+    },
+    {
+      "id": "com.apple.BootCache",
+      "path": "/System/Library/Extensions/BootCache.kext"
+    },
+    {
+      "id": "com.apple.kext.triggers",
+      "path": "/System/Library/Extensions/triggers.kext"
+    },
+    {
+      "id": "com.apple.filesystems.autofs",
+      "path": "/System/Library/Extensions/autofs.kext"
+    },
+    {
+      "id": "com.apple.kext.OSvKernDSPLib",
+      "path": "/System/Library/Extensions/OSvKernDSPLib.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOAudioFamily",
+      "path": "/System/Library/Extensions/IOAudioFamily.kext"
+    },
+    {
+      "id": "com.apple.driver.AudioAUUC",
+      "path": "/System/Library/Extensions/AudioAUUC.kext"
+    },
+    {
+      "id": "com.ATTO.driver.ATTOExpressSASRAID",
+      "path": "/System/Library/Extensions/ATTOExpressSASRAID.kext"
+    },
+    {
+      "id": "com.ATTO.driver.ATTOExpressSASHBA3",
+      "path": "/System/Library/Extensions/ATTOExpressSASHBA3.kext"
+    },
+    {
+      "id": "com.ATTO.driver.ATTOExpressSASHBA",
+      "path": "/System/Library/Extensions/ATTOExpressSASHBA.kext"
+    },
+    {
+      "id": "com.ATTO.driver.ATTOExpressPCIUl4",
+      "path": "/System/Library/Extensions/ATTOExpressPCI4.kext"
+    },
+    {
+      "id": "com.ATTO.driver.ATTOCelerityFC",
+      "path": "/System/Library/Extensions/ATTOCelerityFC.kext"
+    },
+    {
+      "id": "com.apple.driver.XsanFilter",
+      "path": "/System/Library/Extensions/AppleXsanFilter.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleWWANAutoEject",
+      "path": "/System/Library/Extensions/AppleWWANAutoEject.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBTrackpad",
+      "path": "/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTrackpad.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBTCKeyEventDriver",
+      "path": "/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyEventDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBTCKeyboard",
+      "path": "/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBTCButtons",
+      "path": "/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCButtons.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBTopCase",
+      "path": "/System/Library/Extensions/AppleUSBTopCase.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBMultitouch",
+      "path": "/System/Library/Extensions/AppleUSBMultitouch.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBAudio",
+      "path": "/System/Library/Extensions/AppleUSBAudio.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUpstreamUserClient",
+      "path": "/System/Library/Extensions/AppleUpstreamUserClient.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleMultitouchDriver",
+      "path": "/System/Library/Extensions/AppleMultitouchDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHIDKeyboard",
+      "path": "/System/Library/Extensions/AppleHIDKeyboard.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBTopCaseDriver",
+      "path": "/System/Library/Extensions/AppleTopCase.kext/Contents/PlugIns/AppleUSBTopCaseDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleTopCaseHIDEventDriver",
+      "path": "/System/Library/Extensions/AppleTopCase.kext/Contents/PlugIns/AppleTopCaseHIDEventDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleTopCase",
+      "path": "/System/Library/Extensions/AppleTopCase.kext"
+    },
+    {
+      "id": "com.apple.iokit.AppleThunderboltUTDM",
+      "path": "/System/Library/Extensions/AppleThunderboltUTDM.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleThunderboltPCIDownAdapter",
+      "path": "/System/Library/Extensions/AppleThunderboltPCIAdapters.kext/Contents/PlugIns/AppleThunderboltPCIDownAdapter.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleThunderboltPCIUpAdapter",
+      "path": "/System/Library/Extensions/AppleThunderboltPCIAdapters.kext/Contents/PlugIns/AppleThunderboltPCIUpAdapter.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleThunderboltPCIAdapters",
+      "path": "/System/Library/Extensions/AppleThunderboltPCIAdapters.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleThunderboltNHI",
+      "path": "/System/Library/Extensions/AppleThunderboltNHI.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleThunderboltIP",
+      "path": "/System/Library/Extensions/AppleThunderboltIP.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleThunderboltDPAdapterFamily",
+      "path": "/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/PlugIns/AppleThunderboltDPAdapterFamily.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleThunderboltDPOutAdapter",
+      "path": "/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/PlugIns/AppleThunderboltDPOutAdapter.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleThunderboltEDMSink",
+      "path": "/System/Library/Extensions/AppleThunderboltEDMService.kext/Contents/PlugIns/AppleThunderboltEDMSink.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleThunderboltDPInAdapter",
+      "path": "/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/PlugIns/AppleThunderboltDPInAdapter.kext"
+    },
+    {
+      "id": "com.apple.driver.WriteProtectedMediaDriver",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/WriteProtectedMediaDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.USBStorageDeviceSpecifics",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/USBStorageDeviceSpecifics.kext"
+    },
+    {
+      "id": "com.apple.driver.UFIWriteProtectedMediaDriver",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/UFIWriteProtectedMediaDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.StorageLynx",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/StorageLynx.kext"
+    },
+    {
+      "id": "com.apple.driver.Sony_XDCAM",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/SonyXDCAMDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.SanyoIDShot",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/SanyoIDShot.kext"
+    },
+    {
+      "id": "com.apple.driver.QPSQueFire",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/QPSQueFire.kext"
+    },
+    {
+      "id": "com.apple.driver.PlasmonUDO",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/PlasmonUDO.kext"
+    },
+    {
+      "id": "com.apple.driver.PioneerSuperDrive",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/PioneerSuperDrive.kext"
+    },
+    {
+      "id": "com.apple.driver.Oxford_Semi",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/OxfordSemiconductor.kext"
+    },
+    {
+      "id": "com.apple.driver.MKE_SR_8171",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/MKE-SR-8171.kext"
+    },
+    {
+      "id": "com.apple.driver.MKE_LF_D211A",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/MKE-LF-D211A.kext"
+    },
+    {
+      "id": "com.apple.driver.MaxTranserSizeOverrideDriver",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/MaxTranserSizeOverrideDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.LSI_FW_500",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/LSI-FW-500.kext"
+    },
+    {
+      "id": "com.apple.driver.IOFireWireSerialBusProtocolSansPhysicalUnit",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/IOFireWireSerialBusProtocolSansPhysicalUnit.kext"
+    },
+    {
+      "id": "com.apple.driver.initioFWBridge",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/initioFWBridge.kext"
+    },
+    {
+      "id": "com.apple.driver.FWPreferredProtocolSpeed",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/FWPreferredProtocolSpeed.kext"
+    },
+    {
+      "id": "com.apple.driver.FireWireStorageDeviceSpecifics",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/FireWireStorageDeviceSpecifics.kext"
+    },
+    {
+      "id": "com.apple.driver.CanonEOS1D",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/CanonEOS1D.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleXserveRAID",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleXserveRAID.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBODD",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBODD.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBCardReader",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBCardReader.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleMemorexCDROMDriver",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleMemorexCDROMDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHollywood",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleHollywood.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleFireWireStorage",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleFireWireStorage.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleATAPIStorage",
+      "path": "/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleATAPIStorage.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleSMCLMU",
+      "path": "/System/Library/Extensions/AppleSMCLMU.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleSMBusPCI",
+      "path": "/System/Library/Extensions/AppleSMBusPCI.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleSMBIOS",
+      "path": "/System/Library/Extensions/AppleSMBIOS.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleSmartBatteryManager",
+      "path": "/System/Library/Extensions/AppleSmartBatteryManager.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleSDXC",
+      "path": "/System/Library/Extensions/AppleSDXC.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleRTC",
+      "path": "/System/Library/Extensions/AppleRTC.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleRAIDCard",
+      "path": "/System/Library/Extensions/AppleRAIDCard.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleRAID",
+      "path": "/System/Library/Extensions/AppleRAID.kext"
+    },
+    {
+      "id": "com.apple.driver.ApplePlatformEnabler",
+      "path": "/System/Library/Extensions/ApplePlatformEnabler.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleMobileDevice",
+      "path": "/System/Library/Extensions/AppleMobileDevice.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleMCP89RootPortPM",
+      "path": "/System/Library/Extensions/AppleMCP89RootPortPM.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleSMBusController",
+      "path": "/System/Library/Extensions/AppleSMBusController.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleMCCSControl",
+      "path": "/System/Library/Extensions/AppleMCCSControl.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleLSIFusionMPT",
+      "path": "/System/Library/Extensions/AppleLSIFusionMPT.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleLPC",
+      "path": "/System/Library/Extensions/AppleLPC.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleKeyswitch",
+      "path": "/System/Library/Extensions/AppleKeyswitch.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleKeyStore",
+      "path": "/System/Library/Extensions/AppleKeyStore.kext"
+    },
+    {
+      "id": "com.apple.driver.KextExcludeList",
+      "path": "/System/Library/Extensions/AppleKextExcludeList.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleIRController",
+      "path": "/System/Library/Extensions/AppleIRController.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleIntelLpssDmac",
+      "path": "/System/Library/Extensions/AppleIntelLpssDmac.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleIntelLpssGspi",
+      "path": "/System/Library/Extensions/AppleIntelLpssGspi.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleIntelLpssSpiController",
+      "path": "/System/Library/Extensions/AppleIntelLpssSpiController.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOAcceleratorFamily2",
+      "path": "/System/Library/Extensions/IOAcceleratorFamily2.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleIntelHD5000Graphics",
+      "path": "/System/Library/Extensions/AppleIntelHD5000Graphics.kext"
+    },
+    {
+      "id": "com.apple.AppleGraphicsDeviceControl",
+      "path": "/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/AppleGraphicsDeviceControl.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleIntelFramebufferAzul",
+      "path": "/System/Library/Extensions/AppleIntelFramebufferAzul.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleIntelCPUPowerManagementClient",
+      "path": "/System/Library/Extensions/AppleIntelCPUPowerManagementClient.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleIntelCPUPowerManagement",
+      "path": "/System/Library/Extensions/AppleIntelCPUPowerManagement.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHWAccess",
+      "path": "/System/Library/Extensions/AppleHWAccess.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHSSPISupport",
+      "path": "/System/Library/Extensions/AppleHSSPISupport.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHSSPIHIDDriver",
+      "path": "/System/Library/Extensions/AppleHSSPIHIDDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHPET",
+      "path": "/System/Library/Extensions/AppleHPET.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHIDMouse",
+      "path": "/System/Library/Extensions/AppleHIDMouse.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBHIDMouse",
+      "path": "/System/Library/Extensions/AppleHIDMouse.kext/Contents/PlugIns/AppleUSBHIDMouse.kext"
+    },
+    {
+      "id": "com.apple.driver.IOBluetoothHIDDriver",
+      "path": "/System/Library/Extensions/IOBluetoothHIDDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleBluetoothHIDMouse",
+      "path": "/System/Library/Extensions/AppleHIDMouse.kext/Contents/PlugIns/AppleBluetoothHIDMouse.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBHIDKeyboard",
+      "path": "/System/Library/Extensions/AppleHIDKeyboard.kext/Contents/PlugIns/AppleUSBHIDKeyboard.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleUSBBuiltinHIDKeyboard",
+      "path": "/System/Library/Extensions/AppleHIDKeyboard.kext/Contents/PlugIns/AppleUSBBuiltinHIDKeyboard.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleBluetoothHIDKeyboard",
+      "path": "/System/Library/Extensions/AppleHIDKeyboard.kext/Contents/PlugIns/AppleBluetoothHIDKeyboard.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOHDAFamily",
+      "path": "/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/IOHDAFamily.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHDAHardwareConfigDriver",
+      "path": "/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHardwareConfigDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHDAController",
+      "path": "/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAController.kext"
+    },
+    {
+      "id": "com.apple.vecLib.kext",
+      "path": "/System/Library/Extensions/vecLib.kext"
+    },
+    {
+      "id": "com.apple.driver.DspFuncLib",
+      "path": "/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/DspFuncLib.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleHDA",
+      "path": "/System/Library/Extensions/AppleHDA.kext"
+    },
+    {
+      "id": "com.apple.driver.AGPM",
+      "path": "/System/Library/Extensions/AppleGraphicsPowerManagement.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleGraphicsControl",
+      "path": "/System/Library/Extensions/AppleGraphicsControl.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleBacklightExpert",
+      "path": "/System/Library/Extensions/AppleBacklightExpert.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleMuxControl",
+      "path": "/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/AppleMuxControl.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleGraphicsDevicePolicy",
+      "path": "/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/AppleGraphicsDevicePolicy.kext"
+    },
+    {
+      "id": "com.apple.AppleFSCompression.AppleFSCompressionTypeZlib",
+      "path": "/System/Library/Extensions/AppleFSCompressionTypeZlib.kext"
+    },
+    {
+      "id": "com.apple.AppleFSCompression.AppleFSCompressionTypeLZVN",
+      "path": "/System/Library/Extensions/AppleFSCompressionTypeLZVN.kext"
+    },
+    {
+      "id": "com.apple.AppleFSCompression.AppleFSCompressionTypeDataless",
+      "path": "/System/Library/Extensions/AppleFSCompressionTypeDataless.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleFileSystemDriver",
+      "path": "/System/Library/Extensions/AppleFileSystemDriver.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleEFIRuntime",
+      "path": "/System/Library/Extensions/AppleEFIRuntime.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleEFINVRAM",
+      "path": "/System/Library/Extensions/AppleEFIRuntime.kext/Contents/PlugIns/AppleEFINVRAM.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleCameraInterface",
+      "path": "/System/Library/Extensions/AppleCameraInterface.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleBluetoothMultitouch",
+      "path": "/System/Library/Extensions/AppleBluetoothMultitouch.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleBacklight",
+      "path": "/System/Library/Extensions/AppleBacklight.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleAPIC",
+      "path": "/System/Library/Extensions/AppleAPIC.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleAHCIPort",
+      "path": "/System/Library/Extensions/AppleAHCIPort.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleACPIPlatform",
+      "path": "/System/Library/Extensions/AppleACPIPlatform.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleACPIEC",
+      "path": "/System/Library/Extensions/AppleACPIPlatform.kext/Contents/PlugIns/AppleACPIEC.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleACPIButtons",
+      "path": "/System/Library/Extensions/AppleACPIPlatform.kext/Contents/PlugIns/AppleACPIButtons.kext"
+    },
+    {
+      "id": "com.apple.kext.AMDSupport",
+      "path": "/System/Library/Extensions/AMDSupport.kext"
+    },
+    {
+      "id": "com.apple.iokit.IOAcceleratorFamily",
+      "path": "/System/Library/Extensions/IOAcceleratorFamily.kext"
+    },
+    {
+      "id": "com.apple.AMDRadeonX4000",
+      "path": "/System/Library/Extensions/AMDRadeonX4000.kext"
+    },
+    {
+      "id": "com.apple.kext.AMDFramebuffer",
+      "path": "/System/Library/Extensions/AMDFramebuffer.kext"
+    },
+    {
+      "id": "com.apple.kext.AMD7000Controller",
+      "path": "/System/Library/Extensions/AMD7000Controller.kext"
+    },
+    {
+      "id": "com.apple.nke.applicationfirewall",
+      "path": "/System/Library/Extensions/ALF.kext"
+    },
+    {
+      "id": "com.Accusys.driver.Acxxx",
+      "path": "/System/Library/Extensions/Accusys6xxxx.kext"
+    },
+    {
+      "id": "com.apple.driver.AppleTopCaseActuatorHIDDriver",
+      "path": "/System/Library/Extensions/AppleTopCase.kext/Contents/PlugIns/AppleTopCaseActuatorHIDDriver.kext"
+    },
+    {
+      "id": "com.apple.iokit.IO80211Family",
+      "path": "/System/Library/Extensions/IO80211Family.kext"
+    },
+    {
+      "id": "com.apple.driver.AirPort.Brcm4360",
+      "path": "/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortBrcm4360.kext"
+    },
+    {
+      "id": "org.mavericks115.driver.WiFiCompat",
+      "path": "/Library/Extensions/WiFiCompat.kext"
+    }
+  ],
+  "alert": {
+    "asset": "Cache/noloadkextalert.plist",
+    "sha256": "1a5103abaa31da3115f3701638f9c0759cec8a4d457d1ae28ae21537ae89079e"
+  },
+  "stockSelection": "local-root",
+  "sourceReferences": [
+    "https://github.com/apple-oss-distributions/kext_tools/blob/kext_tools-268.13.1/kextcache_main.c",
+    "https://github.com/apple-oss-distributions/kext_tools/blob/kext_tools-268.13.1/bootcaches.c"
+  ],
+  "nativeCachePreparationValidated": false
+}

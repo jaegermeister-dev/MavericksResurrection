@@ -1,0 +1,131 @@
+{
+  "version": "10.9.5",
+  "build": "13F34",
+  "files": [
+    {
+      "path": "System/Library/CoreServices/SystemVersion.plist",
+      "sha256": "9b46d2c02d3c48e7ed4956b7fb795b0b9da1cc0aa13d96e1f6966fd2a8dfc05c",
+      "bytes": 478
+    },
+    {
+      "path": "System/Library/CoreServices/PlatformSupport.plist",
+      "sha256": "8b8085d063cced9fb50e5ecc7bd3e79198f5041df7134ad6ef354e635c06f893",
+      "bytes": 4694
+    },
+    {
+      "path": "System/Library/CoreServices/com.apple.recovery.boot/PlatformSupport.plist",
+      "sha256": "8b8085d063cced9fb50e5ecc7bd3e79198f5041df7134ad6ef354e635c06f893",
+      "bytes": 4694
+    },
+    {
+      "path": "System/Library/CoreServices/boot.efi",
+      "sha256": "72f3225ff8efadc607086b5778a328918a7fffbb763cad682b0bb29ed31a4795",
+      "bytes": 505400
+    },
+    {
+      "path": "System/Library/Caches/com.apple.kext.caches/Startup/kernelcache",
+      "sha256": "96c88846ef8ad59ad739c202c24d080734fe434e3c60c1b1607104bd0ec55aaa",
+      "bytes": 16649967
+    },
+    {
+      "path": "System/Installation/BaseSystem.dmg",
+      "sha256": "4e33ed34db869189bec60dc2334573e5d5e420037fc18e7f0f4b1251a396ad6d",
+      "bytes": 493349624
+    },
+    {
+      "path": "System/Installation/BaseSystem.chunklist",
+      "sha256": "0dfe388c4a991bf86b19b31c4bae6c879fd4ce6c12aad0b743eb2e40c79c10a9",
+      "bytes": 2020
+    },
+    {
+      "path": "System/Installation/Packages/AdditionalEssentials.pkg",
+      "sha256": "ea3068b7a697d28fa593ca986ae6f775b6dc5daefa1b9109227a2c00282b815c",
+      "bytes": 94434126
+    },
+    {
+      "path": "System/Installation/Packages/AdditionalSpeechVoices.pkg",
+      "sha256": "180bf5d180fb67b5d67d5b55d8631ebcde67304dcbf7af4bb39feab41e0f22cc",
+      "bytes": 434183027
+    },
+    {
+      "path": "System/Installation/Packages/AsianLanguagesSupport.pkg",
+      "sha256": "541347a3a8579d27a5bdc7c7dff6bcca7800383d5e4021d0c621e922e2dff713",
+      "bytes": 1100808
+    },
+    {
+      "path": "System/Installation/Packages/BSD.pkg",
+      "sha256": "d25ee7d1e1725e21ccfe2c525e0f057b820f8a1da54c04112210ba7acbf54e87",
+      "bytes": 304865061
+    },
+    {
+      "path": "System/Installation/Packages/BaseSystemBinaries.pkg",
+      "sha256": "c62d8d444f8f205b652eeb172b553a7827dc79abfd8965a77885c4efbb6fd521",
+      "bytes": 283812163
+    },
+    {
+      "path": "System/Installation/Packages/BaseSystemResources.pkg",
+      "sha256": "815dd85cf3df922664c19ec45143db16fb08c8b57ff2df76a7cb52ab376e72e1",
+      "bytes": 2302558
+    },
+    {
+      "path": "System/Installation/Packages/Essentials.pkg",
+      "sha256": "a0609f3d43e7cbe293af242b02dc21d5f7182642b8e21d1ef867f06b519308e7",
+      "bytes": 3218081872
+    },
+    {
+      "path": "System/Installation/Packages/InstallableMachines.plist",
+      "sha256": "4f135ec9e960b518a0dbbdbf59e5528bf0c6c4390766d590ef4d17841a69ab4b",
+      "bytes": 2813
+    },
+    {
+      "path": "System/Installation/Packages/JavaEssentials.pkg",
+      "sha256": "99d9b8dbfd250b23d17c61ece6a62471a28a8dd225e63b72a744ac7b045cbbcc",
+      "bytes": 2472424
+    },
+    {
+      "path": "System/Installation/Packages/JavaTools.pkg",
+      "sha256": "34c61671fcb7cedb204cadea32e74bcc7bdca4b17e09c83ba44f50937261f429",
+      "bytes": 20715
+    },
+    {
+      "path": "System/Installation/Packages/MediaFiles.pkg",
+      "sha256": "612ab9b00f9624af25d55cb245f9360470d2226255a5cddb1bc8a5474e45a51a",
+      "bytes": 345478239
+    },
+    {
+      "path": "System/Installation/Packages/OSInstall.mpkg",
+      "sha256": "67443b362b0cb707e4bb0609b167711fb30b0f923757cbe83d3dc98a6fba7a0b",
+      "bytes": 728069
+    },
+    {
+      "path": "System/Installation/Packages/OSInstall.pkg",
+      "sha256": "daa929e9e59567b81d37207e8bde58cfbf964212509b00fcee8ccd7e14e3088a",
+      "bytes": 2258
+    },
+    {
+      "path": "System/Installation/Packages/OSUpgrade.pkg",
+      "sha256": "527182bd97861034df4856f6d26ed395e8e19a62c1814b4ad33f93646f65c142",
+      "bytes": 843
+    },
+    {
+      "path": "System/Installation/Packages/OxfordDictionaries.pkg",
+      "sha256": "5381f84c9f37847dc891ce22ae4a25728b81d2cc9f4c6d2bab012ee3223f74fa",
+      "bytes": 140448540
+    },
+    {
+      "path": "System/Installation/Packages/X11redirect.pkg",
+      "sha256": "25e4ea51ae64d2c6cc01b4a6a1602da3a9872ea4c0a3f71e7815b96e2638b7d5",
+      "bytes": 581272
+    }
+  ],
+  "installESDSHA256": "c861fd59e82bf777496809a0d2a9b58f66691ee56738031f55874a3fe1d7c3ff",
+  "archiveSHA256": "883a2c4fa59bf85598e2bfaec84058bb66c50272346bb890c79d6745815ffe24",
+  "hashManifestSHA256": "354e25b9493639a85a306b18b59cd5bb0b74cb6c3ae958c2b1ad4e218705c502",
+  "sizeManifestSHA256": "988dab47df1322cc87541c902d2bc40987823e807f1484fd01410d743cc7a115",
+  "mavericksForever": {
+    "author": "Wowfunhappy",
+    "source": "https://mavericksforever.com/get.sh",
+    "upstreamRevision": "2026-02-09",
+    "upstreamSHA256": "3856f41b521b8137a2ac07c18df4a6e0101ec8c4ad1a3934dd0ba1eceb75cdad"
+  }
+}

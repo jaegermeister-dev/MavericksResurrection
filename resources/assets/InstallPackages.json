@@ -1,0 +1,393 @@
+{
+  "schema": 1,
+  "version": "10.9.5",
+  "build": "13F34",
+  "externalRootToken": "@@MAVERICKS_BASE_SYSTEM_ROOT@@",
+  "packages": [
+    {
+      "name": "BaseSystemBinaries.pkg",
+      "identifier": "com.apple.pkg.BaseSystemBinaries",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "c62d8d444f8f205b652eeb172b553a7827dc79abfd8965a77885c4efbb6fd521",
+      "sourceBytes": 283812163,
+      "members": {
+        "Payload": {
+          "bytes": 283337629,
+          "sha256": "4296b1170dbe01fba5c1fd043f3a4984687b00c7dfe80c4eb2305612749e49b7"
+        },
+        "PackageInfo": {
+          "bytes": 520,
+          "sha256": "1aff13425e5325868c578785045f193d5289b01061fc4f8148456313ad5a61a7"
+        },
+        "Bom": {
+          "bytes": 1991997,
+          "sha256": "59e1eb8ee4c4dff08eb5d696424a43bec7f4aa8a6e34ade16272fce72b4e6783"
+        }
+      },
+      "template": "PackageInfo/BaseSystemBinaries.pkg.xml",
+      "templateSHA256": "0c6b44e1a9bd74541531a0686aaf9bdc67f94ceb8af8755b6ca7bc29845104a6",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [],
+      "installedKiB": 836766
+    },
+    {
+      "name": "BaseSystemResources.pkg",
+      "identifier": "com.apple.pkg.BaseSystemResources",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "815dd85cf3df922664c19ec45143db16fb08c8b57ff2df76a7cb52ab376e72e1",
+      "sourceBytes": 2302558,
+      "members": {
+        "Scripts": {
+          "bytes": 719,
+          "sha256": "53fd7c49f716f6b00508ce30dcd592bf5faa4bd3379ffe61aa36260071108e87"
+        },
+        "PackageInfo": {
+          "bytes": 183523,
+          "sha256": "742a171269bb906916288f255649318a2870b1b103cf57b8c5a05f00e2253bab"
+        },
+        "Bom": {
+          "bytes": 7610732,
+          "sha256": "707b098d189b762c260b66ee40c50bf3de64f5c89720c97c660a43bbc5b3bce0"
+        }
+      },
+      "template": "PackageInfo/BaseSystemResources.pkg.xml",
+      "templateSHA256": "b6519cfe2976da0df2405e650d844d94680187ee4f591759811d6d2013519455",
+      "externalBaseSystem": true,
+      "originalSetupScripts": [
+        {
+          "stage": "preinstall",
+          "file": "preinstall"
+        },
+        {
+          "stage": "postinstall",
+          "file": "postinstall",
+          "estimatedRunningTime": "3"
+        }
+      ],
+      "installedKiB": 563350
+    },
+    {
+      "name": "Essentials.pkg",
+      "identifier": "com.apple.pkg.Essentials",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "a0609f3d43e7cbe293af242b02dc21d5f7182642b8e21d1ef867f06b519308e7",
+      "sourceBytes": 3218081872,
+      "members": {
+        "Scripts": {
+          "bytes": 7352,
+          "sha256": "058fce36da7f89845eda13f77e678072fa8c6f17103211182b78ac9992192b6d"
+        },
+        "Payload": {
+          "bytes": 3204174882,
+          "sha256": "a4e9ea4ff4ae2474f2ccddd7465120a39a7e36113304a9aae14713154777c421"
+        },
+        "PackageInfo": {
+          "bytes": 366823,
+          "sha256": "4e281673d510112146636fd7cd5e7d3d74d9647ef054e2511a3da77f3debfe50"
+        },
+        "Bom": {
+          "bytes": 41847409,
+          "sha256": "75b49054284a05001e68271cfb0e309d3da10caaa5992ecba12487859dd6c743"
+        }
+      },
+      "template": "PackageInfo/Essentials.pkg.xml",
+      "templateSHA256": "1a38998ff7513cd28c02000c86be844c5b4a09aabb3659bb5146a4ade6f96cb3",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [
+        {
+          "stage": "preinstall",
+          "file": "preinstall"
+        },
+        {
+          "stage": "postinstall",
+          "file": "postinstall",
+          "estimatedRunningTime": "37"
+        }
+      ],
+      "installedKiB": 7091666
+    },
+    {
+      "name": "BSD.pkg",
+      "identifier": "com.apple.pkg.BSD",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "d25ee7d1e1725e21ccfe2c525e0f057b820f8a1da54c04112210ba7acbf54e87",
+      "sourceBytes": 304865061,
+      "members": {
+        "Scripts": {
+          "bytes": 827,
+          "sha256": "9c697b7da07d7753629677ee1e71e9ad68bcc71a81536f4853cf1bd1ea38cb28"
+        },
+        "Payload": {
+          "bytes": 302757392,
+          "sha256": "7aa1121157463bdd81698b948cab868efa05f1436eafd05526d5e7986982fe15"
+        },
+        "PackageInfo": {
+          "bytes": 1716,
+          "sha256": "99298681fe5b63d17a36d39a3cb314de3c63b3bdbf11a1bdf2969338a7a51ad1"
+        },
+        "Bom": {
+          "bytes": 7213799,
+          "sha256": "db919b95108f4bb537644f237cf7df43527e3bc5329c6a7fe1fcbd65c60404c3"
+        }
+      },
+      "template": "PackageInfo/BSD.pkg.xml",
+      "templateSHA256": "b12103ebbcc40a40bd961931213ebc2ae2022308d9b235db1aeaecbc7f74ecb3",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [
+        {
+          "stage": "preinstall",
+          "file": "preinstall"
+        },
+        {
+          "stage": "postinstall",
+          "file": "postinstall"
+        }
+      ],
+      "installedKiB": 1107038
+    },
+    {
+      "name": "JavaTools.pkg",
+      "identifier": "com.apple.pkg.JavaTools",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "34c61671fcb7cedb204cadea32e74bcc7bdca4b17e09c83ba44f50937261f429",
+      "sourceBytes": 20715,
+      "members": {
+        "Payload": {
+          "bytes": 18526,
+          "sha256": "73b4f4608d3a5ebd4a4424dbfd797e6b5ac9440ad79f0786db043bae7433f7db"
+        },
+        "PackageInfo": {
+          "bytes": 505,
+          "sha256": "61814c0f78b5799629aca593792f2cbef60d1ac19dd685f17a8270cdc02b3f18"
+        },
+        "Bom": {
+          "bytes": 80281,
+          "sha256": "202d7d80311640cb292d1ebdf7c12e68dafa32abbf57519b9da89d7409dbeaae"
+        }
+      },
+      "template": "PackageInfo/JavaTools.pkg.xml",
+      "templateSHA256": "3036e8046b4f864b549f2158ed863b1bb4659845a738e9473c3b90c2781d065a",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [],
+      "installedKiB": 142
+    },
+    {
+      "name": "AdditionalEssentials.pkg",
+      "identifier": "com.apple.pkg.AdditionalEssentials",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "ea3068b7a697d28fa593ca986ae6f775b6dc5daefa1b9109227a2c00282b815c",
+      "sourceBytes": 94434126,
+      "members": {
+        "Payload": {
+          "bytes": 93660826,
+          "sha256": "a5c0a582bbd6f0c32d143f08206b35eaf084706731211f179a5bf66ac1e80ad6"
+        },
+        "PackageInfo": {
+          "bytes": 11600,
+          "sha256": "2161d6b26a30fa4bf93f1a6c346039d992458a161b0e33d0358570ec4f414074"
+        },
+        "Bom": {
+          "bytes": 3422320,
+          "sha256": "631b05e49b47b7590ad0b5b05c4ce42015fa029e0a9f16c5a5662b2ecf0db123"
+        }
+      },
+      "template": "PackageInfo/AdditionalEssentials.pkg.xml",
+      "templateSHA256": "970a4448e0a6724147d5bd1a085d4ee091b8c28701ace5a00ff70e0b8f0d13f1",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [],
+      "installedKiB": 246346
+    },
+    {
+      "name": "AdditionalSpeechVoices.pkg",
+      "identifier": "com.apple.pkg.AdditionalSpeechVoices",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "180bf5d180fb67b5d67d5b55d8631ebcde67304dcbf7af4bb39feab41e0f22cc",
+      "sourceBytes": 434183027,
+      "members": {
+        "Payload": {
+          "bytes": 434179776,
+          "sha256": "36f43c2de02f8fdc11dd5356ce7cc65eef37f26edcb90dab29065dd030d178e9"
+        },
+        "PackageInfo": {
+          "bytes": 945,
+          "sha256": "5282703b18c87a4c7a342c5ef78e25f0c2e49717ce7814ca0d7039cf3339280f"
+        },
+        "Bom": {
+          "bytes": 81634,
+          "sha256": "7a669c4e8f39b009ffff75c2e1e2ace196b1f80141fdb7509880dea9993eb029"
+        }
+      },
+      "template": "PackageInfo/AdditionalSpeechVoices.pkg.xml",
+      "templateSHA256": "5b0dd4a7579226d5eb34aa7d0d2e6503318bdc2d9b78cc6f98af44d88970cde1",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [],
+      "installedKiB": 441022
+    },
+    {
+      "name": "AsianLanguagesSupport.pkg",
+      "identifier": "com.apple.pkg.AsianLanguagesSupport",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "541347a3a8579d27a5bdc7c7dff6bcca7800383d5e4021d0c621e922e2dff713",
+      "sourceBytes": 1100808,
+      "members": {
+        "Payload": {
+          "bytes": 1075152,
+          "sha256": "4d93aa9fac7d520158de8907ebbf8db51593940dd75d67af87a7db4027398a12"
+        },
+        "PackageInfo": {
+          "bytes": 2188,
+          "sha256": "f8a8df6ea7c74f8af4a0d153b7fc7b8019a64d6e5434b6981a512c11cb6ef619"
+        },
+        "Bom": {
+          "bytes": 133827,
+          "sha256": "7954214b63834b574a62779ea23d84d8f461db99fd30175f445fa465a23f85b3"
+        }
+      },
+      "template": "PackageInfo/AsianLanguagesSupport.pkg.xml",
+      "templateSHA256": "4fcab6aa3f793bc6c7aad6ad71fbfe63332dd1e144e4bc81aba6b3982f13391d",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [],
+      "installedKiB": 6038
+    },
+    {
+      "name": "MediaFiles.pkg",
+      "identifier": "com.apple.pkg.MediaFiles",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "612ab9b00f9624af25d55cb245f9360470d2226255a5cddb1bc8a5474e45a51a",
+      "sourceBytes": 345478239,
+      "members": {
+        "Payload": {
+          "bytes": 345457559,
+          "sha256": "4addfd6e7d4bbad0799feee4f3d960ba7fe93ead62af61cb80f86cfc375862a6"
+        },
+        "PackageInfo": {
+          "bytes": 1284,
+          "sha256": "f2ffbbb3612629a432072852df5d84c7fced2e228dabea3085f48c03e3b1eb8c"
+        },
+        "Bom": {
+          "bytes": 122637,
+          "sha256": "8b3ede50ed75b144cbd8c6dfeae79c015e8593d3814aeb253313ef8753dc4d6e"
+        }
+      },
+      "template": "PackageInfo/MediaFiles.pkg.xml",
+      "templateSHA256": "15ff93405b9393789f093a0b8ec8b8e67f102f586807c20923049814612124a8",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [],
+      "installedKiB": 353682
+    },
+    {
+      "name": "JavaEssentials.pkg",
+      "identifier": "com.apple.pkg.JavaEssentials",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "99d9b8dbfd250b23d17c61ece6a62471a28a8dd225e63b72a744ac7b045cbbcc",
+      "sourceBytes": 2472424,
+      "members": {
+        "Payload": {
+          "bytes": 2435270,
+          "sha256": "930ffcd53877be1853fa1fcd5316438f75e88734a8c864d1e5fad29518281908"
+        },
+        "PackageInfo": {
+          "bytes": 2909,
+          "sha256": "e03182489794da325b957257a12a394b419f5a7b3d9f0994b7d4bb23730ce8b8"
+        },
+        "Bom": {
+          "bytes": 223253,
+          "sha256": "8db3a33ff17c8e9e0915d8b002be9804cf51076f500c023e8ef15313f13cbdc6"
+        }
+      },
+      "template": "PackageInfo/JavaEssentials.pkg.xml",
+      "templateSHA256": "af8cb3df7bff692e603fe87c0bfd5ebb2b62bf5e4ab03e36047366f094b24185",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [],
+      "installedKiB": 10014
+    },
+    {
+      "name": "OxfordDictionaries.pkg",
+      "identifier": "com.apple.pkg.OxfordDictionaries",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "5381f84c9f37847dc891ce22ae4a25728b81d2cc9f4c6d2bab012ee3223f74fa",
+      "sourceBytes": 140448540,
+      "members": {
+        "Payload": {
+          "bytes": 140362722,
+          "sha256": "84ba1d7120eb27bcaa61179db9c4a7f147648e2b81a1a0355227aee690a90e56"
+        },
+        "PackageInfo": {
+          "bytes": 1128,
+          "sha256": "a0fc241cbd654eef075667e5681dc1491b3448e0d50bbed9cbf74b5e964c4a1f"
+        },
+        "Bom": {
+          "bytes": 449794,
+          "sha256": "3a6f8b8ff0899d72178ab538ea166dde23a3825f3890efb09bd760e1d8bc78d3"
+        }
+      },
+      "template": "PackageInfo/OxfordDictionaries.pkg.xml",
+      "templateSHA256": "3abbe17e12606cbb822ec2bbaca0943cc3e6d11f5c198e37483792cf4c3ffd33",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [],
+      "installedKiB": 153686
+    },
+    {
+      "name": "X11redirect.pkg",
+      "identifier": "com.apple.pkg.X11redirect",
+      "version": "10.9.0.1.1.1306847324",
+      "sourceSHA256": "25e4ea51ae64d2c6cc01b4a6a1602da3a9872ea4c0a3f71e7815b96e2638b7d5",
+      "sourceBytes": 581272,
+      "members": {
+        "Bom": {
+          "bytes": 106239,
+          "sha256": "cca4b520e78360685c0d2373a0a6df109afaf617da437b31de5d504c230b1d21"
+        },
+        "PackageInfo": {
+          "bytes": 694,
+          "sha256": "4f458250e89c3a0ce1d35a35415927f9b36037527de5a1d80562bb545e07c2a1"
+        },
+        "Payload": {
+          "bytes": 566713,
+          "sha256": "20b72540d0ee953be14fefaac52859140284b7594b205c9dc27c333b226cda93"
+        }
+      },
+      "template": "PackageInfo/X11redirect.pkg.xml",
+      "templateSHA256": "c32e7b28698137d3257eb08d154d82595a1716354f9d322d3ce04c961926b6c9",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [],
+      "installedKiB": 5218
+    },
+    {
+      "name": "OSInstall.pkg",
+      "identifier": "com.apple.pkg.OSInstall",
+      "version": "10.9.0.1",
+      "sourceSHA256": "daa929e9e59567b81d37207e8bde58cfbf964212509b00fcee8ccd7e14e3088a",
+      "sourceBytes": 2258,
+      "members": {
+        "Scripts": {
+          "bytes": 1270,
+          "sha256": "97613b91e8f78280a4f5f17de9b23a08f1b5d9b044bfdbdef488b07580b5b019"
+        },
+        "PackageInfo": {
+          "bytes": 569,
+          "sha256": "9e9532581075c964ecdf53f6c10f0f3efebc64e959b5d618e8aac5814b4cf264"
+        }
+      },
+      "template": "PackageInfo/OSInstall.pkg.xml",
+      "templateSHA256": "19bdbfb108a446bf2992612661ef28646fa4a09d81b3547ab879d72f3feb4b8b",
+      "externalBaseSystem": false,
+      "originalSetupScripts": [
+        {
+          "stage": "preinstall",
+          "file": "preinstall"
+        },
+        {
+          "stage": "postinstall",
+          "file": "postinstall",
+          "estimatedRunningTime": "37"
+        }
+      ],
+      "installedKiB": 0
+    }
+  ],
+  "excludedFreshInstallPackages": {
+    "OSUpgrade.pkg": "Only selected for old-system upgrade, not a fresh partition."
+  },
+  "nativeStagingValidated": false
+}

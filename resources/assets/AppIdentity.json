@@ -1,0 +1,7 @@
+{
+  "displayName": "MavericksResurrection",
+  "bundleName": "MavericksResurrection.app",
+  "bundleIdentifier": "dev.Jaegermeister.MavericksResurrection",
+  "minimumHostVersion": "12.0",
+  "releaseLabel": "1.0 Beta 6"
+}

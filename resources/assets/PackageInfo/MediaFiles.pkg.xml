@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pkg-info format-version="2" relocatable="false" deleteObsoleteLanguages="true" overwrite-permissions="true" identifier="com.apple.pkg.MediaFiles" useHFSPlusCompression="true" auth="root" version="10.9.0.1.1.1306847324">
+  <payload installKBytes="353682" numberOfFiles="403"/>
+  <groups>
+    <group>com.apple.snowleopard-repair-permissions.pkg-group</group>
+    <group>com.apple.FindSystemFiles.pkg-group</group>
+  </groups>
+  <bundle-version>
+    <bundle CFBundleVersion="3" CFBundleShortVersionString="10.8" SourceVersion="71000000000000" id="com.apple.Flurry" path="./System/Library/Screen Savers/Flurry.saver"/>
+    <bundle CFBundleVersion="3" CFBundleShortVersionString="5.0" SourceVersion="71000000000000" id="com.apple.ScreenSaver.FloatingMessage" path="./System/Library/Screen Savers/FloatingMessage.saver"/>
+    <bundle CFBundleVersion="3" CFBundleShortVersionString="5.0" SourceVersion="71000000000000" id="com.apple.ScreenSaver.Random" path="./System/Library/Screen Savers/Random.saver"/>
+    <bundle CFBundleVersion="3" CFBundleShortVersionString="5.0" SourceVersion="71000000000000" id="com.apple.screensaver.iTunesArtwork" path="./System/Library/Screen Savers/iTunes Artwork.saver"/>
+  </bundle-version>
+</pkg-info>

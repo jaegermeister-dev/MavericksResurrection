@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "minimumHost": "10.10",
+  "tools": {
+    "ManifestCompare": {
+      "bytes": 57904,
+      "sha256": "b102c3b63e92d317aaa74202366663b7a4464073c29b00f73ac328991b7a6311"
+    },
+    "CopyDirectoryMetadata": {
+      "bytes": 33568,
+      "sha256": "18a05737c0f7220ce6fca24b98f38ef8bf28d5add0138bd45be8787f28d75cb2"
+    },
+    "TreeManifest": {
+      "bytes": 38848,
+      "sha256": "dde1a795fb7d65a502564a6f9abbcf1f9e85f7e3b8c0771b5342e15b9e218c44"
+    },
+    "ImageRuntimeLaunch": {
+      "bytes": 53392,
+      "sha256": "7fccb7bfacbb22d4815bbae056149fc743ae5e1e27f4845c6f851ead8b2e736f",
+      "minimumTargetOS": "10.10"
+    },
+    "ImageRuntimeRoot.dylib": {
+      "bytes": 28416,
+      "sha256": "fb898a88ef958e8ebf70843f0805df78a7a77cafcc2fd6d51ebbd8f1fd5411b1"
+    },
+    "FirstBootSetup": {
+      "bytes": 72976,
+      "sha256": "3081aedabf21e20db696284bde096dff3e84c8af94273d60d546a5bd0f404dbb",
+      "minimumTargetOS": "10.9"
+    },
+    "NVMeSnapshotStore": {
+      "minimumHost": "10.10",
+      "bytes": 125696,
+      "sha256": "ec67eda8bad4fe4a831b0e93a80ca733c9781289bf21861cfe86e85eb7b82176"
+    },
+    "CacheToolLaunch": {
+      "bytes": 53488,
+      "sha256": "4ccb67e6f6bc8fc55345fc0aa5f19d92f2f5ca32afb80b3b3a532bae3e1826ff",
+      "minimumHost": "10.10"
+    },
+    "HashFile": {
+      "bytes": 27952,
+      "sha256": "4e2a27c40331045a4112de26d706751be58947973b6d5fd913ddad9d256b3c05"
+    },
+    "FidelityMetadata": {
+      "bytes": 55408,
+      "sha256": "19d746389af78661cafd0e92d8d0705f2133ed1f41048afb0c993a3bc2d3ec21",
+      "minimumTargetOS": "10.10"
+    },
+    "VerifySharedCaches": {
+      "bytes": 54672,
+      "sha256": "6f10b20c16bc431b299e86c182dfd000b5def365b4f93a3513d8be1629a3028d",
+      "minimumTargetOS": "10.10"
+    },
+    "PostUpdateSnapshotStore": {
+      "minimumHost": "10.10",
+      "bytes": 325424,
+      "sha256": "b32ed0d81b84746eccf412d1b8058a1e00f743ed68bfb1e4db03bcde4b29a020"
+    },
+    "GraphicsSnapshotStore": {
+      "minimumHost": "10.10",
+      "sha256": "db5e25f96562b519974254b78032ca486169d1791029d733d6dcc52abbee19c9",
+      "bytes": 81504
+    },
+    "ExperimentsSnapshotStore": {
+      "minimumHost": "10.10",
+      "sha256": "b4666f9b9661669ee78c12efb537f351af8ea5097d5b5a6c6430113f60a01110",
+      "bytes": 90048
+    }
+  }
+}
