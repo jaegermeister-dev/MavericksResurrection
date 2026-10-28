@@ -1,0 +1,100 @@
+{
+  "release": "1.0 Beta 6.1",
+  "cleanBuildsCompared": 2,
+  "differentSourceAndOutputDirectories": true,
+  "identicalAppFiles": 168,
+  "allAppFilesByteIdentical": true,
+  "completeZipByteIdentical": true,
+  "archiveSHA256": "c2849e810d37a7acf217d464f266c4c9bb23df2733c071fb7d4ad3aaeed69254",
+  "toolchain": {
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+    "sdk": "26.5",
+    "linker": "1267",
+    "macOSBuild": "25G241"
+  },
+  "sourceMatchesPreviousMemoryFix": true,
+  "targetedChecks": {
+    "policy.cjs": {
+      "passed": true,
+      "oneDriver": true,
+      "cacheInstallRemoveReinstall": true,
+      "repairPreservesNVMe": true,
+      "legacyAbsentSlotsPreserved": true,
+      "HFSListAndMountPolicy": true,
+      "modelGate": true,
+      "allJavaScriptParses": true
+    },
+    "experiments.cjs": {
+      "passed": true,
+      "actualReleased244BundleInventory": true,
+      "actualAGPMIdentifier": true,
+      "NVMePreserved": true,
+      "missingDriverBlocksPublication": true,
+      "roundTripFailureBlocksPublication": true,
+      "allEightConfigurationsSupported": true,
+      "conflictsSymmetricAndValidated": true
+    },
+    "native": {
+      "signatureVerifiedAfterUnzip": true,
+      "tools": {
+        "ManifestCompare": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 64
+        },
+        "CopyDirectoryMetadata": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 64
+        },
+        "TreeManifest": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 2
+        },
+        "ImageRuntimeLaunch": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 64
+        },
+        "ImageRuntimeRoot.dylib": {
+          "hashAndSignatureVerified": true
+        },
+        "FirstBootSetup": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 64
+        },
+        "NVMeSnapshotStore": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 1
+        },
+        "CacheToolLaunch": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 64
+        },
+        "HashFile": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 2
+        },
+        "FidelityMetadata": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 64
+        },
+        "VerifySharedCaches": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 64
+        },
+        "PostUpdateSnapshotStore": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 1
+        },
+        "GraphicsSnapshotStore": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 1
+        },
+        "ExperimentsSnapshotStore": {
+          "hashAndSignatureVerified": true,
+          "argumentRejectionExitCode": 1
+        }
+      },
+      "hashFileFixturePassed": true
+    }
+  },
+  "fullInstallationRerun": false
+}

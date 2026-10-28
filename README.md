@@ -14,7 +14,9 @@ MavericksResurrection downloads and prepares Mavericks using MavericksForever, i
 
 The source for Beta 6.1 is now available after a user pointed out that it had not been published. See [SOURCE.md](SOURCE.md) for the code layout and build instructions.
 
-Previous release downloads were removed following reports of a memory leak, and for transparency because their source code had not been published. Beta 6.1 contains only the memory leak fix on top of Beta 6. The tested app still displays Beta 6 (build 105) internally.
+Previous release downloads were removed following reports of a memory leak, and for transparency because their source code had not been published. Beta 6.1 contains only the memory leak fix on top of Beta 6. The app still displays Beta 6 (build 105) internally.
+
+The corrected Beta 6.1 download is reproduced byte for byte by the published build script with the recorded toolchain. See [SOURCE.md](SOURCE.md) for verification and testing details.
 
 
 ## Before you start
