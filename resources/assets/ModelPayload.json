@@ -2,8 +2,8 @@
   "schema": 1,
   "sourceArchiveSHA256": "9029738b0ce13d185e3edb7c91ce43d8ecc895a28aa15313ac859437d93e359c",
   "archive": "Released-Model-Support.tar.gz",
-  "archiveBytes": 12420749,
-  "archiveSHA256": "4013e3daa59c31f6543fbc89244b9026c69672ca9537d134a1a67b21f844a89c",
+  "archiveBytes": 12421303,
+  "archiveSHA256": "503e9229c9f03be37ae602a309d36da96ad83e07f1011e83399adada70dd415c",
   "archiveEntries": [
     {
       "path": "assets",
@@ -9842,6 +9842,57 @@
       "uid": 501,
       "gid": 0,
       "link": "A"
+    },
+    {
+      "path": "payload/display",
+      "kind": "directory",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "payload/display/System",
+      "kind": "directory",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "payload/display/System/Library",
+      "kind": "directory",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "payload/display/System/Library/Displays",
+      "kind": "directory",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "payload/display/System/Library/Displays/Overrides",
+      "kind": "directory",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "payload/display/System/Library/Displays/Overrides/DisplayVendorID-610",
+      "kind": "directory",
+      "mode": 493,
+      "uid": 0,
+      "gid": 0
+    },
+    {
+      "path": "payload/display/System/Library/Displays/Overrides/DisplayVendorID-610/DisplayProductID-a02f",
+      "kind": "file",
+      "mode": 420,
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1297,
+      "sha256": "1614dce4aa68682251177bd24ed6dec9fb00db1a0b4e9fa4972f4f77d5295c22"
     }
   ],
   "components": [
@@ -19632,6 +19683,21 @@
           "gid": 0,
           "bytes": 475,
           "sha256": "e8885920db58469d7402d564b415d0804985d2e932429f4c6f192a3e10ffd9b3"
+        }
+      ]
+    },
+    {
+      "source": "payload/display/System/Library/Displays/Overrides/DisplayVendorID-610/DisplayProductID-a02f",
+      "target": "System/Library/Displays/Overrides/DisplayVendorID-610/DisplayProductID-a02f",
+      "entries": [
+        {
+          "path": "",
+          "kind": "file",
+          "mode": 420,
+          "uid": 0,
+          "gid": 0,
+          "bytes": 1297,
+          "sha256": "1614dce4aa68682251177bd24ed6dec9fb00db1a0b4e9fa4972f4f77d5295c22"
         }
       ]
     }

@@ -8,16 +8,13 @@ Install OS X Mavericks 10.9.5 directly onto an existing internal or USB partitio
 
 MavericksResurrection downloads and prepares Mavericks using MavericksForever, installs it, and applies the patches needed for the MacBookPro11,4 or MacBookPro11,5. It also includes optional NVMe support and a fix for audio breaking after software updates.
 
-**[Download 1.0 Beta 6.1](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.6.1)**
+**[Download 1.0 Beta 7](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.7)**
 
 ## Source code
 
-The source for Beta 6.1 is now available after a user pointed out that it had not been published. See [SOURCE.md](SOURCE.md) for the code layout and build instructions.
+The source and build instructions for Beta 7 are included in this repository. The published source builds the release download byte for byte with the recorded toolchains. See [SOURCE.md](SOURCE.md).
 
-Previous release downloads were removed following reports of a memory leak, and for transparency because their source code had not been published. Beta 6.1 contains only the memory leak fix on top of Beta 6. The app still displays Beta 6 (build 105) internally.
-
-The corrected Beta 6.1 download is reproduced byte for byte by the published build script with the recorded toolchain. See [SOURCE.md](SOURCE.md) for verification and testing details.
-
+The source was first published with Beta 6.1 after a user pointed out that it was missing. Older downloads were removed following memory leak reports and because they had no accompanying source. Beta 6.1 remains available.
 
 ## Before you start
 
@@ -28,11 +25,13 @@ Keep a working newer macOS installation available. You'll use it to run the app,
 ## Compatibility
 
 - **MacBookPro11,5:** tested, including direct installs to the internal NVMe SSD and a USB drive, software updates, audio repair, and NVMe removal/reinstallation.
-- **MacBookPro11,4:** supported by the app, but untested on hardware.
+- **MacBookPro11,4:** included in the app, but testers have reported boot failures. These are still being investigated.
 - **Macs that officially support Mavericks:** the app can install Mavericks without the extra model patches. A normal Apple installer is recommended for these Macs. If this app doesn't work, use the normal installation method; support is limited to the 11,4 and 11,5.
 - Other unsupported Mac models are not supported.
 
-The app targets **macOS Monterey 12 through macOS Tahoe**. It has been tested on Monterey and Tahoe. If something goes wrong on another version, try Monterey and include logs from both attempts in your report.
+The app runs on **macOS Big Sur 11 and newer**. Installation has been tested from Big Sur with SIP enabled, Monterey, and Tahoe.
+
+**GPU switching on the MacBookPro11,5 is still being investigated.** This release does not claim to fix it or the reported 11,4 boot failures.
 
 **Creating a Mavericks installation on a USB drive from an Apple silicon Mac has not been tested.** Any resulting installation would be for a compatible Intel Mac.
 
@@ -51,13 +50,13 @@ If you keep an installer image for reuse, leave it and its records in Applicatio
 
 In my testing, the **MacBookPro11,5 would not boot Mavericks with HDMI connected to the laptop's own HDMI port**. It could show a white screen or kernel panic. Disconnect it before booting and connect it after reaching the desktop.
 
-HDMI connected through my dock worked during boot. That only describes **my 11,5 and the specific dock I tested**; other docks may behave differently. I have not confirmed either HDMI arrangement on the 11,4. It may work fine, but I'd still advise leaving HDMI disconnected until Mavericks has booted. If a dock causes startup trouble, disconnect its HDMI cable or the dock itself until you're at the desktop.
+HDMI through my dock worked in earlier tests, but a later boot failed with it connected and succeeded after it was disconnected. **Disconnect HDMI, including through a dock, until Mavericks reaches the desktop.** Those results are from my 11,5 and one dock; neither arrangement is confirmed on the 11,4.
 
 ## Experimental NVMe support
 
 One High Sierra-based NVMe driver is included. It works with the **Apple SSD SM0256L tested in a MacBookPro11,5**, including after Mavericks updates and audio repair. It has also passed sustained read/write testing.
 
-It's intended to support standard third-party NVMe drives too, but those results are still unconfirmed. **The release is a beta because compatibility with other NVMe drives still needs testing.**
+It's intended to support standard third-party NVMe drives too, but those results are still unconfirmed. Compatibility with other NVMe drives still needs testing.
 
 SATA drives normally don't need this option. A Mavericks installation on USB can boot without it, but may need it to access an internal NVMe SSD. If you're preparing an installation for another Mac, remember the storage check describes the Mac running the app.
 
@@ -72,6 +71,12 @@ Mavericks updates can remove working speakers, microphone and HDMI audio. If tha
 3. Let the repair finish, then boot Mavericks again.
 
 The repair has been tested on both internal and USB installations with NVMe support present.
+
+## Display scaling and update checks
+
+Beta 7 adds the missing display profile for higher Retina scaling options. On an existing installation, use **Fix post-update issues** to apply it. The scaling fix was verified on the 11,5 against a native 11,3 before updates, after updates and after repair.
+
+The app can notify you about new releases. **Download** opens that release's GitHub page; the app does not download or install its own updates. You can skip a version or disable checks in **Preferences**.
 
 ## A window appeared again after I already continued past it
 

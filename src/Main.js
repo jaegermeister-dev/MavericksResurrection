@@ -8,7 +8,7 @@ function run(argv){
     try{
         if(argv && argv.length)throw new Error('Open MavericksResurrection normally without command-line installation arguments.');
         var m={},identity=JSON.parse(read(resources+'/assets/AppIdentity.json')),capabilities=JSON.parse(read(resources+'/assets/AppCapabilities.json'));
-        if(identity.displayName!=='MavericksResurrection' || identity.minimumHostVersion!=='12.0')throw new Error('The application identity is invalid.');
+        if(identity.displayName!=='MavericksResurrection' || identity.minimumHostVersion!=='11.0')throw new Error('The application identity is invalid.');
         m.policy=load('Policy','MavericksPolicy');m.appPolicy=load('AppPolicy','MavericksAppPolicy',{MavericksPolicy:m.policy});
         m.partitionView=load('PartitionViewModel','MavericksPartitionViewModel',{MavericksPolicy:m.policy});
         m.nvmePolicy=load('NVMePolicy','MavericksNVMePolicy');m.nvmeCatalog=JSON.parse(read(resources+'/assets/NVMeCandidates.json'));
@@ -28,6 +28,11 @@ function run(argv){
         var progress=load('MacProgressView','MavericksResurrectionMacProgressView',{MavericksResurrectionProgressPresentation:presentation}).create(766,324);
         var windowLayout=load('MainWindowLayout','MavericksResurrectionMainWindowLayout');
         var actions={},window=load('MacMainWindow','MavericksResurrectionMacMainWindow',{MavericksResurrectionMainWindowLayout:windowLayout}).create(resources,session,m.dialogs,capabilities,actions,progress,m.sourceDialogs);
+        try {
+        var updatePolicy=load('UpdatePolicy','MavericksResurrectionUpdatePolicy');
+        var updateTransport=load('MacUpdateTransport','MavericksResurrectionMacUpdateTransport',{MavericksResurrectionUpdatePolicy:updatePolicy});
+        window.setUpdateChecker(load('MacUpdateChecker','MavericksResurrectionMacUpdateChecker',{MavericksResurrectionUpdatePolicy:updatePolicy}).create(identity,m.dialogs,updateTransport.create(),{record:function(e,d){session.logger.record(e,d);}}));
+        } catch(updateError) { session.logger.record('updates.check.unavailable',{reason:String(updateError)}); }
         m.runner.setPresentation(window.presentation);
         var ui={status:window.status,choosePartition:m.dialogs.choosePartition,installed:window.installed,chooseMavericks:m.dialogs.chooseMavericks,recoverNVMe:m.dialogs.recoverNVMe,diagnosticsCollected:window.diagnosticsCollected};
         var flow=load('ApplicationFlow','MavericksResurrectionApplicationFlow').create(session,ui,ObjC.unwrap($.NSHomeDirectory()));

@@ -32,6 +32,7 @@ var MavericksPatchPlan = (function () {
         if (model === 'MacBookPro11,5') graphicsPower.forEach(function (path) {
             paths.push({source: 'payload/model-11,5/' + path, target: path});
         });
+        paths.push({source: 'payload/display/System/Library/Displays/Overrides/DisplayVendorID-610/DisplayProductID-a02f', target: 'System/Library/Displays/Overrides/DisplayVendorID-610/DisplayProductID-a02f'});
         return {profile: model, installerEligibility: [],
             installedPaths: paths, includePostInstallPatcher: false,
             normalizeCameraPermissions: true};

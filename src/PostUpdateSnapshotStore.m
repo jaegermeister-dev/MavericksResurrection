@@ -20,6 +20,7 @@
 #include <signal.h>
 #include "NVMeInventory.h"
 #include "ModelInventory.h"
+#include "DisplayProfileInventory.h"
 
 __attribute__((noreturn)) static void gmFail(NSString *s) { @throw [NSException exceptionWithName:@"PostUpdateSnapshot" reason:s userInfo:nil]; }
 static NSString *gmStoreRelative=@"Library/Application Support/MavericksResurrection/PostUpdateRepair";
@@ -146,6 +147,8 @@ static void gmWriteJSON(NSString *p,id value) {
     NSString *root,*volumeID,*store;struct stat rootStat;int rootFD,lockFD;
 }
 - (id)initWithRoot:(NSString *)path device:(unsigned long long)device inode:(unsigned long long)inode;
+- (NSDictionary *)displayAssessment;
+- (NSDictionary *)applyDisplayProfile;
 - (NSDictionary *)capture;
 - (NSDictionary *)assessment:(NSString *)model;
 - (NSDictionary *)repairInputs;
@@ -345,6 +348,7 @@ static void gmWriteJSON(NSString *p,id value) {
     return @{@"status":@"recovered",@"transaction":p[@"id"],@"snapshot":p[@"snapshot"]};
 }
 #include "PostUpdateManagedState.inc"
+#include "DisplayProfileRepair.inc"
 @end
 #ifndef GM_POSTUPDATE_SNAPSHOT_TEST
 int main(int argc,char **argv) {
@@ -352,10 +356,10 @@ int main(int argc,char **argv) {
         if(argc<5||argc>7)gmFail(@"Usage: PostUpdateSnapshotStore /offline-volume device inode capture|verify|begin|pending|recover|baseline|state|apply|commit [identifier] [candidate|payload|receipt]");
         char *e1=NULL,*e2=NULL;unsigned long long dev=strtoull(argv[2],&e1,10),ino=strtoull(argv[3],&e2,10);if(!dev||!ino||*e1||*e2)gmFail(@"Invalid expected filesystem identity.");
         NSString *verb=[NSString stringWithUTF8String:argv[4]];
-        if(!((argc==5&&[@[@"location",@"capture",@"pending",@"recover",@"baseline",@"state"]containsObject:verb])||(argc==6&&[@[@"verify",@"assessment"]containsObject:verb])||(argc==7&&[@[@"begin",@"apply",@"commit"]containsObject:verb])))gmFail(@"Unexpected snapshot operation.");
+        if(!((argc==5&&[@[@"location",@"capture",@"pending",@"recover",@"baseline",@"state",@"display-assessment",@"display-apply"]containsObject:verb])||(argc==6&&[@[@"verify",@"assessment"]containsObject:verb])||(argc==7&&[@[@"begin",@"apply",@"commit"]containsObject:verb])))gmFail(@"Unexpected snapshot operation.");
         GMPostUpdateSnapshotStore *s=[[[GMPostUpdateSnapshotStore alloc]initWithRoot:[NSString stringWithUTF8String:argv[1]] device:dev inode:ino]autorelease];NSDictionary *result;
         if([verb isEqual:@"location"]){NSData *location=[NSJSONSerialization dataWithJSONObject:@{@"relative":gmStoreRelative} options:0 error:NULL];fwrite(location.bytes,1,location.length,stdout);return 0;}
-        if([verb isEqual:@"assessment"]&&argc==6)result=[s assessment:[NSString stringWithUTF8String:argv[5]]];else if([verb isEqual:@"capture"]&&argc==5)result=[s capture];else if([verb isEqual:@"verify"]&&argc==6)result=@{@"verified":@YES,@"id":[s verify:[NSString stringWithUTF8String:argv[5]]][@"id"]};else if([verb isEqual:@"begin"]&&argc==7)result=[s begin:[NSString stringWithUTF8String:argv[5]] candidate:[NSString stringWithUTF8String:argv[6]]];else if([verb isEqual:@"pending"]&&argc==5)result=@{@"pending":[s pending]?:[NSNull null]};else if([verb isEqual:@"recover"])result=[s recover];else if([verb isEqual:@"baseline"])result=[s baseline];else if([verb isEqual:@"state"])result=[s managedState];else if([verb isEqual:@"apply"])result=[s apply:[NSString stringWithUTF8String:argv[5]] payload:[NSString stringWithUTF8String:argv[6]]];else if([verb isEqual:@"commit"]){if(strlen(argv[6])>65536)gmFail(@"Cache receipt is oversized.");NSData *data=[[NSString stringWithUTF8String:argv[6]]dataUsingEncoding:NSUTF8StringEncoding];result=[s commit:[NSString stringWithUTF8String:argv[5]] receipt:[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL]];}else gmFail(@"Unexpected snapshot operation.");
+        if([verb isEqual:@"display-assessment"])result=[s displayAssessment];else if([verb isEqual:@"display-apply"])result=[s applyDisplayProfile];else if([verb isEqual:@"assessment"]&&argc==6)result=[s assessment:[NSString stringWithUTF8String:argv[5]]];else if([verb isEqual:@"capture"]&&argc==5)result=[s capture];else if([verb isEqual:@"verify"]&&argc==6)result=@{@"verified":@YES,@"id":[s verify:[NSString stringWithUTF8String:argv[5]]][@"id"]};else if([verb isEqual:@"begin"]&&argc==7)result=[s begin:[NSString stringWithUTF8String:argv[5]] candidate:[NSString stringWithUTF8String:argv[6]]];else if([verb isEqual:@"pending"]&&argc==5)result=@{@"pending":[s pending]?:[NSNull null]};else if([verb isEqual:@"recover"])result=[s recover];else if([verb isEqual:@"baseline"])result=[s baseline];else if([verb isEqual:@"state"])result=[s managedState];else if([verb isEqual:@"apply"])result=[s apply:[NSString stringWithUTF8String:argv[5]] payload:[NSString stringWithUTF8String:argv[6]]];else if([verb isEqual:@"commit"]){if(strlen(argv[6])>65536)gmFail(@"Cache receipt is oversized.");NSData *data=[[NSString stringWithUTF8String:argv[6]]dataUsingEncoding:NSUTF8StringEncoding];result=[s commit:[NSString stringWithUTF8String:argv[5]] receipt:[NSJSONSerialization JSONObjectWithData:data options:0 error:NULL]];}else gmFail(@"Unexpected snapshot operation.");
         NSData *json=[NSJSONSerialization dataWithJSONObject:result options:0 error:NULL];fwrite(json.bytes,1,json.length,stdout);fputc('\n',stdout);return 0;
     }@catch(NSException *e){fprintf(stderr,"%s\n",e.reason.UTF8String);return 1;}}
 }

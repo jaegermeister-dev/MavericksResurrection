@@ -22,8 +22,8 @@ static int Failed(NSString *detail) {
 
 int main(int argc,const char *argv[]) {
     @autoreleasepool {
-        if ([NSProcessInfo processInfo].operatingSystemVersion.majorVersion < 12)
-            return Failed(@"MavericksResurrection requires macOS Monterey 12 or later.");
+        if ([NSProcessInfo processInfo].operatingSystemVersion.majorVersion < 11)
+            return Failed(@"MavericksResurrection requires macOS Big Sur 11 or later.");
         if(argc!=1 && !(argc==2 && strncmp(argv[1],"-psn_",5)==0))
             return Failed(@"Open MavericksResurrection normally without command-line installation arguments.");
         NSString *resources=[[NSBundle mainBundle] resourcePath];
@@ -32,7 +32,7 @@ int main(int argc,const char *argv[]) {
         NSString *source=[NSString stringWithContentsOfFile:entry encoding:NSUTF8StringEncoding error:&readError];
         if(!source)return Failed(readError.localizedDescription);
         OSALanguage *language=[OSALanguage languageForName:@"JavaScript"];
-        if(!language)return Failed(@"JavaScript for Automation is unavailable. MavericksResurrection requires macOS Monterey 12 or later.");
+        if(!language)return Failed(@"JavaScript for Automation is unavailable. MavericksResurrection requires macOS Big Sur 11 or later.");
         NSApplication *application=[NSApplication sharedApplication];
         [application setActivationPolicy:NSApplicationActivationPolicyRegular];
         [application finishLaunching];

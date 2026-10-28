@@ -11,6 +11,8 @@ var MavericksResurrectionMacMainWindow=(function(){
         'showAdvanced:':{types:['void',['id']],implementation:function(){if(current)current.perform('advanced');}},
         'showLogging:':{types:['void',['id']],implementation:function(){if(current)current.logging();}},
         'cancelOperation:':{types:['void',['id']],implementation:function(){if(current)current.cancel();}},
+        'showPreferences:':{types:['void',['id']],implementation:function(){if(current)current.preferences();}},
+        'validateMenuItem:':{types:['BOOL',['id']],implementation:function(item){return Number(item.tag)!==7001||!!(current&&current.canShowPreferences());}},
         'showCredits:':{types:['void',['id']],implementation:function(){if(current)current.credits();}},
         'showSupport:':{types:['void',['id']],implementation:function(){if(current)current.support();}},
         'requestQuit:':{types:['void',['id']],implementation:function(){if(current)current.requestClose();}},
@@ -33,7 +35,7 @@ var MavericksResurrectionMacMainWindow=(function(){
             {width:Number(screen.width),height:Number(screen.height)});
         w.mrSetContentSizeWithWidthHeight(restored.width,restored.height);
         w.contentView=$.NSClassFromString('MavericksResurrectionWindowCanvas').alloc.mrInitWithXYWidthHeight(0,0,restored.width,restored.height);
-        var buttons=[],busy=false,cancelCallback=null,controls={};
+        var buttons=[],busy=false,cancelCallback=null,controls={},updates=null;
         function add(v){w.contentView.addSubview(v);return v;}
         function button(x,y,width,title,action,enabled){
             var b=$.NSButton.alloc.mrInitWithXYWidthHeight(x,y,width,33);b.title=$(title);b.bezelStyle=$.NSRoundedBezelStyle;
@@ -73,11 +75,15 @@ var MavericksResurrectionMacMainWindow=(function(){
             var bar=$.NSMenu.alloc.initWithTitle($('Main menu')),item=$.NSMenuItem.alloc.initWithTitleActionKeyEquivalent($('MavericksResurrection'),null,$(''));
             var submenu=$.NSMenu.alloc.initWithTitle($('MavericksResurrection'));
             var credits=$.NSMenuItem.alloc.initWithTitleActionKeyEquivalent($('About MavericksResurrection'),'showCredits:',$(''));credits.target=delegate;submenu.addItem(credits);
+            var preferencesItem=$.NSMenuItem.alloc.initWithTitleActionKeyEquivalent($('Preferences…'),'showPreferences:',$(','));preferencesItem.target=delegate;preferencesItem.tag=7001;submenu.addItem(preferencesItem);
             submenu.addItem($.NSMenuItem.separatorItem);
             var quit=$.NSMenuItem.alloc.initWithTitleActionKeyEquivalent($('Quit MavericksResurrection'),'requestQuit:',$('q'));quit.target=delegate;submenu.addItem(quit);
             item.submenu=submenu;bar.addItem(item);app.mainMenu=bar;
         }
         current={window:w,delegate:delegate,closed:false,buttons:buttons,statusField:status,resize:resize,
+            setUpdateChecker:function(checker){updates=checker;},
+            canShowPreferences:function(){return !busy&&!!updates;},
+            preferences:function(){if(!busy&&updates)updates.preferences();},
             saveSize:function(){var size={width:Number(w.contentView.mrBoundsWidth),height:Number(w.contentView.mrBoundsHeight)};preferences.setDoubleForKey(Number(size.width),'mainWindowWidth');preferences.setDoubleForKey(Number(size.height),'mainWindowHeight');preferences.synchronize;},
             status:function(s){progressView.message(s);w.displayIfNeeded;app.updateWindows;},
             logging:function(){var a=dialogs.alert('Diagnostic logs','Optionally save a detailed log to a folder for troubleshooting. The activity log remains visible without saving a file.',['Done']);a.accessoryView=session.diagnostics.view;a.runModal;},
@@ -100,7 +106,7 @@ var MavericksResurrectionMacMainWindow=(function(){
                     if(!$.NSWorkspace.sharedWorkspace.openURL($.NSURL.URLWithString($(url))))tell('Could not open the support page',url);
                 }
             },
-            credits:function(){tell('MavericksResurrection — 1.0 Beta 6','The original MavericksForever script was created by Wowfunhappy (mavericksforever.com).\n\nMavericksResurrection and its bundled adaptation of that script are maintained by Jaegermeister-dev.\n\nReport MavericksResurrection issues to Jaegermeister-dev, not Wowfunhappy. Wowfunhappy did not create MavericksResurrection and does not maintain this app or its bundled adaptation.\n\nSupport is provided only for MacBookPro11,4 / 11,5. Officially Mavericks-compatible Macs can also use this app without model patches, but are outside its support scope. macOS Monterey 12 or later required; tested on Monterey. macOS and OS X are Apple software.\n\nMacBookPro11,4 support is untested. NVMe compatibility with other SSD models remains experimental.');},
+            credits:function(){tell('MavericksResurrection — 1.0 Beta 7','The original MavericksForever script was created by Wowfunhappy (mavericksforever.com).\n\nMavericksResurrection and its bundled adaptation of that script are maintained by Jaegermeister-dev.\n\nReport MavericksResurrection issues to Jaegermeister-dev, not Wowfunhappy. Wowfunhappy did not create MavericksResurrection and does not maintain this app or its bundled adaptation.\n\nSupport is provided only for MacBookPro11,4 / 11,5. Officially Mavericks-compatible Macs can also use this app without model patches, but are outside its support scope. macOS Big Sur 11 or later required; tested on Monterey. macOS and OS X are Apple software.\n\nMacBookPro11,4 support is untested. NVMe compatibility with other SSD models remains experimental.');},
             perform:function(action){
                 if(busy)return;
                 if(!handlers[action]){tell('Feature unavailable','This action is unavailable. Please reopen the application.');return;}
@@ -124,7 +130,9 @@ var MavericksResurrectionMacMainWindow=(function(){
                 tell(result.export.saved?'Installation diagnostics saved':'Diagnostic log incomplete',message);
             },
             run:function(){menu();w.center;w.makeKeyAndOrderFront(null);app.activateIgnoringOtherApps(true);
-                while(!current.closed){var e=app.nextEventMatchingMaskUntilDateInModeDequeue($.NSAnyEventMask,$.NSDate.dateWithTimeIntervalSinceNow(0.1),$.NSDefaultRunLoopMode,true);if(e && !e.isNil())app.sendEvent(e);app.updateWindows;}
+                if(updates)updates.start();
+                while(!current.closed){var e=app.nextEventMatchingMaskUntilDateInModeDequeue($.NSAnyEventMask,$.NSDate.dateWithTimeIntervalSinceNow(0.1),$.NSDefaultRunLoopMode,true);if(e && !e.isNil())app.sendEvent(e);app.updateWindows;if(updates)updates.poll(!busy&&!current.closed);}
+                if(updates)updates.stop();
                 session.close();current=null;
             }
         };

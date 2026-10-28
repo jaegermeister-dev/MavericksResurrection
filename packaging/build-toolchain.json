@@ -1,6 +1,13 @@
 {
-  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
-  "sdk": "26.5",
-  "linker": "1267",
-  "macOSBuild": "25G241"
+  "macOSBuild": "25G241",
+  "toolchains": {
+    "13.1": {
+      "compiler": "Apple clang version 14.0.0 (clang-1400.0.29.202)",
+      "linker": "820.1"
+    },
+    "26.5": {
+      "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+      "linker": "1267"
+    }
+  }
 }

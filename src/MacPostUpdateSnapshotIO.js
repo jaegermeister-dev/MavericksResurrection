@@ -24,7 +24,7 @@ var MavericksResurrectionMacPostUpdateSnapshotIO=(function(){
         function command(action,tail){
             // Native snapshot reads already bind the filesystem UUID and root.
             // Refresh disk information at mutation boundaries, not twice per read.
-            if(['capture','begin','apply','recover','commit'].indexOf(action)>=0)validate.revalidate();
+            if(['capture','begin','apply','recover','commit','display-apply'].indexOf(action)>=0)validate.revalidate();
             guard();var task=$.NSTask.alloc.init,out=$.NSPipe.pipe,errors=$.NSPipe.pipe;
             task.launchPath=$(helper);task.arguments=$([root,parts[0],parts[1],action].concat(tail||[]));
             task.environment=$({PATH:'/usr/bin:/bin:/usr/sbin:/sbin',HOME:'/var/root',LANG:'C',LC_ALL:'C'});
@@ -53,6 +53,8 @@ var MavericksResurrectionMacPostUpdateSnapshotIO=(function(){
                 if(['MacBookPro11,4','MacBookPro11,5'].indexOf(model)<0)throw new Error('Unsupported repair model.');
                 var r=command('assessment',[model]);if(r.model!==model||!Array.isArray(r.changedIndices)||!Array.isArray(r.components)||typeof r.repairNeeded!=='boolean')throw new Error('Repair assessment was incomplete.');return r;
             },
+            displayAssessment:function(){return command('display-assessment');},
+            applyDisplayProfile:function(){var r=command('display-apply');if(r.verified!==true)throw new Error('Display profile repair was not verified.');return r;},
             state:function(){return command('state');},
             apply:function(id,payload){
                 if(typeof payload!=='string'||(payload!=='-'&&payload.charAt(0)!=='/'))throw new Error('Invalid verified payload location.');

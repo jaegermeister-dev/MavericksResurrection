@@ -1,18 +1,66 @@
 {
-  "release": "1.0 Beta 6.1",
+  "release": "1.0 Beta 7",
   "cleanBuildsCompared": 2,
   "differentSourceAndOutputDirectories": true,
-  "identicalAppFiles": 168,
   "allAppFilesByteIdentical": true,
+  "identicalAppFiles": 173,
   "completeZipByteIdentical": true,
-  "archiveSHA256": "c2849e810d37a7acf217d464f266c4c9bb23df2733c071fb7d4ad3aaeed69254",
+  "archiveSHA256": "e49cb3d5a614f62c3fe07703631aebd83a0fc8e2dc0067a52383b4f68f8de42a",
   "toolchain": {
-    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
-    "sdk": "26.5",
-    "linker": "1267",
-    "macOSBuild": "25G241"
+    "macOSBuild": "25G241",
+    "toolchains": {
+      "13.1": {
+        "compiler": "Apple clang version 14.0.0 (clang-1400.0.29.202)",
+        "linker": "820.1"
+      },
+      "26.5": {
+        "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+        "linker": "1267"
+      }
+    }
   },
-  "sourceMatchesPreviousMemoryFix": true,
+  "changesAfterFreshInstallationTest": [
+    "Contents/MacOS/MavericksResurrection",
+    "Contents/Resources/BundledTools/ImageRuntimeRoot.dylib",
+    "Contents/Resources/assets/NativeTools.json",
+    "Contents/_CodeSignature/CodeResources"
+  ],
+  "nativeMetadataComparison": {
+    "Contents/MacOS/MavericksResurrection": {
+      "allMachOSectionsIdentical": true,
+      "runtimeLoadCommandsIdentical": true,
+      "allCodeDataAndLinkeditBytesIdentical": true,
+      "onlyIdentificationHeaderAndSignatureDiffer": true
+    },
+    "Contents/Resources/BundledTools/ImageRuntimeRoot.dylib": {
+      "allMachOSectionsIdentical": true,
+      "runtimeLoadCommandsIdentical": true,
+      "allCodeDataAndLinkeditBytesIdentical": true,
+      "onlyIdentificationHeaderAndSignatureDiffer": true
+    }
+  },
+  "privateRuntimeFixture": {
+    "usedDisposableImage": true,
+    "installationsModified": false,
+    "runs": {
+      "tested": {
+        "exitCode": 0,
+        "stdout": "PRIVATE_ROOT_AND_OPTIONAL_LIBRARY_CHECKS_PASSED\n",
+        "stderr": "GM_HOST_WRITES_DENIED\nGM_HOST_RUNTIME_ROOTED\nMR_OPTIONAL_SPINDUMP_UNAVAILABLE\n",
+        "hostWriteCanaryDenied": true,
+        "privateImageWritePassed": true
+      },
+      "privacy-cleaned": {
+        "exitCode": 0,
+        "stdout": "PRIVATE_ROOT_AND_OPTIONAL_LIBRARY_CHECKS_PASSED\n",
+        "stderr": "GM_HOST_WRITES_DENIED\nGM_HOST_RUNTIME_ROOTED\nMR_OPTIONAL_SPINDUMP_UNAVAILABLE\n",
+        "hostWriteCanaryDenied": true,
+        "privateImageWritePassed": true
+      }
+    },
+    "sameBehaviour": true,
+    "fixtureDetached": true
+  },
   "targetedChecks": {
     "policy.cjs": {
       "passed": true,
@@ -34,67 +82,34 @@
       "allEightConfigurationsSupported": true,
       "conflictsSymmetricAndValidated": true
     },
-    "native": {
-      "signatureVerifiedAfterUnzip": true,
-      "tools": {
-        "ManifestCompare": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 64
-        },
-        "CopyDirectoryMetadata": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 64
-        },
-        "TreeManifest": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 2
-        },
-        "ImageRuntimeLaunch": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 64
-        },
-        "ImageRuntimeRoot.dylib": {
-          "hashAndSignatureVerified": true
-        },
-        "FirstBootSetup": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 64
-        },
-        "NVMeSnapshotStore": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 1
-        },
-        "CacheToolLaunch": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 64
-        },
-        "HashFile": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 2
-        },
-        "FidelityMetadata": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 64
-        },
-        "VerifySharedCaches": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 64
-        },
-        "PostUpdateSnapshotStore": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 1
-        },
-        "GraphicsSnapshotStore": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 1
-        },
-        "ExperimentsSnapshotStore": {
-          "hashAndSignatureVerified": true,
-          "argumentRejectionExitCode": 1
-        }
-      },
-      "hashFileFixturePassed": true
+    "beta7.cjs": {
+      "passed": true,
+      "displayProfileFresh114and115": true,
+      "stock113Unchanged": true,
+      "BigSurHostGate": true,
+      "TextKit1Preserved": true,
+      "updaterNoMissingProtocol": true,
+      "repairIncludesDisplayAssessment": true
+    },
+    "updates.cjs": {
+      "passed": true,
+      "numericVersionOrdering": true,
+      "stableAfterBeta": true,
+      "skipOnlyChosenRelease": true,
+      "olderAndCurrentSuppressed": true,
+      "untrustedReleaseURLsRejected": true,
+      "draftsAndUnpublishedRejected": true,
+      "sourceParses": true
     }
   },
-  "fullInstallationRerun": false
+  "freshInstallBeforeMetadataCleanup": {
+    "model": "MacBookPro11,5",
+    "system": "10.9.5 build 13F34",
+    "bootedWithoutHDMI": true,
+    "setupCompleted": true,
+    "allSixFirstBootTasksPassed": true,
+    "profileSHA256": "1614dce4aa68682251177bd24ed6dec9fb00db1a0b4e9fa4972f4f77d5295c22",
+    "HiDPIModesMatchNativeMacBookPro113": true
+  },
+  "fullInstallationRerunAfterMetadataCleanup": false
 }

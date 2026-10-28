@@ -1,0 +1,126 @@
+{
+  "ExperimentsSnapshotStore": {
+    "source": "ExperimentsSnapshotStore.m",
+    "sdk": "26.5",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": null,
+    "outputName": "ExperimentsSnapshotStore"
+  },
+  "CacheToolLaunch": {
+    "source": "CacheToolLaunch.c",
+    "sdk": "13.1",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": "CacheToolLaunch-5555494446677f7770de3e3cbd9cb54660099e4b",
+    "outputName": "CacheToolLaunch"
+  },
+  "VerifySharedCaches": {
+    "source": "VerifySharedCaches.m",
+    "sdk": "13.1",
+    "optimization": "-Os",
+    "minimum": "10.10",
+    "identifier": "VerifySharedCaches-555549440161e0d0a9ff3aa6b72a66ac9c4a7ec7",
+    "outputName": "VerifySharedCaches"
+  },
+  "ManifestCompare": {
+    "source": "ManifestCompare.m",
+    "sdk": "26.5",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": "ManifestCompare-5555494425a1a71a633c3cb69870a31185546dd4",
+    "outputName": "ManifestCompare"
+  },
+  "NVMeSnapshotStore": {
+    "source": "NVMeSnapshotStore.m",
+    "sdk": "13.1",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": "NVMeSnapshotStore-555549449ec465f0950f3e1d907b2d71f8036910",
+    "outputName": "NVMeSnapshotStore"
+  },
+  "GraphicsSnapshotStore": {
+    "source": "GraphicsSnapshotStore.m",
+    "sdk": "26.5",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": null,
+    "outputName": "GraphicsSnapshotStore"
+  },
+  "ImageRuntimeRoot.dylib": {
+    "source": "ImageRuntimeRoot.c",
+    "sdk": "26.5",
+    "optimization": "-Os",
+    "minimum": "10.10",
+    "identifier": "ImageRuntimeRoot-5555494426c19a38c10035f8b904ddd4c29fc119",
+    "outputName": "ImageRuntimeRoot.dylib",
+    "installName": "@rpath/ImageRuntimeRoot.dylib",
+    "headerPadding": "0x60"
+  },
+  "ImageRuntimeLaunch": {
+    "source": "ImageRuntimeLaunch.c",
+    "sdk": "13.1",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": "ImageRuntimeLaunch-5555494492b02e7385a43d3cbfb48212c0cf609d",
+    "outputName": "ImageRuntimeLaunch"
+  },
+  "TreeManifest": {
+    "source": "TreeManifest.m",
+    "sdk": "26.5",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": null,
+    "outputName": "TreeManifest"
+  },
+  "FidelityMetadata": {
+    "source": "FidelityMetadata.m",
+    "sdk": "13.1",
+    "optimization": "-Os",
+    "minimum": "10.10",
+    "identifier": "FidelityMetadata-55554944cf91b77cd42330359e5ecf8dc2c0577b",
+    "outputName": "FidelityMetadata"
+  },
+  "HashFile": {
+    "source": "HashFile.c",
+    "sdk": "26.5",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": "HashFile-55554944e7219ced7a853e37910e02b476babf2b",
+    "outputName": "HashFile"
+  },
+  "CopyDirectoryMetadata": {
+    "source": "CopyDirectoryMetadata.c",
+    "sdk": "26.5",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": "CopyDirectoryMetadata-r1-5555494488f30f96b76d37beb3ad084921016832",
+    "outputName": "CopyDirectoryMetadata-r1",
+    "preserveUUID": "88f30f96b76d37beb3ad084921016832",
+    "expectedCodeSHA256": "77ee51bd36e870726f48e23caacc829bb9a6f4af3aa8a3caab1a4a75cbd466bd"
+  },
+  "PostUpdateSnapshotStore": {
+    "source": "PostUpdateSnapshotStore.m",
+    "sdk": "26.5",
+    "optimization": "-O2",
+    "minimum": "10.10",
+    "identifier": "PostUpdateSnapshotStore-55554944e4d9b51d4d74366e98754319cd0473a0",
+    "outputName": "PostUpdateSnapshotStore"
+  },
+  "FirstBootSetup": {
+    "source": "FirstBootSetup.m",
+    "sdk": "13.1",
+    "optimization": "-O2",
+    "minimum": "10.9",
+    "identifier": "FirstBootSetup-555549440d7152a3e3fd300a98caffaec754c54d",
+    "outputName": "FirstBootSetup"
+  },
+  "MavericksResurrection": {
+    "source": "AppLauncher.m",
+    "sdk": "26.5",
+    "optimization": "-O2",
+    "minimum": "11.0",
+    "identifier": "dev.Jaegermeister.MavericksResurrection",
+    "outputName": "MavericksResurrection"
+  }
+}

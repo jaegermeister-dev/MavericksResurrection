@@ -1,7 +1,8 @@
 /* Read-only filesystem manifest helper. Build for macOS 10.10 and bundle it;
  * end users never need a compiler. Content hashes use logical file bytes.
  * A complete final JSON record is required before a scan can be accepted.
- * No paths are excluded here: callers must prepare the image before scanning. */
+ * Default scans include every path. Installed-system scans omit only the four
+ * root-level filesystem housekeeping trees already excluded by ManifestCompare. */
 #import <Foundation/Foundation.h>
 #include <CommonCrypto/CommonDigest.h>
 #include <sys/acl.h>
@@ -108,12 +109,20 @@ static void emit(id value) {
     if (!data) { fprintf(stderr, "Cannot encode manifest JSON: %s\n", [[error description] UTF8String]); exit(1); }
     if (fwrite([data bytes], 1, [data length], stdout) != [data length] || fputc('\n', stdout) == EOF) { perror("Cannot write manifest"); exit(1); }
 }
+static BOOL filesystemMetadata(const FTSENT *entry) {
+    if (entry->fts_level != 1) return NO;
+    const char *name = entry->fts_name;
+    return !strcmp(name, ".fseventsd") || !strcmp(name, ".Spotlight-V100") ||
+        !strcmp(name, ".Trashes") || !strcmp(name, ".TemporaryItems");
+}
 static int order(const FTSENT **a, const FTSENT **b) { return strcmp((*a)->fts_name, (*b)->fts_name); }
 int main(int argc, char **argv) {
     @autoreleasepool {
-        if (argc != 2 || argv[1][0] != '/') { fprintf(stderr, "Usage: TreeManifest /absolute/root > manifest.jsonl\n"); return 2; }
+        BOOL installedSystem = argc == 3 && !strcmp(argv[1], "--installed-system");
+        const char *input = argc == 2 ? argv[1] : installedSystem ? argv[2] : NULL;
+        if (!input || input[0] != '/') { fprintf(stderr, "Usage: TreeManifest [--installed-system] /absolute/root > manifest.jsonl\n"); return 2; }
         char root[PATH_MAX]; struct stat rootStat;
-        if (!realpath(argv[1], root) || lstat(root, &rootStat)) fail("Cannot resolve scan root", argv[1]);
+        if (!realpath(input, root) || lstat(root, &rootStat)) fail("Cannot resolve scan root", input);
         if (!S_ISDIR(rootStat.st_mode) || !strcmp(root, "/")) { fprintf(stderr, "Choose a specific directory, not the running root filesystem.\n"); return 2; }
         char *roots[] = {root, NULL}; FTS *walk = fts_open(roots, FTS_PHYSICAL | FTS_XDEV | FTS_NOCHDIR, order);
         if (!walk) fail("Cannot scan", root);
@@ -121,6 +130,14 @@ int main(int argc, char **argv) {
         unsigned long long count = 0, total = 0; FTSENT *entry; errno = 0;
         while ((entry = fts_read(walk))) {
             @autoreleasepool {
+                // Skip before metadata reads or traversal errors: these host-managed
+                // trees can be protected even from an administrator. Never skip any
+                // other unreadable file, nor a same-named tree inside the OS payload.
+                if (installedSystem && filesystemMetadata(entry)) {
+                    if (entry->fts_info == FTS_D && fts_set(walk, entry, FTS_SKIP)) fail("Cannot skip filesystem metadata", entry->fts_path);
+                    errno = 0;
+                    continue;
+                }
                 if (entry->fts_info == FTS_DP) continue;
                 if (entry->fts_info == FTS_ERR || entry->fts_info == FTS_DNR || entry->fts_info == FTS_NS || entry->fts_info == FTS_DC) { errno = entry->fts_errno; fail("Cannot scan entry", entry->fts_path); }
                 const struct stat *st = entry->fts_statp;
@@ -154,7 +171,9 @@ int main(int argc, char **argv) {
         }
         if (errno) fail("Cannot finish scan", root);
         if (fts_close(walk)) fail("Cannot close scan", root);
-        emit(@{ @"type": @"complete", @"schema": @1, @"entries": @(count), @"logicalFileBytes": @(total) });
+        NSMutableDictionary *complete = [@{ @"type": @"complete", @"schema": @1, @"entries": @(count), @"logicalFileBytes": @(total) } mutableCopy];
+        if (installedSystem) complete[@"excludedFilesystemMetadata"] = @[@".fseventsd", @".Spotlight-V100", @".Trashes", @".TemporaryItems"];
+        emit(complete); [complete release];
         if (fflush(stdout)) { perror("Cannot flush manifest"); return 1; }
     }
     return 0;

@@ -1,45 +1,45 @@
-# Beta 6.1 source
+# Beta 7 source
 
-This is the source for **MavericksResurrection 1.0 Beta 6.1**.
+This is the source for **MavericksResurrection 1.0 Beta 7, build 107**.
 
-The source is now available after a user pointed out that it had not been published. Previous release downloads were removed following reports of a memory leak, and for transparency because their source code had not been published. Beta 6.1 is being published with its matching source.
+The source was first published with Beta 6.1 after a user pointed out that it was missing. Earlier downloads were removed following memory leak reports and because their source had not been published. Beta 6.1 remains available.
 
-## What changed
+## Release verification
 
-The only functional change from public Beta 6 is in `src/MacProgressView.js`: the activity log explicitly uses TextKit 1. On Tahoe, the newer text layout engine could repeatedly allocate memory while updating the log, eventually freezing the interface and consuming large amounts of RAM and swap.
+The published source builds every application file and the complete release ZIP byte for byte. Two clean builds in different directories were compared, followed by a build from the exact published source archive. See `release/REPRODUCIBILITY.json`, `release/APP-FILE-HASHES.json` and `SHA256SUMS.txt`.
 
-`release/MEMORY-FIX.patch` contains the complete application-source change from Beta 6. The internal version still reads **1.0 Beta 6, build 105**. The download and GitHub release are named **Beta 6.1** to distinguish them from the affected release.
+The tested Beta 7 passed a fresh installation and first boot on a MacBookPro11,5. Its display profile and usable HiDPI modes matched the native MacBookPro11,3 baseline. The final packaging removes a local build path from `ImageRuntimeRoot.dylib` and updates its checksum and app signatures. Every executable code/data section and runtime binding remains identical to the tested app. The original and rebuilt runtime also passed the same disposable HFS+ image test. A full installation was not repeated for this metadata-only cleanup.
 
-The Beta 6.1 download has been rebuilt using the published build script. Independent clean builds in different directories produced the same bytes for every app file and the complete ZIP. The release download is that build output. See `release/REPRODUCIBILITY.json` and `release/APP-FILE-HASHES.json` for the checks.
+Beta 7 keeps the activity-log memory fix, adds Big Sur support, corrects protected-folder verification, supplies the display profile through installation and post-update repair, and adds optional update notifications. It does not fix the reported 11,4 boot or 11,5 GPU-switching problems.
 
-The first Beta 6.1 upload reused previously compiled Beta 6 helpers. Its source-build instructions recompiled those helpers with different settings, so they did not reproduce that upload. The release, build instructions, source archive and checksums have been corrected together. The original install tests used the earlier memory-fix package; a full installation has not been rerun with this reproducible rebuild.
+## Build
 
-This release does not include the other changes under development for Beta 7.
+Use an Intel Mac with Python 3.9 or newer. The exact release uses the two Apple toolchains recorded in `packaging/build-toolchain.json`: clang 14.0.0 with SDK 13.1 and linker 820.1, and clang 21.0.0 with SDK 26.5 and linker 1267. Signing is performed on macOS build 25G241. These are build requirements; the app runs on Big Sur and newer.
 
-## Source layout
-
-- `src/`: application JavaScript, native launcher, C/Objective-C helpers, Ruby diagnostics and installer download script.
-- `resources/`: the exact resource files and bundled patch payloads used by the release.
-- `packaging/`: application metadata.
-- `efi/`: Zig source for the EFI diagnostics tool embedded in `src/AdvancedEFISession.rb`.
-- `nvme/`: compatibility shim source, tests, bridge descriptions and a checked transformation of the High Sierra driver binary.
-- `tools/build.py`: local application build script.
-- `release/APP-FILE-HASHES.json`: SHA-256 hashes of every file in the released app.
-
-The application sources are copied directly from the tested app. This repository does not contain private development logs, SSH credentials or tester reports.
-
-## Build the app
-
-For the exact release build, use an Intel Mac with Python 3.9 or newer and the toolchain recorded in `packaging/build-toolchain.json`: Apple clang 21.0.0 (`clang-2100.1.1.101`), macOS SDK 26.5, linker 1267 and macOS build 25G241. These are build requirements; the app itself still targets Monterey and newer. From the repository directory:
+Keep the older CommandLineTools installation in a separate folder. The build does not change the system's selected developer tools:
 
 ```sh
-python3 tools/build.py
+python3 tools/build.py --legacy-clt /path/to/older/CommandLineTools
 python3 tools/verify_release.py
 ```
 
-The outputs are `build/MavericksResurrection.app`, `build/MavericksResurrection-1.0-beta.6.1.zip` and `build/APP-FILE-HASHES.json`. The build script compiles the native launcher and every bundled host helper, updates their integrity records, and applies deterministic ad-hoc signatures. It fixes archive timestamps, ordering and permissions. It does not launch the app or modify an installation. Use `--output /path/to/new-folder` for another build; an existing output app is never overwritten.
+Use `--current-clt /path/to/current/CommandLineTools` if the newer toolchain is not at its standard location. Use `--output /path/to/new-folder` for a separate build; existing output apps are never overwritten.
 
-The default build refuses a mismatched toolchain. `--allow-different-toolchain` permits a custom build whose bytes may differ. Compare the ZIP's SHA-256 with `SHA256SUMS.txt` and every app-file hash with `release/APP-FILE-HASHES.json`. The build script reuses the checked-in patch resources and the embedded EFI binary; rebuilding those is a separate step described below.
+The build compiles the launcher and all host helpers from `src/`, using the per-file settings in `packaging/native-builds.json`. It preserves the tested helpers' compiler versions and signatures. One helper's existing debug UUID is retained only after checking its compiled code hash. Library header padding preserves the tested instruction/data layout while removing the local path. These steps do not change application logic.
+
+Outputs are `build/MavericksResurrection.app`, `build/MavericksResurrection-1.0-beta.7.zip` and `build/APP-FILE-HASHES.json`. ZIP ordering, timestamps and permissions are fixed. The build never launches the app or modifies a Mavericks installation.
+
+## Source layout
+
+- `src/`: JavaScript application, native launcher, C/Objective-C helpers, Ruby diagnostics and installer-download script.
+- `resources/`: exact release resources and patch payloads.
+- `packaging/`: app metadata and recorded build settings.
+- `tests/`: policy, experimental-settings, update-check and Beta 7 checks.
+- `efi/`: source for the embedded EFI diagnostics tool.
+- `nvme/`: compatibility shim source and documented driver transformation.
+- `tools/`: build and independent release-verification scripts.
+
+The app sources and resources match the delivered app. Private development logs, SSH credentials and tester reports are not included. The build reuses the checked-in Apple patch resources and embedded EFI binary; their provenance and separate build steps are described below.
 
 ## EFI diagnostics
 

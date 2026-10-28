@@ -7,7 +7,7 @@ import json
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-NAME = 'MavericksResurrection-1.0-beta.6.1.zip'
+NAME = 'MavericksResurrection-1.0-beta.7.zip'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('archive', nargs='?', type=Path, default=ROOT / 'build' / NAME)
 args = parser.parse_args()

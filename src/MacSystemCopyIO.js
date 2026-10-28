@@ -78,7 +78,7 @@ var MavericksResurrectionMacSystemCopyIO=(function(){
                 guard();dest=destination.readOnly();destGuard=destination.guard();
                 manifest=folder+'/copied-filesystem.jsonl';write(manifest,'');
                 io.progress('verify-copy','Verifying copied Mavericks files and metadata.');
-                command(helper('TreeManifest'),[dest.root],manifest);
+                command(helper('TreeManifest'),['--installed-system',dest.root],manifest);
                 var result=JSON.parse(command(helper('ManifestCompare'),['--installed-system',prepared.manifest,manifest]));
                 destGuard.revalidate();return result;
             },

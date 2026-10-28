@@ -5,14 +5,14 @@ var MavericksResurrectionApplicationFlow = (function () {
     function supportedHost(version) {
         if (typeof version !== 'string' || !/^\d+\.\d+(?:\.\d+)?$/.test(version)) return false;
         var n=version.split('.').map(Number);
-        return n[0]>=12;
+        return n[0]>=11;
     }
     function create(session, ui, initialFolder) {
         function cancelled(stage) { ui.status('Cancelled.');return {completed:false,cancelled:true,stage:stage}; }
         function hardware() {
             ui.status('Checking this Mac and its storage…');
             var inventory=session.inventory([]);
-            if(!supportedHost(inventory.host.version))throw new Error('MavericksResurrection requires macOS Monterey 12 or later.');
+            if(!supportedHost(inventory.host.version))throw new Error('MavericksResurrection requires macOS Big Sur 11 or later.');
             var decision=session.approveHardware(inventory);
             return {inventory:inventory,decision:decision};
         }
@@ -45,7 +45,7 @@ var MavericksResurrectionApplicationFlow = (function () {
         }
         function maintain(remove){
             ui.status('Checking this Mac before maintenance…');var inventory=session.inventory([]);
-            if(!supportedHost(inventory.host.version))throw new Error('MavericksResurrection requires macOS Monterey 12 or later.');
+            if(!supportedHost(inventory.host.version))throw new Error('MavericksResurrection requires macOS Big Sur 11 or later.');
             if(!session.approveMaintenanceHardware(inventory).accepted)return cancelled('hardware');
             ui.status('Looking for existing Mavericks installations…');var found=session.discoverMavericks();
             var selected=ui.chooseMavericks(found);if(!selected)return cancelled('installation');
@@ -67,7 +67,7 @@ var MavericksResurrectionApplicationFlow = (function () {
         }
         function repairUpdates(){
             ui.status('Confirm the Mac model for post-update repair.');var inventory=session.inventory([]);
-            if(!supportedHost(inventory.host.version))throw new Error('MavericksResurrection requires macOS Monterey 12 or later.');
+            if(!supportedHost(inventory.host.version))throw new Error('MavericksResurrection requires macOS Big Sur 11 or later.');
             var model=session.chooseRepairModel(inventory);if(!model)return cancelled('repair-model');
             ui.status('Looking for Mavericks on internal and external Mac OS Extended partitions…');
             var selected=ui.chooseMavericks(session.discoverRepairTargets());if(!selected)return cancelled('repair-installation');
@@ -81,7 +81,7 @@ var MavericksResurrectionApplicationFlow = (function () {
             ui.status('Choose where to save the diagnostic log.');
             if(!session.enableDiagnostics())return cancelled('diagnostic-folder');
             var inventory=session.inventory([]);
-            if(!supportedHost(inventory.host.version))throw new Error('MavericksResurrection requires macOS Monterey 12 or later.');
+            if(!supportedHost(inventory.host.version))throw new Error('MavericksResurrection requires macOS Big Sur 11 or later.');
             ui.status('Looking for existing Mavericks installations…');
             var selected=ui.chooseMavericks(session.discoverMavericks(),true);if(!selected)return cancelled('installation');
             ui.status('Collecting first-boot status and any previously enabled diagnostic output…');

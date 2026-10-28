@@ -46,7 +46,7 @@ var MavericksResurrectionMacFinalVerificationIO=(function(){
                 if(!fm.createDirectoryAtPathWithIntermediateDirectoriesAttributesError($(folder),false,$({NSFilePosixPermissions:448,NSFileOwnerAccountID:0,NSFileGroupOwnerAccountID:0}),null))throw new Error('Cannot create final verification folder.');
                 var manifest=folder+'/filesystem.jsonl',selection=folder+'/selection.json',inspection=folder+'/inspection.json';
                 write(manifest,'');write(selection,JSON.stringify({schema:1,prefixes:plan.prefixes})+'\n');write(inspection,'');
-                command(helper('TreeManifest'),[stage.root],manifest);
+                command(helper('TreeManifest'),['--installed-system',stage.root],manifest);
                 command(helper('ManifestCompare'),['--inspect',selection,manifest],inspection);
                 var result=JSON.parse(read(inspection));result.path=manifest;
                 guards[stage.root].revalidate();return result;

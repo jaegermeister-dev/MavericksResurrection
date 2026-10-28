@@ -9,7 +9,7 @@ var MavericksResurrectionMacPostUpdateRepair=(function(){
         function ordered(v){if(Array.isArray(v))return v.map(ordered);if(v&&typeof v==='object'){var r={};Object.keys(v).sort().forEach(function(k){r[k]=ordered(v[k]);});return r;}return v;}
         function hash(p){guard(stage);return io.sha256(stage.root+'/'+p);}
         function stop(){if(cancelled&&cancelled())throw new Error('Post-update repair cancelled.');}
-        function run(model){
+        function repairAudio(model){
             if(['MacBookPro11,4','MacBookPro11,5'].indexOf(model)<0)throw new Error('No post-update compatibility patches are provided for this model.');
             guard.revalidate();if(store.pending())throw new Error('Recover the unfinished post-update repair first.');stop();
             var assessment=store.assessment(model);if(assessment.alreadyRepaired)return {status:'already-repaired',model:model,components:[]};
@@ -49,7 +49,19 @@ var MavericksResurrectionMacPostUpdateRepair=(function(){
                 throw new Error('Repair failed. The previous patches and caches were restored. '+String(failure));
             }
         }
-        return {run:run,assessment:store.assessment,pending:store.pending,recover:store.recover};
+        function assessment(model){
+            var a=store.assessment(model),d=store.displayAssessment();
+            if(!d.matches){a.components.push(d.path);a.alreadyRepaired=false;a.repairNeeded=true;}
+            a.displayProfile=d;return a;
+        }
+        function run(model){
+            var result=repairAudio(model);stop();guard.revalidate();
+            progress('Checking Retina display scaling…',null);
+            var display=store.applyDisplayProfile();result.displayProfile=display;
+            if(display.changed)result.status='committed';
+            report('post-update.display-profile.verified',display);return result;
+        }
+        return {run:run,assessment:assessment,pending:store.pending,recover:store.recover};
     }
     return {create:create};
 }());
