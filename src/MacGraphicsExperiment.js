@@ -14,7 +14,7 @@ var MavericksResurrectionMacGraphicsExperiment=(function(){
             if(['native-112','original'].indexOf(selection)<0)throw new Error('No graphics-experiment compatibility patches are provided for this model.');
             guard.revalidate();if(store.pending())throw new Error('Recover the unfinished graphics-experiment repair first.');stop();
             var assessment=store.assessment(selection);if(assessment.alreadySelected)return {status:'already-selected',model:model,components:[]};
-            progress('Preparing the experimental graphics profile for '+model+'…',null);
+            progress('Restoring the original graphics power profile for '+model+'…',null);
             var payload='-';stop();
             var root=stage.root,plist=$.NSDictionary.dictionaryWithContentsOfFile($(root+'/System/Library/CoreServices/SystemVersion.plist'));
             if(!plist||plist.isNil())throw new Error('Cannot read this Mavericks installation.');var version=ObjC.deepUnwrap(plist);
@@ -28,7 +28,7 @@ var MavericksResurrectionMacGraphicsExperiment=(function(){
             }
             try{
                 report('graphics-experiment.repair.started',{model:model,components:assessment.components,transaction:pending.id});stop();
-                progress('Changing the experimental graphics profile…',null);store.apply(pending.id,payload);stop();
+                progress('Restoring the original graphics power profile…',null);store.apply(pending.id,payload);stop();
                 var tool={path:'usr/sbin/kextcache',sha256:target.toolSHA256,bytes:io.stat(root+'/usr/sbin/kextcache').bytes};
                 var runtime=load('MacImageRuntime','MavericksResurrectionMacImageRuntime').create(stage,guard,io.sha256,resources,diagnostic,cancelled,{kind:'journaled-maintenance',tool:tool,assertJournal:assertJournal});
                 var executor=load('MacCacheToolExecutor','MavericksResurrectionMacCacheToolExecutor').create(stage,guard,io.sha256,resources,tool,diagnostic);
@@ -45,7 +45,7 @@ var MavericksResurrectionMacGraphicsExperiment=(function(){
                     if(current.id!==pending.id)throw new Error('Another operation replaced this repair.');
                     var restored=store.recover();if(restored.status!=='recovered'||store.pending()!==null)throw new Error('The previous state was not restored.');
                     report('graphics-experiment.repair.rolled-back',{transaction:pending.id});
-                }catch(recoveryFailure){var e=new Error('Repair failed and recovery is unfinished. Reopen MavericksResurrection and select Debug > Graphics experiment for this installation to recover it.');e.recoveryRequired=true;e.operationFailure=String(failure);e.recoveryFailure=String(recoveryFailure);throw e;}
+                }catch(recoveryFailure){var e=new Error('Repair failed and recovery is unfinished. Reopen MavericksResurrection and select Fix post-update issues for this installation to recover it.');e.recoveryRequired=true;e.operationFailure=String(failure);e.recoveryFailure=String(recoveryFailure);throw e;}
                 throw new Error('Repair failed. The previous patches and caches were restored. '+String(failure));
             }
         }

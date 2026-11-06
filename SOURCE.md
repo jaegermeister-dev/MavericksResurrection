@@ -1,16 +1,16 @@
-# Beta 7 source
+# Beta 8 source
 
-This is the source for **MavericksResurrection 1.0 Beta 7, build 107**.
+This is the source for **MavericksResurrection 1.0 Beta 8, build 108**.
 
 The source was first published with Beta 6.1 after a user pointed out that it was missing. Earlier downloads were removed following memory leak reports and because their source had not been published. Beta 6.1 remains available.
 
 ## Release verification
 
-The published source builds every application file and the complete release ZIP byte for byte. Two clean builds in different directories were compared, followed by a build from the exact published source archive. See `release/REPRODUCIBILITY.json`, `release/APP-FILE-HASHES.json` and `SHA256SUMS.txt`.
+The published source builds every application file and the complete release ZIP byte for byte. Two clean builds in different directories were compared, including a build from the accompanying source archive. See `release/REPRODUCIBILITY.json`, `release/APP-FILE-HASHES.json` and `SHA256SUMS.txt`.
 
-The tested Beta 7 passed a fresh installation and first boot on a MacBookPro11,5. Its display profile and usable HiDPI modes matched the native MacBookPro11,3 baseline. The final packaging removes a local build path from `ImageRuntimeRoot.dylib` and updates its checksum and app signatures. Every executable code/data section and runtime binding remains identical to the tested app. The original and rebuilt runtime also passed the same disposable HFS+ image test. A full installation was not repeated for this metadata-only cleanup.
+Beta 8 adds the verified MacBookPro11,4 framebuffer alias to fresh installations and restores it after software updates. The same fix was tested on 11,4 hardware, including graphics, Retina scaling, HDMI video/audio and internal audio. The 11,5 installation and patch configuration is unchanged from Beta 7; its graphics switching issue remains separate.
 
-Beta 7 keeps the activity-log memory fix, adds Big Sur support, corrects protected-folder verification, supplies the display profile through installation and post-update repair, and adds optional update notifications. It does not fix the reported 11,4 boot or 11,5 GPU-switching problems.
+The 11,4 payload changes only byte 0x64d00 from 0x07 to 0x0e in Mavericks' original AppleIntelFramebufferAzul executable. It maps the model's framebuffer ID to the existing Iris Pro layout. The original 13F34 SHA-256 is `e9353f0646e93d733952325f1283985fc829978b54c644482739e65b56b583c4`; the output is `a996bdb1e15908fbd7e5cb1554f46e2aef2b84fc47c98fd162a50dfbc07b7173`. The post-update fixer applies the same change to the supported updated driver without downgrading it. Its original SHA-256 is `dfdc6cca8454732713a1b4d11997d6fda792cfb9e90b58c34e0f5f2b2205c79a`; the output is `630baf6a58d03aea890964f8088be3d5917762556a5034c134e1c96419d5e49e`. Unknown binaries are rejected.
 
 ## Build
 
@@ -27,14 +27,14 @@ Use `--current-clt /path/to/current/CommandLineTools` if the newer toolchain is 
 
 The build compiles the launcher and all host helpers from `src/`, using the per-file settings in `packaging/native-builds.json`. It preserves the tested helpers' compiler versions and signatures. One helper's existing debug UUID is retained only after checking its compiled code hash. Library header padding preserves the tested instruction/data layout while removing the local path. These steps do not change application logic.
 
-Outputs are `build/MavericksResurrection.app`, `build/MavericksResurrection-1.0-beta.7.zip` and `build/APP-FILE-HASHES.json`. ZIP ordering, timestamps and permissions are fixed. The build never launches the app or modifies a Mavericks installation.
+Outputs are `build/MavericksResurrection.app`, `build/MavericksResurrection-1.0-beta.8.zip` and `build/APP-FILE-HASHES.json`. ZIP ordering, timestamps and permissions are fixed. The build never launches the app or modifies a Mavericks installation.
 
 ## Source layout
 
 - `src/`: JavaScript application, native launcher, C/Objective-C helpers, Ruby diagnostics and installer-download script.
 - `resources/`: exact release resources and patch payloads.
 - `packaging/`: app metadata and recorded build settings.
-- `tests/`: policy, experimental-settings, update-check and Beta 7 checks.
+- `tests/`: policy, update-check, framebuffer repair, legacy recovery and model regression checks.
 - `efi/`: source for the embedded EFI diagnostics tool.
 - `nvme/`: compatibility shim source and documented driver transformation.
 - `tools/`: build and independent release-verification scripts.

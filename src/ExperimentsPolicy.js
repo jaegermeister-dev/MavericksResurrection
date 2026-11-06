@@ -3,7 +3,7 @@ var MavericksResurrectionExperimentsPolicy=(function(){
  'use strict';
  var definitions=[
   {id:'graphics-power',title:'Use the MacBookPro11,2 graphics power profile',description:'Adds the existing Mavericks Intel graphics power-management profile for MacBookPro11,4. Does not change the display driver.',conflicts:[]},
-  {id:'intel-framebuffer',title:'Try Intel framebuffer compatibility',description:'Maps the MacBookPro11,4 framebuffer ID to Mavericks’ existing Iris Pro layout. May help a white screen, but is untested and may not boot.',conflicts:[]},
+  {id:'intel-framebuffer',title:'Try Intel framebuffer compatibility',description:'Maps the MacBookPro11,4 framebuffer ID to Mavericks’ existing Iris Pro layout.',conflicts:[]},
   {id:'cpu-power',title:'Use the MacBookPro11,2 CPU power profile',description:'Adds the existing Mavericks CPU power-management profile for MacBookPro11,4. This is separate from the graphics power profile.',conflicts:[]}
  ];
  function conflicts(id,selected,defs){

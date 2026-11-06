@@ -15,8 +15,7 @@ var MavericksResurrectionMacAdvancedTools=(function(){
   function apple(s){return '"'+s.replace(/\\/g,'\\\\').replace(/"/g,'\\"').replace(/\n/g,'\\n').replace(/\r/g,'\\r')+'"';}
   var launcher={stage:function(r,request,events,errors){
    if(request.action.indexOf('advanced-')!==0)throw Error('Unknown advanced action.');
-   var graphics=request.action.indexOf('advanced-graphics-')===0;
-   var args=graphics?['/usr/bin/osascript','-l','JavaScript',r+'/src/GraphicsWorker.js',r,JSON.stringify(request)]:['/usr/bin/ruby',r+'/src/AdvancedWorker.rb',ObjC.unwrap($.NSUserName()),JSON.stringify(request)];
+   var args=['/usr/bin/ruby',r+'/src/AdvancedWorker.rb',ObjC.unwrap($.NSUserName()),JSON.stringify(request)];
    return {executable:'/usr/bin/osascript',arguments:['-e','do shell script '+apple(args.map(shell).join(' ')+' > '+shell(events)+' 2> '+shell(errors))+' with administrator privileges']};
   }};
   function execute(request){return m.runner.prepareSystem(resources,request,session.logger,launcher);}
@@ -48,43 +47,9 @@ var MavericksResurrectionMacAdvancedTools=(function(){
    if(modal(a)!==1000)return;
    saved(execute({action:'advanced-collect',efi:e,case:name,observation:ObjC.unwrap(input.stringValue)}));
   }
-  function graphics(){
-   var discovered=session.discoverRepairTargets(),t=m.dialogs.chooseMavericks(discovered,false);if(!t)return;
-   var inv=session.inventory([]),model=session.chooseRepairModel(inv);if(!model)return;
-   if(model!=='MacBookPro11,4'){tell('MacBookPro11,4 only','These experiments are only for a confirmed MacBookPro11,4 installation. They do not apply to MacBookPro11,5 or other models.');return;}
-   var workspace=m.sourceDialogs.maintenanceWorkspace();
-   function request(action,selection){return execute({action:action,selection:selection||'000',target:t,model:model,confirmed:true,workspace:workspace,protectedPaths:[resources,workspace],protectedIDs:session.logger.protectedVolumeIDs()});}
-   var inspected=request('advanced-graphics-inspect');
-   if(inspected.pending){
-    var legacy=inspected.pending.legacy;
-    if(confirm(legacy?'Restore the previous graphics setting':'Recover unfinished experimental changes',t.name+' — '+t.device+'\n\n'+(legacy?'Restore the previous Beta 5 graphics transaction before using these settings.':'A previous change did not finish. Restore its saved files and caches before changing any settings.'),'Restore saved state')){request('advanced-graphics-recover');tell('Previous state restored','Reopen Debug and select this installation to change its experimental settings.');}return;
-   }
-   var code=$.NSString.stringWithContentsOfFileEncodingError($(resources+'/src/ExperimentsPolicy.js'),$.NSUTF8StringEncoding,null);
-   if(!code||code.isNil())throw Error('Experimental settings are unavailable.');
-   var policy=Function(ObjC.unwrap(code)+'\nreturn MavericksResurrectionExperimentsPolicy;')();
-   var current=policy.decode(inspected.assessment.currentSelection);policy.validate(current);
-   var a=m.dialogs.alert('MacBookPro11,4 experimental settings',t.name+' — '+t.device+'\n\nThese settings apply only to this Mavericks installation. Checked options were read from its saved configuration and verified against its files.\n\nAll three current options can be combined. Try one change at a time so the result is clear. They are untested on 11,4 hardware and may not resolve a boot failure.',['Apply to this installation','Cancel']);
-   var panel=$.NSView.alloc.mrInitWithXYWidthHeight(0,0,590,304),boxes=[],notes=[];
-   function label(y,h,text){var v=$.NSTextField.alloc.mrInitWithXYWidthHeight(22,y,566,h);v.stringValue=$(text);v.editable=false;v.selectable=false;v.bezeled=false;v.drawsBackground=false;v.cell.wraps=true;v.font=$.NSFont.systemFontOfSize(11);panel.addSubview(v);return v;}
-   function selected(){return policy.definitions.filter(function(d,i){return Number(boxes[i].state)===1;}).map(function(d){return d.id;});}
-   function refresh(){var choices=selected();policy.definitions.forEach(function(d,i){var other=policy.conflicts(d.id,choices);boxes[i].enabled=Number(boxes[i].state)===1||other.length===0;notes[i].stringValue=$(d.description+(other.length?' Uncheck '+other.map(function(id){return policy.definitions.filter(function(x){return x.id===id;})[0].title;}).join(', ')+' to use this option.':''));});}
-   var className='MavericksResurrectionExperimentChecks'+ObjC.unwrap($.NSUUID.UUID.UUIDString).replace(/-/g,'');
-   ObjC.registerSubclass({name:className,superclass:'NSObject',methods:{'changed:':{types:['void',['id']],implementation:function(){refresh();}}}});
-   var delegate=$.NSClassFromString(className).alloc.init;
-   policy.definitions.forEach(function(d,i){var y=270-i*86,b=$.NSButton.alloc.mrInitWithXYWidthHeight(0,y,590,26);b.setButtonType($.NSSwitchButton);b.title=$(d.title);b.state=current.indexOf(d.id)>=0?1:0;b.target=delegate;b.action='changed:';panel.addSubview(b);boxes.push(b);notes.push(label(y-50,49,d.description));});
-   label(0,43,'Untick an option to restore its saved original files. Changes are saved on this installation, so reopening the app or selecting a different disk shows that installation’s settings.');
-   refresh();a.accessoryView=panel;if(modal(a)!==1000)return;
-   var selection=policy.encode(selected());
-   if(selection===inspected.assessment.currentSelection){tell('No change needed','This installation already has the selected settings.');return;}
-   request('advanced-graphics-apply',selection);
-   var verified=request('advanced-graphics-inspect');
-   if(verified.pending||verified.assessment.currentSelection!==selection)throw Error('Experimental configuration could not be confirmed. Reopen Debug to inspect or recover it.');
-   tell('Experimental settings applied','The selected files and rebuilt caches were verified on '+t.name+'.\n\nBoot Mavericks to test the result. Return here and select the same installation to disable or change its experiments without reinstalling. This does not confirm hardware compatibility.');
-  }
-
   return {open:function(){
-   var action=choose('Debug — Advanced users only','These tools help investigate boot failures. These optional MacBookPro11,4 experiments are untested and may not help. Normal installation settings are unchanged unless you explicitly apply them.',[
-    {name:'Collect read-only filesystem and installation diagnostics',run:readonly},{name:'Prepare the EFI diagnostic / boot tool',run:prepare},{name:'Collect EFI reports',run:collect},{name:'MacBookPro11,4 experimental settings',run:graphics}
+   var action=choose('Debug — Advanced users only','Collect installation diagnostics, prepare an EFI diagnostic tool, or collect its saved reports. These tools do not apply graphics patches.',[
+    {name:'Collect read-only filesystem and installation diagnostics',run:readonly},{name:'Prepare the EFI diagnostic / boot tool',run:prepare},{name:'Collect EFI reports',run:collect}
    ],function(a){return a.name;});if(action)action.run();
   }};
  }

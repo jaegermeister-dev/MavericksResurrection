@@ -43,9 +43,7 @@ var MavericksMacDialogs = (function () {
                 'A normal Apple Mavericks installer is recommended for this Mac. You may use this app for an unpatched installation, but support is provided only for MacBookPro11,4 and MacBookPro11,5. If this app does not work on an officially supported Mac, use a normal Mavericks installer.', ['Continue','Cancel']).runModal)===1000;
             return {accepted:stock,profile:profile,approvals:null};
         }
-        if(profile==='patched-11,5')return {accepted:true,profile:profile,approvals:null};
-        if(profile==='patched-11,4')return {accepted:Number(alert('MacBookPro11,4 is untested',
-            'This model receives the shared compatibility fixes and boot changes. MacBookPro11,5-specific graphics and power patches are not applied. Hardware testing has been performed on MacBookPro11,5 only.', ['Continue','Cancel']).runModal)===1000,profile:profile,approvals:null};
+        if(profile==='patched-11,4'||profile==='patched-11,5')return {accepted:true,profile:profile,approvals:null};
         var proceed=Number(alert('The detected Mac is not supported',
             'Detected model: '+host.model+'\n\nYou can continue if the Mac running this app is not the Mac intended for Mavericks. Confirm the actual target model in the next model dialog. If this is the intended Mac, check the detected identifier carefully and correct it only if it is wrong.\n\nThe confirmed target must be MacBookPro11,4, MacBookPro11,5 or an officially Mavericks-compatible Mac. Support is provided only for MacBookPro11,4 and MacBookPro11,5.', ['Continue','Cancel']).runModal)===1000;
         return {accepted:proceed,profile:profile,approvals:proceed?{model:host.model,creationHostOnly:true}:null};

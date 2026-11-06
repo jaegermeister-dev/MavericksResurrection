@@ -53,7 +53,7 @@ function run(argv){
                 var repair=load('MacPostUpdateRepair','MavericksResurrectionMacPostUpdateRepair').create(opened.stage,opened.guard,io,resources,load,
                     function(m,n){emit({type:'progress',phase:'repair-updates',message:m,percent:typeof n==='number'?n:null});},cancelled,report);
                 if(request.action==='inspect-repair')result={kind:'mavericks-repair-inspection',identity:opened.identity,version:opened.version,assessment:repair.assessment(request.model)};
-                else result={kind:'mavericks-post-update-repair',identity:opened.identity,version:opened.version,repair:request.action==='recover-repair'?repair.recover():repair.run(request.model)};
+                else result={kind:'mavericks-post-update-repair',identity:opened.identity,version:opened.version,repair:request.action==='recover-repair'?repair.recover(request.model):repair.run(request.model)};
             }else{
             var snapshot=load('MacNVMeSnapshotIO','MavericksResurrectionMacNVMeSnapshotIO');
             if(request.action==='inspect-installation'){

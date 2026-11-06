@@ -1,11 +1,12 @@
 {
-  "release": "1.0 Beta 7",
+  "release": "1.0 Beta 8",
+  "build": "108",
   "cleanBuildsCompared": 2,
   "differentSourceAndOutputDirectories": true,
   "allAppFilesByteIdentical": true,
   "identicalAppFiles": 173,
   "completeZipByteIdentical": true,
-  "archiveSHA256": "e49cb3d5a614f62c3fe07703631aebd83a0fc8e2dc0067a52383b4f68f8de42a",
+  "archiveSHA256": "ab0e02aa29ce5e8eb045cac128d143e7a32f4ca29ab2a8113ac34e83b9dfae03",
   "toolchain": {
     "macOSBuild": "25G241",
     "toolchains": {
@@ -19,97 +20,20 @@
       }
     }
   },
-  "changesAfterFreshInstallationTest": [
-    "Contents/MacOS/MavericksResurrection",
-    "Contents/Resources/BundledTools/ImageRuntimeRoot.dylib",
-    "Contents/Resources/assets/NativeTools.json",
-    "Contents/_CodeSignature/CodeResources"
-  ],
-  "nativeMetadataComparison": {
-    "Contents/MacOS/MavericksResurrection": {
-      "allMachOSectionsIdentical": true,
-      "runtimeLoadCommandsIdentical": true,
-      "allCodeDataAndLinkeditBytesIdentical": true,
-      "onlyIdentificationHeaderAndSignatureDiffer": true
-    },
-    "Contents/Resources/BundledTools/ImageRuntimeRoot.dylib": {
-      "allMachOSectionsIdentical": true,
-      "runtimeLoadCommandsIdentical": true,
-      "allCodeDataAndLinkeditBytesIdentical": true,
-      "onlyIdentificationHeaderAndSignatureDiffer": true
-    }
+  "nativeFramebufferFixture": {
+    "passed": true,
+    "tests": [
+      "fresh Beta 8 alias adopted without changing driver bytes",
+      "all eight old selections migrate to framebuffer-only using exact saved originals",
+      "original 13F34 enable and repeat assessment",
+      "interrupted reapply restores updated driver, old selected state and caches",
+      "known update reapply retains updated original and is idempotent",
+      "disable restores updated Apple driver, never the old pre-update driver",
+      "unknown unpatched and modified enabled binaries fail without changing managed files",
+      "damaged prior rollback snapshot blocks automatic reapply"
+    ],
+    "realCacheRebuildTested": false,
+    "scope": "packaged native helper on disposable HFS+ image only"
   },
-  "privateRuntimeFixture": {
-    "usedDisposableImage": true,
-    "installationsModified": false,
-    "runs": {
-      "tested": {
-        "exitCode": 0,
-        "stdout": "PRIVATE_ROOT_AND_OPTIONAL_LIBRARY_CHECKS_PASSED\n",
-        "stderr": "GM_HOST_WRITES_DENIED\nGM_HOST_RUNTIME_ROOTED\nMR_OPTIONAL_SPINDUMP_UNAVAILABLE\n",
-        "hostWriteCanaryDenied": true,
-        "privateImageWritePassed": true
-      },
-      "privacy-cleaned": {
-        "exitCode": 0,
-        "stdout": "PRIVATE_ROOT_AND_OPTIONAL_LIBRARY_CHECKS_PASSED\n",
-        "stderr": "GM_HOST_WRITES_DENIED\nGM_HOST_RUNTIME_ROOTED\nMR_OPTIONAL_SPINDUMP_UNAVAILABLE\n",
-        "hostWriteCanaryDenied": true,
-        "privateImageWritePassed": true
-      }
-    },
-    "sameBehaviour": true,
-    "fixtureDetached": true
-  },
-  "targetedChecks": {
-    "policy.cjs": {
-      "passed": true,
-      "oneDriver": true,
-      "cacheInstallRemoveReinstall": true,
-      "repairPreservesNVMe": true,
-      "legacyAbsentSlotsPreserved": true,
-      "HFSListAndMountPolicy": true,
-      "modelGate": true,
-      "allJavaScriptParses": true
-    },
-    "experiments.cjs": {
-      "passed": true,
-      "actualReleased244BundleInventory": true,
-      "actualAGPMIdentifier": true,
-      "NVMePreserved": true,
-      "missingDriverBlocksPublication": true,
-      "roundTripFailureBlocksPublication": true,
-      "allEightConfigurationsSupported": true,
-      "conflictsSymmetricAndValidated": true
-    },
-    "beta7.cjs": {
-      "passed": true,
-      "displayProfileFresh114and115": true,
-      "stock113Unchanged": true,
-      "BigSurHostGate": true,
-      "TextKit1Preserved": true,
-      "updaterNoMissingProtocol": true,
-      "repairIncludesDisplayAssessment": true
-    },
-    "updates.cjs": {
-      "passed": true,
-      "numericVersionOrdering": true,
-      "stableAfterBeta": true,
-      "skipOnlyChosenRelease": true,
-      "olderAndCurrentSuppressed": true,
-      "untrustedReleaseURLsRejected": true,
-      "draftsAndUnpublishedRejected": true,
-      "sourceParses": true
-    }
-  },
-  "freshInstallBeforeMetadataCleanup": {
-    "model": "MacBookPro11,5",
-    "system": "10.9.5 build 13F34",
-    "bootedWithoutHDMI": true,
-    "setupCompleted": true,
-    "allSixFirstBootTasksPassed": true,
-    "profileSHA256": "1614dce4aa68682251177bd24ed6dec9fb00db1a0b4e9fa4972f4f77d5295c22",
-    "HiDPIModesMatchNativeMacBookPro113": true
-  },
-  "fullInstallationRerunAfterMetadataCleanup": false
+  "model115HandlingUnchanged": true
 }

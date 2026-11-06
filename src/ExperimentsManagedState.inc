@@ -26,14 +26,24 @@
     NSDictionary *donor=v[@"IOKitPersonalities"][@"AGPM"][@"Machines"][@"Mac-3CBD00234E554E41"];
     if(![donor isKindOfClass:[NSDictionary class]]||donor.count!=1||![donor[@"IGPU"]isKindOfClass:[NSDictionary class]])gmFail(@"The original MacBookPro11,2 Intel graphics power profile was not found.");return v;
 }
+- (BOOL)knownFramebufferInput:(NSString *)hash {
+    return [@[@"e9353f0646e93d733952325f1283985fc829978b54c644482739e65b56b583c4",
+              @"dfdc6cca8454732713a1b4d11997d6fda792cfb9e90b58c34e0f5f2b2205c79a"]containsObject:hash];
+}
+- (BOOL)knownFramebufferOutput:(NSString *)hash {
+    return [@[@"a996bdb1e15908fbd7e5cb1554f46e2aef2b84fc47c98fd162a50dfbc07b7173",
+              @"630baf6a58d03aea890964f8088be3d5917762556a5034c134e1c96419d5e49e"]containsObject:hash];
+}
 - (NSData *)enabledData:(NSUInteger)i {
     if(i==0){NSMutableDictionary *p=[self agpmPlist];NSMutableDictionary *m=p[@"IOKitPersonalities"][@"AGPM"][@"Machines"];m[@"Mac-06F11FD93F0323C5"]=m[@"Mac-3CBD00234E554E41"];return [NSPropertyListSerialization dataWithPropertyList:p format:NSPropertyListXMLFormat_v1_0 options:0 error:NULL];}
     if(i==1){
         NSString *p=[self path:gmSlots()[1] absent:NO];gmPlain(p,NO);NSMutableData *data=[NSMutableData dataWithContentsOfFile:p];
-        if(data.length!=585776||![gmHashData(data)isEqual:@"e9353f0646e93d733952325f1283985fc829978b54c644482739e65b56b583c4"])gmFail(@"This Intel framebuffer version is not supported by the experiment. No binary was changed.");
+        if(data.length==585776&&[self knownFramebufferOutput:gmHashData(data)])return data;
+        if(data.length!=585776||![self knownFramebufferInput:gmHashData(data)])gmFail(@"This Intel framebuffer version is not supported. No binary was changed.");
         unsigned char *b=data.mutableBytes;const unsigned char expected[]={0x07,0x00,0x26,0x0d};
         if(memcmp(b+0x64d00,expected,4))gmFail(@"The original Iris Pro framebuffer entry differs.");
-        b[0x64d00]=0x0e;return data;
+        b[0x64d00]=0x0e;
+        if(![self knownFramebufferOutput:gmHashData(data)])gmFail(@"The prepared Iris Pro framebuffer differs from its verified output.");return data;
     }
     NSString *donor=[self path:@"System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Resources/Mac-3CBD00234E554E41.plist" absent:NO];gmPlain(donor,NO);
     NSData *d=[NSData dataWithContentsOfFile:donor];
@@ -44,14 +54,20 @@
     if(![gmChoices()containsObject:selection])gmFail(@"Unknown experimental configuration.");
     NSDictionary *state=[self managedState];NSString *current=state[@"selection"];NSMutableArray *changed=[NSMutableArray array],*components=[NSMutableArray array],*enabled=[NSMutableArray array];
     for(NSUInteger i=0;i<3;i++){
-        NSString *key=gmExperimentIDs()[i];BOOL was=[current characterAtIndex:i]=='1',want=[selection characterAtIndex:i]=='1';
+        NSString *key=gmExperimentIDs()[i];BOOL was=[current characterAtIndex:i]=='1',want=[selection characterAtIndex:i]=='1',reapply=NO;
         if(was){
-            if(!gmUUID(state[@"originals"][key])||![state[@"appliedHashes"][key]isKindOfClass:[NSString class]]||![[self fileHash:gmSlots()[i]]isEqual:state[@"appliedHashes"][key]])gmFail([NSString stringWithFormat:@"The saved %@ experiment no longer matches this installation. Collect diagnostics before changing it; no configuration was guessed.",key]);
-            [enabled addObject:key];
+            if(!gmUUID(state[@"originals"][key])||![state[@"appliedHashes"][key]isKindOfClass:[NSString class]])gmFail(@"The saved experimental configuration is incomplete.");
+            if(![[self fileHash:gmSlots()[i]]isEqual:state[@"appliedHashes"][key]]){
+                // A known Apple update can replace an enabled alias. Keep the
+                // selected setting, but capture the UPDATED original on reapply.
+                reapply=i==1&&want&&[self knownFramebufferOutput:state[@"appliedHashes"][key]]&&[self knownFramebufferInput:[self fileHash:gmSlots()[i]]];
+                if(!reapply)gmFail([NSString stringWithFormat:@"The saved %@ experiment no longer matches this installation. Collect diagnostics before changing it; no configuration was guessed.",key]);
+                (void)[self verify:state[@"originals"][key]];
+            }else [enabled addObject:key];
         }
-        if(was!=want){[changed addObject:@(i)];[components addObject:gmSlots()[i]];if(want)(void)[self enabledData:i];else (void)[self verify:state[@"originals"][key]];}
+        if(was!=want||reapply){[changed addObject:@(i)];[components addObject:gmSlots()[i]];if(want)(void)[self enabledData:i];else (void)[self verify:state[@"originals"][key]];}
     }
-    return @{@"selection":selection,@"currentSelection":current,@"enabled":enabled,@"alreadySelected":@([current isEqual:selection]),@"changedIndices":changed,@"components":components,@"pending":[self pending]?:[NSNull null],@"volumeUUID":volumeID};
+    return @{@"selection":selection,@"currentSelection":current,@"enabled":enabled,@"alreadySelected":@(changed.count==0),@"changedIndices":changed,@"components":components,@"pending":[self pending]?:[NSNull null],@"volumeUUID":volumeID};
 }
 - (NSDictionary *)ownedChange:(NSString *)transaction {
     NSDictionary *p=[self pending];if(!gmUUID(transaction)||![p[@"id"]isEqual:transaction]||![p[@"owner"]isEqual:gmProcess(getppid())]||![p[@"repairInputs"]isEqual:[self repairInputs]])gmFail(@"This worker does not own the experiment transaction.");return p;

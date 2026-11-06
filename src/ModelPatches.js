@@ -66,9 +66,15 @@ var MavericksModelPatches = (function () {
             !Array.isArray(catalog.components)) throw new Error('Invalid released model payload.');
         entriesCheck(catalog.archiveEntries, false);
         var expected = plans.plan('MacBookPro11,5', 'Mac-06F11F11946D27C5', 'direct').installedPaths;
+        plans.plan('MacBookPro11,4', 'Mac-06F11FD93F0323C5', 'direct').installedPaths.forEach(function (c) {
+            if (!expected.some(function (e) { return e.source === c.source && e.target === c.target; })) expected.push(c);
+        });
         if (catalog.components.length !== expected.length) throw new Error('Released component count differs.');
         catalog.components.forEach(function (component, i) {
             if (component.source !== expected[i].source || component.target !== expected[i].target) throw new Error('Released component destination differs.');
+            if (component.source.indexOf('payload/model-11,4/') === 0 &&
+                (component.sourceInputSHA256 !== 'e9353f0646e93d733952325f1283985fc829978b54c644482739e65b56b583c4' || component.entries.length !== 1 ||
+                 component.entries[0].sha256 !== 'a996bdb1e15908fbd7e5cb1554f46e2aef2b84fc47c98fd162a50dfbc07b7173' || component.entries[0].bytes !== 585776)) throw new Error('The 11,4 framebuffer payload differs.');
             entriesCheck(component.entries, true);
             component.entries.forEach(function (e) { if (e.uid !== 0 || e.gid !== 0) throw new Error('Installed repairs must be owned by root:wheel.'); });
         });

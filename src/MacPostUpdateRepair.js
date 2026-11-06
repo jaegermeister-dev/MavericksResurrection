@@ -49,19 +49,79 @@ var MavericksResurrectionMacPostUpdateRepair=(function(){
                 throw new Error('Repair failed. The previous patches and caches were restored. '+String(failure));
             }
         }
+        function graphicsStores(model){
+            if(model!=='MacBookPro11,4')return null;
+            return {
+                legacy:load('MacGraphicsSnapshotIO','MavericksResurrectionMacGraphicsSnapshotIO').create(stage,guard,io,resources,diagnostic),
+                current:load('MacExperiments','MavericksResurrectionMacExperiments').create(stage,guard,io,resources,load,progress,cancelled,diagnostic)
+            };
+        }
+        function pending(model){
+            var normal=store.pending();
+            if(model!=='MacBookPro11,4')return normal;
+            var g=graphicsStores(model),old=g.legacy.pending(),current=g.current.pending();
+            var found=[normal?{kind:'normal',record:normal}:null,old?{kind:'legacy-graphics',record:old}:null,current?{kind:'graphics',record:current}:null].filter(function(p){return !!p;});
+            if(found.length>1)throw new Error('More than one unfinished repair was found. Collect diagnostics before continuing; no saved files were changed.');
+            return found.length?found[0]:null;
+        }
+        function recover(model){
+            if(model!=='MacBookPro11,4')return store.recover();
+            var p=pending(model);if(!p)return {status:'nothing-to-recover'};
+            if(p.kind==='normal')return store.recover();
+            var g=graphicsStores(model);
+            return p.kind==='legacy-graphics'?g.legacy.recover():g.current.recover();
+        }
+        function framebufferRepair(model){
+            var g=graphicsStores(model);if(!g)return null;
+            if(g.legacy.pending()||g.current.pending())throw new Error('Recover the unfinished graphics change using Fix post-update issues first.');
+            if(g.legacy.state().selection==='native-112'){
+                var a=g.legacy.assessment('original');
+                return {legacy:true,assessment:{alreadySelected:false,components:a.components.concat(['System/Library/Extensions/AppleIntelFramebufferAzul.kext/Contents/MacOS/AppleIntelFramebufferAzul'])}};
+            }
+            // The standard 11,4 setup always includes the framebuffer alias.
+            // Retire older optional AGPM/CPU selections through their verified
+            // rollback snapshots; never guess or discard an altered original.
+            return {engine:g.current,selection:'010',assessment:g.current.assessment('010')};
+        }
         function assessment(model){
+            if(model==='MacBookPro11,4'){
+                var unfinished=pending(model);
+                if(unfinished)return {model:model,pending:unfinished,alreadyRepaired:false,repairNeeded:true,components:[]};
+            }
             var a=store.assessment(model),d=store.displayAssessment();
             if(!d.matches){a.components.push(d.path);a.alreadyRepaired=false;a.repairNeeded=true;}
+            if(!a.pending){var f=framebufferRepair(model);if(f&&!f.assessment.alreadySelected){
+                a.components=a.components.concat(f.assessment.components);a.alreadyRepaired=false;a.repairNeeded=true;
+                a.framebufferRepairRequired=true;
+            }}
             a.displayProfile=d;return a;
         }
         function run(model){
-            var result=repairAudio(model);stop();guard.revalidate();
+            // Use the existing experiment snapshot/cache transaction first; the
+            // normal repair then leaves a final cache receipt for all components.
+            // Each completed phase is durable and a retry can safely resume.
+            guard.revalidate();if(pending(model))throw new Error('Recover the unfinished post-update repair first.');
+            var f=framebufferRepair(model),framebuffer=null;
+            if(f&&f.legacy){
+                progress('Restoring the original graphics power profile…',null);
+                var legacy=load('MacGraphicsExperiment','MavericksResurrectionMacGraphicsExperiment').create(stage,guard,io,resources,load,progress,cancelled,diagnostic);
+                report('post-update.legacy-graphics.restored',legacy.run('original'));
+                f=framebufferRepair(model);
+            }
+            if(f){progress('Checking Intel framebuffer compatibility…',null);framebuffer=f.engine.run(f.selection);report('post-update.framebuffer.verified',framebuffer);}
+            var result;
+            try{result=repairAudio(model);}catch(error){
+                if(framebuffer&&framebuffer.status==='committed')throw new Error('Intel framebuffer compatibility was restored, but the remaining post-update repair failed: '+String(error));
+                throw error;
+            }
+            if(framebuffer){result.framebuffer=framebuffer;if(framebuffer.status==='committed')result.status='committed';}
+            stop();guard.revalidate();
             progress('Checking Retina display scaling…',null);
             var display=store.applyDisplayProfile();result.displayProfile=display;
             if(display.changed)result.status='committed';
             report('post-update.display-profile.verified',display);return result;
         }
-        return {run:run,assessment:assessment,pending:store.pending,recover:store.recover};
+        return {run:run,assessment:assessment,pending:pending,recover:recover};
     }
     return {create:create};
 }());

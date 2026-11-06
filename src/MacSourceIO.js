@@ -601,6 +601,7 @@ var MavericksMacSourceIO = (function () {
                 var source = payload + '/' + component.source;
                 verifyTree(source, componentSourceEntries(state.catalog, component), false, true);
                 var target = installedParent(stage, component.target);
+                if (component.sourceInputSHA256 && (stat(target).kind !== 'file' || sha256(target) !== component.sourceInputSHA256)) throw new Error('The original 11,4 framebuffer differs; no replacement was made.');
                 var temporary = target + '.mavericks-app-new', previous = target + '.mavericks-app-original';
                 if (exists(temporary) || exists(previous)) throw new Error('An unfinished model replacement was retained in the private image.');
                 var hadOriginal = exists(target), movedOriginal = false, installedNew = false, error = Ref();

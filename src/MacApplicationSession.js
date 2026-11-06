@@ -38,7 +38,6 @@ var MavericksResurrectionMacApplicationSession = (function () {
                 var choice=modules.dialogs.chooseInstallModel(inventory.host,function(text){return modules.installModel.select(inventory.host,text,modules.compatibility);});
                 if(!choice)return null;
                 if(['MacBookPro11,4','MacBookPro11,5'].indexOf(choice.model)<0){modules.dialogs.alert('No compatibility repair for this model','These post-update patches are for MacBookPro11,4 and MacBookPro11,5. Macs that officially support Mavericks do not need these model-specific patches.',['OK']).runModal;return null;}
-                if(choice.model==='MacBookPro11,4'&&Number(modules.dialogs.alert('MacBookPro11,4 is untested','This uses the existing MacBookPro11,4 patch selection. Hardware testing has been performed on MacBookPro11,5 only.',['Continue','Cancel']).runModal)!==1000)return null;
                 return choice.model;
             },
             discoverRepairTargets:function(){return maintenanceRequest('list-repair-installations');},

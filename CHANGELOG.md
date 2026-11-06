@@ -1,3 +1,7 @@
+# 1.0 Beta 8
+
+MacBookPro11,4 boot and display issues have now been fully fixed.
+
 # 1.0 Beta 7
 
 Added Big Sur support and fixed installation verification failing on protected folders such as .Spotlight-V100. SIP can stay enabled.

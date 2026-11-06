@@ -14,7 +14,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE_NAME = 'MavericksResurrection-1.0-beta.7.zip'
+ARCHIVE_NAME = 'MavericksResurrection-1.0-beta.8.zip'
 ENV = {k: v for k, v in os.environ.items()
        if k not in {'SDKROOT', 'MACOSX_DEPLOYMENT_TARGET', 'CPATH', 'C_INCLUDE_PATH',
                     'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH', 'CFLAGS', 'LDFLAGS'}

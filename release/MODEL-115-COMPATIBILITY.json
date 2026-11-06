@@ -1,0 +1,53 @@
+{
+  "publicBaselineCommit": "fdeaf482db5d7fb7af8eb9b242619a3011785e5f",
+  "unchangedFiles": {
+    "src/ModelInventory.h": "5abf412372d63d00a0a78e79c96cf6063361ddea70dc402cde6081b79e4e06b4",
+    "src/PostUpdateSnapshotStore.m": "e6e2c75dc507afae8a13197a0a3ce9f2a8cdeaf006dfbbe76a2527fb3bb75c6c",
+    "src/PostUpdateManagedState.inc": "8bf59cf4d65828f40348210a42d5f57a536f7e864025c98d9340af005b4b4d5b",
+    "src/DisplayProfileInventory.h": "00103262e0b2b4aab2091b388c31bcee6ef5662636423bbb9e98a04174912a42",
+    "src/DisplayProfileRepair.inc": "852d719b10a5a3ff35861117aaf9fe00c225d8bca735141dc11f4ad8a194a96b",
+    "src/PostUpdateCachePreparation.js": "dc3f16b6d82faa64db08409a056971d664c4f99602acb9a83d8936d68cb3c671",
+    "src/PostUpdateCachePlan.js": "c0dbf2a785acd1dcf76389fa2754bc7ec3fc133bda1e61a1eda5e64de86a00d8",
+    "src/CachePreparation.js": "269718d7356caba4034f73a3188eec6bd45567d1e39a9a35a69dc6683867b3dd",
+    "src/BootPreparation.js": "739602c77bce45219be91d0e7cbee73391fc6c9086d7b3d431e836eb0388cee2",
+    "src/FinalVerification.js": "fce8c76c22cfd7ced45a5096bb165ddc4ac7d129489c443c85e8591e2162a34c",
+    "src/FirstBootSetup.m": "e0e35dcd47fb3ee54699dce8613475ee20a3eef753fa2c97d29a5203c1038be4",
+    "src/StagePackages.js": "63ef045e05393745e8389276e8ce3cddf41168d1b235bcc379f25afd12cdb04c",
+    "src/DirectWorker.js": "42453ef698b975cb822b4523f324913301686cceb82ff68859bf46fda3d992cf",
+    "src/StageWorker.js": "6235a2410f7b81601746fbbac85b50534051b759587040720de7a6952eadc006",
+    "src/NVMePolicy.js": "9d4aeff52bbb7ae76c6d8abb602b2ae93c47d0335e90eff269f087a45b2e63c9",
+    "src/MacNVMeMaintenance.js": "124600be888b35d2b7c0dafbd0f3650c08099911467000e7e9d721593817f1db",
+    "src/NVMeManagedState.inc": "e826a4c200df15bd5436fc8800e7e894bd10db35c809275008d0615a49cf7dfa",
+    "resources/assets/CacheInputs.json": "b44d1f269cfd1ca628acab1db7a90b99a1d398de07c0e8ece65a9c1574fc8e11",
+    "resources/BundledInputs/NVMe-Driver-High-Sierra-R3.tar.gz": "9bc47b29d35cb7168ecf5edd877c451e5acce235a582cb0f6fc3b76c3a06087f"
+  },
+  "same115Behavior": {
+    "patchPlanComponentsProgressAndReceiptIdentical": true,
+    "selectedComponents": 17
+  },
+  "commonModelAudioCacheRepairBodyIdentical": true,
+  "displayRepairTailIdentical": true,
+  "reviewedChangedSourceFiles": [
+    "AdvancedEFISession.rb",
+    "ExperimentsManagedState.inc",
+    "ExperimentsPolicy.js",
+    "MacAdvancedTools.js",
+    "MacApplicationSession.js",
+    "MacDialogs.js",
+    "MacExperiments.js",
+    "MacGraphicsExperiment.js",
+    "MacMainWindow.js",
+    "MacPostUpdateRepair.js",
+    "MacSourceIO.js",
+    "Main.js",
+    "MaintenanceWorker.js",
+    "ModelPatches.js",
+    "PatchPlan.js",
+    "Policy.js"
+  ],
+  "privatePathsInBuild": [],
+  "releaseBranding": "1.0 Beta 8 (108)",
+  "scope": "11,5 installation patches, cache/boot handling, NVMe and post-update behavior unchanged; shared UI/version text changes are separate.",
+  "live115MavericksModified": false,
+  "full115HardwareRetestRequired": false
+}

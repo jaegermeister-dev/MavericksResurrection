@@ -13,8 +13,7 @@ var MavericksPolicy = (function () {
     function confirmed(text) { return typeof text === 'string' && text.trim().toLowerCase() === 'confirm'; }
     function hostWarning(model, board, compatibility) {
         if (profile(model, board, compatibility) === 'stock') return '';
-        if (model === 'MacBookPro11,4') return 'MacBookPro11,4 has not been tested. Please report any issues.';
-        if (model === 'MacBookPro11,5') return '';
+        if (knownModel(model)) return '';
         return 'PROCEEDING IS NOT RECOMMENDED. This app was made for MacBookPro11,4 and MacBookPro11,5. Your Mac is ' +
             model + '. It is not in the verified Mavericks compatibility data. A stock installation will be attempted without the 11,4/11,5-specific patches; it may not boot or work correctly. Back up important files. Continue only if you accept these risks.';
     }

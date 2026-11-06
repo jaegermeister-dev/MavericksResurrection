@@ -269,9 +269,9 @@ Tool folder: #{efi}
    observations and photographs. Reports contain hardware identifiers and paths;
    review them before sharing. Nothing is uploaded automatically.
 
-Disconnect HDMI from the laptop before booting Mavericks. If startup fails with
-dock HDMI, disconnect it too. Record what was connected and whether NVMe support
-was installed. For comparisons, use the same test version and OpenCore route.
+On MacBookPro11,4 and MacBookPro11,5, disconnect HDMI from the laptop and any
+dock before booting Mavericks. Connect it after reaching the desktop. Record
+what was connected and whether NVMe support was installed. For comparisons, use the same test version and OpenCore route.
 OpenCore may change the firmware environment; this report records that environment.
 
 If TargetNotExposedByFirmware appears, the firmware filesystem protocols did not
