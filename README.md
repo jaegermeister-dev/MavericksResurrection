@@ -8,11 +8,11 @@ Install OS X Mavericks 10.9.5 directly onto an existing internal or USB partitio
 
 MavericksResurrection downloads and prepares Mavericks using MavericksForever, installs it, and applies the patches needed for the MacBookPro11,4 or MacBookPro11,5. It also includes optional NVMe support and a fix for audio breaking after software updates.
 
-**[Download 1.0 Beta 8](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.8)**
+**[Download 1.0 Beta 9](https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/v1.0-beta.9)**
 
 ## Source code
 
-The source and build instructions for Beta 8 are included in this repository. The published source builds the release download byte for byte with the recorded toolchains. See [SOURCE.md](SOURCE.md).
+The source and build instructions for Beta 9 are included in this repository. The published source builds the release download byte for byte with the recorded toolchains. See [SOURCE.md](SOURCE.md).
 
 The source was first published with Beta 6.1 after a user pointed out that it was missing. Older downloads were removed following memory leak reports and because they had no accompanying source. Beta 6.1 remains available.
 
@@ -88,7 +88,7 @@ This means leftover confirmation or selection dialogs, sometimes with an empty l
 
 ## Debug tools (advanced users)
 
-Use the **Debug — Advanced users only…** button:
+Use the **Debug â€” Advanced users onlyâ€¦** button:
 
 - **Read-only filesystem and installation diagnostics:** select the affected Mavericks partition. The app unmounts it normally, reads it without applying patches or repairs, checks the filesystem with repairs disabled, and leaves it unmounted. The report ZIP goes on your Desktop. Normal unmounting can flush writes macOS already has pending.
 - **EFI diagnostics:** select the Mavericks partition and the EFI partition where you want the tool and logs saved. One EFI offers either diagnostics only, or diagnostics followed by a separately confirmed boot attempt. Existing OpenCore and boot files are preserved. Logs always stay on the EFI partition the tool runs from.
@@ -102,7 +102,7 @@ Reports can contain hardware identifiers, usernames and file paths. Review them 
 
 ## Reporting a problem
 
-Use **Diagnostic logs…** to choose a folder for a saved log before reproducing the issue. **Collect installation diagnostics…** can also collect information from an installed Mavericks volume.
+Use **Diagnostic logsâ€¦** to choose a folder for a saved log before reproducing the issue. **Collect installation diagnosticsâ€¦** can also collect information from an installed Mavericks volume.
 
 [Open an issue](https://github.com/jaegermeister-dev/MavericksResurrection/issues) with your Mac model, host macOS version, SSD model, whether the destination is internal or USB, what happened, and the logs. Support is provided for the **MacBookPro11,4 and MacBookPro11,5 only**.
 

@@ -1,6 +1,12 @@
 const assert=require('node:assert/strict'),fs=require('fs'),path=require('path');
 const src=process.argv[2],p=require(path.join(src,'UpdatePolicy.js'));
 const release=tag=>({tag_name:tag,html_url:'https://github.com/jaegermeister-dev/MavericksResurrection/releases/tag/'+tag,published_at:'2026-10-26T21:29:36Z',draft:false,prerelease:false});
+const identityPath=fs.existsSync(path.join(src,'../assets/AppIdentity.json'))?path.join(src,'../assets/AppIdentity.json'):path.join(src,'../resources/assets/AppIdentity.json');
+const identity=JSON.parse(fs.readFileSync(identityPath));
+assert.equal(identity.releaseLabel,'1.0 Beta 9');
+assert(!p.available(release('v1.0-beta.8'),identity.releaseLabel,''));
+assert(!p.available(release('v1.0-beta.9'),identity.releaseLabel,''));
+assert(p.available(release('v1.0-beta.10'),identity.releaseLabel,''));
 assert(p.available(release('v1.0-beta.7'),'1.0 Beta 6',''));
 assert(p.available(release('v1.0-beta.10'),'1.0 Beta 9',''));
 assert(!p.available(release('v1.0-beta.6'),'1.0 Beta 6',''));

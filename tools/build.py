@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 import plistlib
+import re
 import shutil
 import stat
 import struct
@@ -14,12 +15,25 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVE_NAME = 'MavericksResurrection-1.0-beta.8.zip'
+ARCHIVE_NAME = 'MavericksResurrection-1.0-beta.9.zip'
 ENV = {k: v for k, v in os.environ.items()
        if k not in {'SDKROOT', 'MACOSX_DEPLOYMENT_TARGET', 'CPATH', 'C_INCLUDE_PATH',
                     'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH', 'CFLAGS', 'LDFLAGS'}
        and not k.startswith('DYLD_')}
 ENV.update(LC_ALL='C', TZ='UTC')
+
+
+def validate_release_identity(root=ROOT):
+    info = plistlib.loads((root/'packaging/Info.plist').read_bytes())
+    identity = json.loads((root/'resources/assets/AppIdentity.json').read_text())
+    for field, key in [('releaseLabel', 'CFBundleShortVersionString'),
+                       ('bundleIdentifier', 'CFBundleIdentifier'),
+                       ('minimumHostVersion', 'LSMinimumSystemVersion')]:
+        if identity[field] != info[key]:
+            raise RuntimeError('App identity differs from bundle metadata: '+field)
+    label = re.fullmatch(r'(\d+\.\d+(?:\.\d+)?) Beta (\d+)', info['CFBundleShortVersionString'])
+    if not label or ARCHIVE_NAME != 'MavericksResurrection-'+label[1]+'-beta.'+label[2]+'.zip':
+        raise RuntimeError('Release archive name differs from bundle version')
 
 def run(*args):
     subprocess.run([str(a) for a in args], check=True, cwd=ROOT, env=ENV)
@@ -72,6 +86,7 @@ def archive(app, destination):
 
 def main():
     os.umask(0o022)
+    validate_release_identity()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, default=ROOT/'build')
     parser.add_argument('--legacy-clt', type=Path, required=True,

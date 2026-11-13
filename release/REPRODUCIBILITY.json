@@ -1,12 +1,12 @@
 {
-  "release": "1.0 Beta 8",
-  "build": "108",
+  "release": "1.0 Beta 9",
+  "build": "109",
   "cleanBuildsCompared": 2,
   "differentSourceAndOutputDirectories": true,
   "allAppFilesByteIdentical": true,
   "identicalAppFiles": 173,
   "completeZipByteIdentical": true,
-  "archiveSHA256": "ab0e02aa29ce5e8eb045cac128d143e7a32f4ca29ab2a8113ac34e83b9dfae03",
+  "archiveSHA256": "1a0245006399ffbb25fdaae0cbdd266fcf67984ff0da6d61fa822e446715f648",
   "toolchain": {
     "macOSBuild": "25G241",
     "toolchains": {
@@ -20,20 +20,20 @@
       }
     }
   },
-  "nativeFramebufferFixture": {
-    "passed": true,
-    "tests": [
-      "fresh Beta 8 alias adopted without changing driver bytes",
-      "all eight old selections migrate to framebuffer-only using exact saved originals",
-      "original 13F34 enable and repeat assessment",
-      "interrupted reapply restores updated driver, old selected state and caches",
-      "known update reapply retains updated original and is idempotent",
-      "disable restores updated Apple driver, never the old pre-update driver",
-      "unknown unpatched and modified enabled binaries fail without changing managed files",
-      "damaged prior rollback snapshot blocks automatic reapply"
-    ],
-    "realCacheRebuildTested": false,
-    "scope": "packaged native helper on disposable HFS+ image only"
-  },
-  "model115HandlingUnchanged": true
+  "liveTranslocatedDownloadsDiscoveryPassed": true,
+  "backingVolumeRemainsProtected": true,
+  "regressionChecksPassed": [
+    "policy.cjs",
+    "beta7.cjs",
+    "beta8.cjs",
+    "experiments.cjs",
+    "updates.cjs",
+    "framebuffer-repair.cjs",
+    "protected-volume.cjs",
+    "release-identity.py"
+  ],
+  "nativeHelpersUnchangedFromBeta8": true,
+  "driverPayloadsUnchangedFromBeta8": true,
+  "installationAndRepairCodeUnchangedFromBeta8": true,
+  "freshOSInstallationPerformedForBeta9": false
 }

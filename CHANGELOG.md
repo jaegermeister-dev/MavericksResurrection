@@ -1,3 +1,8 @@
+# 1.0 Beta 9
+
+- Fixed the startup storage-check error when opening the app from Downloads.
+- Fixed the update checker reporting the wrong installed version.
+
 # 1.0 Beta 8
 
 MacBookPro11,4 boot and display issues have now been fully fixed.

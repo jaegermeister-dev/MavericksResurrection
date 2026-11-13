@@ -1,6 +1,6 @@
 {
-  "Contents/Info.plist": "4be39356349d014ee28cef61dea3e31f67aea865688bc7ce9fe421b6fdb77da7",
-  "Contents/MacOS/MavericksResurrection": "7e4aa2d84529409742c9e4d8ca261aed6b2c9ff75e82910c3647525a3e9c589a",
+  "Contents/Info.plist": "91df8c317ccf9036c7691ea3c77365031b1d79606445e7c4cc52c52785a141eb",
+  "Contents/MacOS/MavericksResurrection": "cb6ea8b5cd821f9887635d85a45bfd924b7c863ac63c08db4be89ecdb888acc1",
   "Contents/Resources/BundledInputs/NVMe-Driver-High-Sierra-R3.tar.gz": "9bc47b29d35cb7168ecf5edd877c451e5acce235a582cb0f6fc3b76c3a06087f",
   "Contents/Resources/BundledInputs/Released-Model-Support.tar.gz": "1eed2e0ed8bd6e47776e4a4a63ab34f033c54379de9d633333bc4786fa67e190",
   "Contents/Resources/BundledTools/CacheToolLaunch": "4ccb67e6f6bc8fc55345fc0aa5f19d92f2f5ca32afb80b3b3a532bae3e1826ff",
@@ -19,7 +19,7 @@
   "Contents/Resources/BundledTools/VerifySharedCaches": "6f10b20c16bc431b299e86c182dfd000b5def365b4f93a3513d8be1629a3028d",
   "Contents/Resources/MavericksResurrection.icns": "444c9b88e2a8272228f5c54b073dd37438f291c2ed9c109077c9a8a6c9582ef6",
   "Contents/Resources/assets/AppCapabilities.json": "e5c5aefbfc34ae6b685bafe1780134b21f290a97fb71bb861a491ea62b532f18",
-  "Contents/Resources/assets/AppIdentity.json": "2700eb0abb88c762c9b90c2e278e5c0dd8934e328df332973609d9e2e716012f",
+  "Contents/Resources/assets/AppIdentity.json": "28cbaf13849d43925d5de06dbb0164d3332d5f854162224646cec16d2abf89cd",
   "Contents/Resources/assets/BaseResourceSelection.json": "f7b126d8ab2bef19a36cf2dbfff1f37f9652b2689e5730fe4bd807571da267da",
   "Contents/Resources/assets/Cache/noloadkextalert.plist": "1a5103abaa31da3115f3701638f9c0759cec8a4d457d1ae28ae21537ae89079e",
   "Contents/Resources/assets/CacheEvidence.json": "6e67291574da1ac42423a24c2d1abbcea2bbad9b4dd5e8d5a672a6d4b6c69168",
@@ -122,7 +122,7 @@
   "Contents/Resources/src/MacPostUpdateSnapshotIO.js": "ddfcff5eaaf9b671129bde9bf61e1ea1d3f050734bf953749ef5e8dd1617b202",
   "Contents/Resources/src/MacPrivateSystemCopyIO.js": "eadbc2e776aa1926916ea5aa2b90fd70d4b539a43a308d6fcfdd7a8816eeeac1",
   "Contents/Resources/src/MacProgressView.js": "45dde9050662190849786ca06459432e0df404df8b853442a8ec9d1cb25740dc",
-  "Contents/Resources/src/MacRuntime.js": "291da59157baf2f0ea3392c91b97226ba50fb768d350be62ff3dadf1d8e5fb2f",
+  "Contents/Resources/src/MacRuntime.js": "f122900c8ae0a5e6008430398257acecdbdd4cfd33ffa38992bae7fa04149db6",
   "Contents/Resources/src/MacSourceDialogs.js": "23264fd1a803b19c84018246727194b437e50a05c4869e78ce1458929e4ff2dd",
   "Contents/Resources/src/MacSourceIO.js": "1ba840870afec0b13b8b609cf65d172dc783d977a971a57f06271bbbc3fa5887",
   "Contents/Resources/src/MacSourceRunner.js": "d99554435b2ed47bf539a559406e401145998672af4e5e68398422e06955e001",
@@ -171,5 +171,5 @@
   "Contents/Resources/src/VerifySharedCaches.m": "871944b81b1bb1eb1309ae737ff37555cedbae3140c30fcaff471db6c1634510",
   "Contents/Resources/src/VolumeRelease.js": "2ec81f5a5967501eba3ded6b5decf9f16192868aab077a71c80e85a11acaa113",
   "Contents/Resources/src/WorkerLaunch.js": "bb4ec1b1c09f0923087f9b902e79832867b834bd5b0195492a29722b32b8d637",
-  "Contents/_CodeSignature/CodeResources": "6cd305ffceb9a94fdbaed141336e86f0e5e0a273182ba846adac72d94e41440e"
+  "Contents/_CodeSignature/CodeResources": "a2fc79f92f55c043e460d035a1b777e8923b3fbf0de4293958b710aeecd9a82c"
 }

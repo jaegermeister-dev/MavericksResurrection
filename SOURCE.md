@@ -1,12 +1,14 @@
-# Beta 8 source
+# Beta 9 source
 
-This is the source for **MavericksResurrection 1.0 Beta 8, build 108**.
+This is the source for **MavericksResurrection 1.0 Beta 9, build 109**.
 
 The source was first published with Beta 6.1 after a user pointed out that it was missing. Earlier downloads were removed following memory leak reports and because their source had not been published. Beta 6.1 remains available.
 
 ## Release verification
 
-The published source builds every application file and the complete release ZIP byte for byte. Two clean builds in different directories were compared, including a build from the accompanying source archive. See `release/REPRODUCIBILITY.json`, `release/APP-FILE-HASHES.json` and `SHA256SUMS.txt`.
+The published source builds every application file and the complete release ZIP byte for byte. Independent clean builds in different directories were compared, including a build from the accompanying source archive. See `release/REPRODUCIBILITY.json`, `release/APP-FILE-HASHES.json` and `SHA256SUMS.txt`.
+
+Beta 9 fixes the protected-volume check when macOS runs a downloaded app through App Translocation, and corrects the version label used by the update checker. The build now rejects a mismatch between that label and the app bundle version. The reported Downloads launch was checked on a MacBookPro11,5. Installation, driver and post-update patch handling are unchanged from Beta 8.
 
 Beta 8 adds the verified MacBookPro11,4 framebuffer alias to fresh installations and restores it after software updates. The same fix was tested on 11,4 hardware, including graphics, Retina scaling, HDMI video/audio and internal audio. The 11,5 installation and patch configuration is unchanged from Beta 7; its graphics switching issue remains separate.
 
@@ -27,7 +29,7 @@ Use `--current-clt /path/to/current/CommandLineTools` if the newer toolchain is 
 
 The build compiles the launcher and all host helpers from `src/`, using the per-file settings in `packaging/native-builds.json`. It preserves the tested helpers' compiler versions and signatures. One helper's existing debug UUID is retained only after checking its compiled code hash. Library header padding preserves the tested instruction/data layout while removing the local path. These steps do not change application logic.
 
-Outputs are `build/MavericksResurrection.app`, `build/MavericksResurrection-1.0-beta.8.zip` and `build/APP-FILE-HASHES.json`. ZIP ordering, timestamps and permissions are fixed. The build never launches the app or modifies a Mavericks installation.
+Outputs are `build/MavericksResurrection.app`, `build/MavericksResurrection-1.0-beta.9.zip` and `build/APP-FILE-HASHES.json`. ZIP ordering, timestamps and permissions are fixed. The build never launches the app or modifies a Mavericks installation.
 
 ## Source layout
 
